@@ -7,3 +7,6 @@ Thumbs.db
 *.sublime-workspace
 *.log
 package-lock.json
+
+*.css
+*.css.map

@@ -3,9 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
-    "lint:css": "stylelint '**/*.css'",
-    "pretest": "npm run lint:css"
+    "start": "nodemon ./bin/www"
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
@@ -26,7 +24,8 @@
     "lint-staged": "^8.1.5",
     "prettier": "1.16.4",
     "stylelint": "^9.10.1",
-    "stylelint-config-standard": "^18.2.0"
+    "stylelint-config-standard": "^18.2.0",
+    "nodemon": "^1.18.10"
   },
   "husky": {
     "hooks": {
@@ -34,8 +33,12 @@
     }
   },
   "lint-staged": {
-    "*.{js,json,css,md}": [
+    "*.{js,json,scss,md}": [
       "prettier --write",
+      "git add"
+    ],
+    "*.scss": [
+      "stylelint 'public/stylesheets/*.scss'",
       "git add"
     ],
     "*.js": [

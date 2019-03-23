@@ -6,7 +6,7 @@ const config = include('config');
 function createPost() {
 	return {
 		title: fakerZh.Name.findName(),
-		subTitle: fakerZh.Lorem.sentences(),
+		subTitle: fakerZh.Lorem.paragraph(),
 		date: faker.date.past(),
 		firstName: fakerZh.Name.firstName(),
 		lastName: fakerZh.Name.lastName(),

@@ -7,4 +7,6 @@ const polyglot = new Polyglot();
 
 polyglot.extend(locale);
 
-hbs.registerHelper('t', str => polyglot.t(str));
+hbs.registerHelper('t', (str, { hash }) => {
+	return polyglot.t(str, hash);
+});

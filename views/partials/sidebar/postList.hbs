@@ -2,16 +2,16 @@
   <article>
     <header>
       <h3>
-        <a href="single.html">
-          Lorem ipsum fermentum ut nisl vitae
+        <a href={{originPost}}>
+          {{title}}
         </a>
       </h3>
-      <time class="published" datetime="2015-10-20">
-        October 20, 2015
+      <time class="published" datetime={{date}}>
+        {{dateFormatter date}}
       </time>
     </header>
-    <a href="single.html" class="image">
-      <img src="images/pic08.jpg" alt="" />
+    <a href={{originPost}} class="image">
+      <img src={{imageUrl}} alt="" />
     </a>
   </article>
 </li>

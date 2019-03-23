@@ -4,13 +4,17 @@
   <!-- Mini Posts -->
   <section>
     <div class="mini-posts">
-			{{> sidebar/miniPost}}
+			{{#each miniPosts}}
+				{{> sidebar/miniPost this}}
+			{{/each}}
     </div>
   </section>
   <!-- Posts List -->
   <section>
     <ul class="posts">
-			{{> sidebar/postList}}
+			{{#each postList}}
+				{{> sidebar/postList this}}
+			{{/each}}
     </ul>
   </section>
 	{{> sidebar/about}}

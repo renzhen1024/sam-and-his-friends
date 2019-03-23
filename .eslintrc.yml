@@ -2,12 +2,13 @@ env:
   browser: true
   commonjs: true
   es6: true
-extends: 
+extends:
   - airbnb-base
   - plugin:prettier/recommended
 globals:
   Atomics: readonly
   SharedArrayBuffer: readonly
+  include: readonly
 parserOptions:
   ecmaVersion: 2018
 rules: {}

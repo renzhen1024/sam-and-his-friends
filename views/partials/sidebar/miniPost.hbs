@@ -10,7 +10,9 @@
 			<img src={{authorImageUrl}} alt="" />
 		</a>
 	</header>
-	<a href={{originPost}} class="image">
-		<img src={{imageUrl}} alt="" />
-	</a>
+		{{#unless isReaderMode}}
+			<a href={{originPost}} class="image">
+				<img src={{imageUrl}} alt="" />
+			</a>
+		{{/unless}}
 </article>

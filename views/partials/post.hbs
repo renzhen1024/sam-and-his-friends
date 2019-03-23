@@ -22,9 +22,11 @@
       </a>
     </div>
   </header>
-  <a href="single.html" class="image featured">
-    <img src={{imageUrl}} alt="" />
-  </a>
+		{{#unless isReaderMode}}
+			<a href="single.html" class="image featured">
+				<img src={{imageUrl}} alt="" />
+			</a>
+		{{/unless}}
   <p>
     {{paragraphsPreview content}}
   </p>

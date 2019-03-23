@@ -1,11 +1,11 @@
 <section id="sidebar">
   <!-- Intro -->
-	{{> sidebar/intro}}
+	{{> sidebar/intro config.creator}}
   <!-- Mini Posts -->
   <section>
     <div class="mini-posts">
 			{{#each miniPosts}}
-				{{> sidebar/miniPost this}}
+				{{> sidebar/miniPost}}
 			{{/each}}
     </div>
   </section>
@@ -13,7 +13,7 @@
   <section>
     <ul class="posts">
 			{{#each postList}}
-				{{> sidebar/postList this}}
+				{{> sidebar/postList}}
 			{{/each}}
     </ul>
   </section>

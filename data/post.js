@@ -1,6 +1,8 @@
 const fakerZh = require('faker-zh-cn');
 const faker = require('faker');
 
+const config = include('config');
+
 function createPost() {
 	return {
 		title: fakerZh.Name.findName(),
@@ -14,6 +16,7 @@ function createPost() {
 		category: fakerZh.Name.findName(),
 		numLikes: faker.random.number(),
 		numComments: faker.random.number(),
+		isReaderMode: config.isReaderMode,
 	};
 }
 

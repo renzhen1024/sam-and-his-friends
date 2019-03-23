@@ -1,6 +1,8 @@
 const fakerZh = require('faker-zh-cn');
 const faker = require('faker');
 
+const config = include('config');
+
 function createMiniPost() {
 	return {
 		title: fakerZh.Name.findName(),
@@ -8,6 +10,7 @@ function createMiniPost() {
 		authorImageUrl: faker.image.avatar(),
 		imageUrl: faker.image.image(),
 		originPost: faker.internet.url(),
+		isReaderMode: config.isReaderMode,
 	};
 }
 

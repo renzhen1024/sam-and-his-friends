@@ -11,12 +11,12 @@
       </p>
     </div>
     <div class="meta">
-      <time class="published" datetime="2015-11-01">
-        {{date}}
+      <time class="published" datetime={{dateFormatter date}}>
+        {{dateFormatter date}}
       </time>
       <a href="#" class="author">
         <span class="name">
-          {{author}}
+					{{fullName firstName lastName}}
         </span>
         <img src={{authorImageUrl}} alt="" />
       </a>
@@ -26,7 +26,7 @@
     <img src={{imageUrl}} alt="" />
   </a>
   <p>
-    {{content}}
+    {{paragraphsPreview content}}
   </p>
   <footer>
     <ul class="actions">

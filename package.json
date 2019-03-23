@@ -13,6 +13,7 @@
     "faker-zh-cn": "^0.5.9",
     "hbs": "~4.0.1",
     "http-errors": "~1.6.2",
+    "moment": "^2.24.0",
     "morgan": "~1.9.0",
     "node-sass-middleware": "0.11.0"
   },

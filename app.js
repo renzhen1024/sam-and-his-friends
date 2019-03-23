@@ -7,6 +7,9 @@ const sassMiddleware = require('node-sass-middleware');
 const hbs = require('hbs');
 
 require('./setup-global')();
+
+include('hbs-helpers');
+
 const indexRouter = require('./routes/index');
 
 const app = express();

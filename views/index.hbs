@@ -6,7 +6,9 @@
   <!-- Main -->
   <div id="main">
 
-		{{> post}}
+		{{#each posts}}
+			{{>post this}}
+		{{/each}}
 
 		<!-- Pagination -->
     <ul class="actions pagination">

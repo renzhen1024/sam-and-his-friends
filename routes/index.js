@@ -1,12 +1,13 @@
 const express = require('express');
 
-const post = include('data/post');
+const { createPosts } = include('data/post');
 
 const router = express.Router();
 
 /* GET home page. */
 router.get('/', (req, res) => {
-	res.render('index', post);
+	const posts = createPosts(3);
+	res.render('index', { posts });
 });
 
 module.exports = router;

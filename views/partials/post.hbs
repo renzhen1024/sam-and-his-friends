@@ -2,7 +2,7 @@
   <header>
     <div class="title">
       <h2>
-        <a href="single-post">
+        <a href="single-post/{{id}}">
           {{title}}
         </a>
       </h2>
@@ -23,7 +23,7 @@
     </div>
   </header>
 		{{#unless isReaderMode}}
-			<a href="single-post" class="image featured">
+			<a href="single-post/{{id}}" class="image featured">
 				<img src={{imageUrl}} alt="" />
 			</a>
 		{{/unless}}
@@ -33,7 +33,7 @@
   <footer>
     <ul class="actions">
       <li>
-        <a href="single-post" class="button large">
+        <a href="single-post/{{id}}" class="button large">
           {{t "i18n-post-continue-reading"}}
         </a>
       </li>

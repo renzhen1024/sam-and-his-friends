@@ -3,6 +3,7 @@ const config = include('config');
 function postFormatter({ data = {} } = {}) {
 	const { topics } = data.topic_list;
 	return topics.map(topic => ({
+		id: topic.id,
 		title: topic.title,
 		subTitle: topic.fancy_title || '这张帖子没有副标题',
 		date: topic.bumped_at,

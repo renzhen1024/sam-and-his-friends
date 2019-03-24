@@ -5,6 +5,7 @@ const config = include('config');
 
 function createPost() {
 	return {
+		id: faker.random.number(),
 		title: fakerZh.Name.findName(),
 		subTitle: fakerZh.Lorem.paragraph(),
 		date: faker.date.past(),

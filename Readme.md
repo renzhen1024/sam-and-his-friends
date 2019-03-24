@@ -1,6 +1,10 @@
 # sam-and-his-friends
 
-...
+## How to run in production
+
+1. `$ sudo npm install -g pm2`
+2. `$ cd sam-and-his-friends`
+3. `$ NODE_ENV=production PORT=80 pm2 start ./bin/www`
 
 ## Change log
 

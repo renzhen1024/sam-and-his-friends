@@ -10,22 +10,22 @@
 				<div class="title">
 					<h2>
 						<a href="#">
-							Magna sed adipiscing
+							{{title}}
 						</a>
 					</h2>
 					<p>
-						Lorem ipsum dolor amet nullam consequat etiam feugiat
+						{{title}}
 					</p>
 				</div>
 				<div class="meta">
 					<time class="published" datetime="2015-11-01">
-						November 1, 2015
+						{{dateFormatter date}}
 					</time>
-					<a href="#" class="author">
+					<a href="https://renzhen1024.com/u/mountainsun1988/summary" class="author" target="_blank">
 						<span class="name">
-							Jane Doe
+							{{name}}
 						</span>
-						<img src="/images/avatar.jpg" alt="" />
+						<img src={{authorImageUrl}} alt="" />
 					</a>
 				</div>
 			</header>
@@ -33,17 +33,12 @@
 				<img src="/images/pic01.jpg" alt="" />
 			</span>
 			<p>
-				Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.
-			</p>
-			<p>
-				Nunc quis dui scelerisque, scelerisque urna ut, dapibus orci. Sed vitae condimentum lectus, ut imperdiet quam. Maecenas in justo ut nulla aliquam sodales vel at ligula. Sed blandit diam odio, sed fringilla lectus molestie sit amet. Praesent eu tortor viverra lorem mattis pulvinar feugiat in turpis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce ullamcorper tellus sit amet mattis dignissim. Phasellus ut metus ligula. Curabitur nec leo turpis. Ut gravida purus quis erat pretium, sed pellentesque massa elementum. Fusce vestibulum porta augue, at mattis justo. Integer sed sapien fringilla, dapibus risus id, faucibus ante. Pellentesque mattis nunc sit amet tortor pellentesque, non placerat neque viverra.
+				{{content}}
 			</p>
 			<footer>
 				<ul class="stats">
 					<li>
-						<a href="#">
-							General
-						</a>
+						Reads: {{reads}}
 					</li>
 					<li>
 						<a href="#" class="icon fa-heart">
@@ -60,15 +55,5 @@
 		</article>
 	</div>
 
-	<!-- Footer -->
-	<section id="footer">
-		<ul class="icons">
-			<li><a href="#" class="fa-twitter"><span class="label">Twitter</span></a></li>
-			<li><a href="#" class="fa-facebook"><span class="label">Facebook</span></a></li>
-			<li><a href="#" class="fa-instagram"><span class="label">Instagram</span></a></li>
-			<li><a href="#" class="fa-rss"><span class="label">RSS</span></a></li>
-			<li><a href="#" class="fa-envelope"><span class="label">Email</span></a></li>
-		</ul>
-		<p class="copyright">&copy; Untitled.</p>
-	</section>
+	{{> sidebar/footer config.socialMedias}}
 </div>

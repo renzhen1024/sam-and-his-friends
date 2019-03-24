@@ -3,7 +3,7 @@ const axios = require('axios');
 
 const { createPosts } = include('data/mocks/post');
 const { createMiniPosts } = include('data/mocks/mini-post');
-const { postFormatter } = include('data/formatters/post');
+const { postsFormatter } = include('data/formatters/post');
 const config = include('config');
 
 const router = express.Router();
@@ -21,7 +21,7 @@ router.get('/', (req, res) => {
 		res.render('index', { posts, miniPosts, postList, config });
 	} else {
 		axios.get('https://renzhen1024.com/c/7.json').then(response => {
-			posts = postFormatter(response);
+			posts = postsFormatter(response);
 			miniPosts = createMiniPosts(4);
 			postList = createMiniPosts(6);
 			res.render('index', { posts, miniPosts, postList, config });

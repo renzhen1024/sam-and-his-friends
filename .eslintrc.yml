@@ -11,4 +11,5 @@ globals:
   include: readonly
 parserOptions:
   ecmaVersion: 2018
-rules: {}
+rules:
+  no-underscore-dangle: 0

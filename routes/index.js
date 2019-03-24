@@ -1,14 +1,15 @@
 const express = require('express');
-const axios = require('axios');
 
 const { createPosts } = include('data/mocks/post');
 const { createMiniPosts } = include('data/mocks/mini-post');
 const { postsFormatter } = include('data/formatters/post');
+const { request } = include('data/request');
 const config = include('config');
+
+const { API_REQUEST_TYPE, CATEGORY_ID } = include('utils/constants');
 
 const router = express.Router();
 
-/* GET home page. */
 router.get('/', (req, res) => {
 	let posts;
 	let miniPosts;
@@ -20,11 +21,11 @@ router.get('/', (req, res) => {
 		postList = createMiniPosts(6);
 		res.render('index', { posts, miniPosts, postList, config });
 	} else {
-		axios.get('https://renzhen1024.com/c/7.json').then(response => {
+		request(API_REQUEST_TYPE.CATEGORY, CATEGORY_ID).then(response => {
 			posts = postsFormatter(response);
 			miniPosts = createMiniPosts(4);
 			postList = createMiniPosts(6);
-			res.render('index', { posts, miniPosts, postList, config });
+			res.render('index', { posts, miniPosts, postList, ...config });
 		});
 	}
 });

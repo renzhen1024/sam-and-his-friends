@@ -3,7 +3,7 @@ const config = include('config');
 function singlePostFormatter(post) {
 	return {
 		name: '小山',
-		content: post.raw,
+		content: post.cooked,
 		date: post.updated_at,
 		reads: post.reads,
 		authorImageUrl:

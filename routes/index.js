@@ -3,7 +3,7 @@ const express = require('express');
 const { createPosts } = include('data/mocks/post');
 const { createMiniPosts } = include('data/mocks/mini-post');
 const { postsFormatter } = include('data/formatters/post');
-const { request } = include('data/request');
+const { request } = include('data/requests/request');
 const config = include('config');
 
 const { API_REQUEST_TYPE, CATEGORY_ID } = include('utils/constants');

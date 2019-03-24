@@ -1,7 +1,7 @@
 const express = require('express');
 
 const { singlePostFormatter } = include('data/formatters/post');
-const { request } = include('data/request');
+const { request } = include('data/requests/request');
 const config = include('config');
 const { API_REQUEST_TYPE } = include('utils/constants');
 

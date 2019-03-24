@@ -1,5 +1,9 @@
 const config = include('config');
-
+/**
+ * Hard code string is not good, the response only has a user id, so need to send
+ * anther request to get the name and authorImageUrl. Since only Sam will post
+ * in this category, so use hard code string as a compromise solution.
+ */
 function singlePostFormatter(post) {
 	return {
 		name: '小山',
@@ -11,6 +15,11 @@ function singlePostFormatter(post) {
 	};
 }
 
+/**
+ * Hard code string is not good, the response only has a user id, so need to send
+ * anther request to get the name and authorImageUrl. Since only Sam will post
+ * in this category, so use hard code string as a compromise solution.
+ */
 function postFormatter(post) {
 	return {
 		id: post.id,

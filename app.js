@@ -11,6 +11,7 @@ require('./setup-global')();
 include('hbs-helpers');
 
 const indexRouter = require('./routes/index');
+const singlePostRouter = require('./routes/single-post');
 
 const app = express();
 
@@ -34,6 +35,7 @@ app.use(
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+app.use('/single-post', singlePostRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

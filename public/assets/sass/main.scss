@@ -78,3 +78,17 @@
 // Utils
 
 @import 'utils';
+
+// Custom
+
+$header-image-width: 172px;
+
+.header__image-container {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.header__image {
+  width: $header-image-width;
+  vertical-align: middle;
+}

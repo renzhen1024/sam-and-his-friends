@@ -1,4 +1,5 @@
 module.exports = {
+	siteTitle: 'Sam And This Friends',
 	creator: {
 		firstName: '江山',
 		lastName: '孙',

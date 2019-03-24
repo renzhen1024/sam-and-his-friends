@@ -35,6 +35,15 @@ npm run test:jest -- -u
 
 **Please update npm lock file (`package-lock.json`) if you add or update dependencies.**
 
+### How to debug
+
+1. `$: npm run debug`
+2. Open Chrome, navigate to `chrome://inspect/#devices`
+3. Click "Inspect" in the Remote Target section. **Notice:** Cick the Node debug icon or click "Open dedicated DevTools for Node" not work for [some version](https://github.com/nodejs/node/issues/23693#issuecomment-440623410). This step should pause the process in the first line, click continue in the debug tool
+4. Open anther tab, go to `localhost:3000`, this step should pause the programm in the `debugger` you put in the code.
+
+![Chrome Debug](public/images/node-debug.png)
+
 ## Other notes
 
 - If you have commit access to repository and want to make big change or not sure about something, make a new branch and open pull request.

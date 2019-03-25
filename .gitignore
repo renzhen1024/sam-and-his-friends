@@ -8,5 +8,7 @@ Thumbs.db
 *.log
 package-lock.json
 
-*.css
+light
+# TODO: Build the front-end code instead of using sass middleware
+main.css
 *.css.map

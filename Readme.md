@@ -6,6 +6,24 @@
 2. `$ cd sam-and-his-friends`
 3. `$ NODE_ENV=production PORT=80 pm2 start ./bin/www`
 
+## How to deploy a new version production
+
+1. The list of applications currently managed by PM2 can also be looked up with the list subcommand:
+
+`$ pm2 list`
+
+2. Stop an application with this command (specify the PM2 App name or id):
+
+`$ pm2 stop app_name_or_id`
+
+3. Update dependency
+
+`$ cd sam-and-his-friends && git pull && yarn install`
+
+4. Start application again
+
+`$ NODE_ENV=production PORT=80 pm2 start ./bin/www`
+
 ## Change log
 
 The change log can be found on the [Releases page](https://github.com/tningjs/sam-and-his-friends/releases).

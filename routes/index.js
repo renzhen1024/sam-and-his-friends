@@ -16,7 +16,10 @@ router.get('/', (req, res) => {
 	let postList;
 
 	if (process.env.IS_TEST) {
-		posts = createPosts(3);
+		// TODO: This is a temp solution, it's better to mock API
+		const response = createPosts(3);
+		posts = postsFormatter(response);
+
 		miniPosts = createMiniPosts(4);
 		postList = createMiniPosts(6);
 		res.render('index', { posts, miniPosts, postList, config });

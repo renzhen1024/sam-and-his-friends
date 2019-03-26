@@ -39,7 +39,9 @@ function postFormatter(post) {
 
 function postsFormatter({ data = {} } = {}) {
 	const { topics } = data.topic_list;
-	return topics.map(topic => postFormatter(topic));
+	return topics
+		.map(topic => postFormatter(topic))
+		.sort((a, b) => b.date - a.date);
 }
 
 exports.postFormatter = postFormatter;

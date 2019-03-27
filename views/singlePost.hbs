@@ -1,59 +1,57 @@
-<div id="wrapper">
-	{{> header}}
-
-	{{> menu}}
-
-	<div id="main">
-		<!-- Post -->
-		<article class="post">
-			<header>
-				<div class="title">
-					<h2>
-						<a href="#">
-							{{title}}
-						</a>
-					</h2>
-					{{!-- <p>
-						{{title}}
-					</p> --}}
-				</div>
-				<div class="meta">
-					<time class="published" datetime="2015-11-01">
-						{{dateFormatter date}}
-					</time>
-					<a href="https://renzhen1024.com/u/mountainsun1988/summary" class="author" target="_blank">
-						<span class="name">
-							{{name}}
-						</span>
-						<img src={{authorImageUrl}} alt="" />
+<div id="main">
+	<!-- Post -->
+	<article class="post">
+		<header>
+			<div class="title">
+				<h2>
+					<a href="#">
+						{{ title }}
 					</a>
-				</div>
-			</header>
-			{{!-- <span class="image featured">
-				<img src="/images/pic01.jpg" alt="" />
-			</span> --}}
-			<p>
-				{{{content}}}
-			</p>
-			<footer>
-				<ul class="stats">
-					<li>
-						Reads: {{reads}}
-					</li>
-					<li>
-						<a href="#" class="icon fa-heart">
-							28
-						</a>
-					</li>
-					<li>
-						<a href="#" class="icon fa-comment">
-							128
-						</a>
-					</li>
-				</ul>
-			</footer>
-		</article>
-	</div>
-
-	{{> footer socialMedias}}
+				</h2>
+				{{!--
+				<p>
+					{{ title }}
+				</p>
+				--}}
+			</div>
+			<div class="meta">
+				<time class="published" datetime="2015-11-01">
+					{{dateFormatter date}}
+				</time>
+				<a
+					href="https://renzhen1024.com/u/mountainsun1988/summary"
+					class="author"
+					target="_blank"
+				>
+					<span class="name">
+						{{ name }}
+					</span>
+					<img src="{{ authorImageUrl }}" alt="" />
+				</a>
+			</div>
+		</header>
+		{{!--
+		<span class="image featured">
+			<img src="/images/pic01.jpg" alt="" />
+		</span>
+		--}}
+		<p>{{{content}}}</p>
+		<footer>
+			<ul class="stats">
+				<li>Reads: {{ reads }}</li>
+				<li>
+					<a href="#" class="icon fa-heart">
+						28
+					</a>
+				</li>
+				<li>
+					<a href="#" class="icon fa-comment">
+						128
+					</a>
+				</li>
+			</ul>
+		</footer>
+	</article>
 </div>
+
+{{> footer socialMedias}}

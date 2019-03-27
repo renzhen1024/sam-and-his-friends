@@ -1,28 +1,19 @@
-<!-- Wrapper -->
-<div id="wrapper">
-	{{> header}}
+<div id="main">
+	{{#each posts}} {{>post}} {{/each}}
 
-	{{> menu}}
-  <!-- Main -->
-  <div id="main">
-		{{#each posts}}
-			{{>post}}
-		{{/each}}
-
-		<!-- Pagination -->
-    <ul class="actions pagination">
-      <li>
-        <a href="" class="disabled button large previous">
-          {{t "i18n-pagination-previous-page"}}
-        </a>
-      </li>
-      <li>
-        <a href="#" class="button large next">
-          {{t "i18n-pagination-next-page"}}
-        </a>
-      </li>
-    </ul>
-  </div>
-
-  {{> sidebar}}
+	<!-- Pagination -->
+	<ul class="actions pagination">
+		<li>
+			<a href="" class="disabled button large previous">
+				{{t "i18n-pagination-previous-page"}}
+			</a>
+		</li>
+		<li>
+			<a href="#" class="button large next">
+				{{t "i18n-pagination-next-page"}}
+			</a>
+		</li>
+	</ul>
 </div>
+
+{{> sidebar}}

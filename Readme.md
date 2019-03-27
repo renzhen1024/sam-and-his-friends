@@ -1,5 +1,23 @@
 # Sam And His Friends
 
+## How to run in dev
+
+1. Checkout source code: `$ git clone git@github.com:tningjs/sam-and-his-friends.git`
+2. Install dependency: `$ yarn install`
+3. Start server: `$ npm start`
+4. visit https://localhost/
+
+## How to debug
+
+1. `$: npm run debug`
+2. Open Chrome, navigate to `chrome://inspect/#devices`
+3. Click "Inspect" in the Remote Target section. **Notice:** Cick the Node debug icon or click "Open dedicated DevTools for Node" not work for [some version](https://github.com/nodejs/node/issues/23693#issuecomment-440623410). This step should pause the process in the first line, click continue in the debug tool
+4. Open anther tab, go to `localhost:3000`, this step should pause the programm in the `debugger` you put in the code.
+
+![Chrome Debug](public/images/node-debug.png)
+
+In the production server, can use `$ pm2 logs` to see the logs.
+
 ## How to run in production
 
 1. Checkout source code: `$ git clone git@github.com:tningjs/sam-and-his-friends.git`
@@ -10,7 +28,7 @@
 6. Start redirect server: `$ NODE_ENV=production pm2 start redirect-server.js`
 7. Start main server: `$ NODE_ENV=production pm2 start ./bin/www`
 
-## How to deploy a new version production
+### How to deploy a new version production
 
 1. The list of applications currently managed by PM2 can also be looked up with the list subcommand:
 
@@ -27,17 +45,6 @@
 4. Start application again
 
 `$ NODE_ENV=production PORT=80 pm2 start ./bin/www`
-
-### How to debug
-
-1. `$: npm run debug`
-2. Open Chrome, navigate to `chrome://inspect/#devices`
-3. Click "Inspect" in the Remote Target section. **Notice:** Cick the Node debug icon or click "Open dedicated DevTools for Node" not work for [some version](https://github.com/nodejs/node/issues/23693#issuecomment-440623410). This step should pause the process in the first line, click continue in the debug tool
-4. Open anther tab, go to `localhost:3000`, this step should pause the programm in the `debugger` you put in the code.
-
-![Chrome Debug](public/images/node-debug.png)
-
-In the production server, can use `$ pm2 logs` to see the logs.
 
 ## Change log
 

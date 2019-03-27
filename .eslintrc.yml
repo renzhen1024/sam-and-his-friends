@@ -9,6 +9,7 @@ globals:
   Atomics: readonly
   SharedArrayBuffer: readonly
   include: readonly
+  absPath: readonly
 parserOptions:
   ecmaVersion: 2018
 rules:

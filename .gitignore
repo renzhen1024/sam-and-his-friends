@@ -12,3 +12,4 @@ light
 # TODO: Build the front-end code instead of using sass middleware
 main.css
 *.css.map
+encryption/

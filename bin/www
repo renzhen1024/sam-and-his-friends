@@ -4,14 +4,19 @@
  * Module dependencies.
  */
 const debug = require('debug')('sam-and-his-friends:server');
-const http = require('http');
+const https = require('https');
+const fs = require('fs');
 
 const app = require('../app');
 
-/**
- * Create HTTP server.
- */
-const server = http.createServer(app);
+// set up ssl
+const key = fs.readFileSync('encryption/private.key');
+const cert = fs.readFileSync('encryption/samandhisfriends_com.crt');
+const ca = fs.readFileSync('encryption/samandhisfriends_com.ca');
+
+const options = { key, cert, ca };
+
+const server = https.createServer(options, app);
 
 /**
  * Normalize a port into a number, string, or false.
@@ -35,7 +40,7 @@ function normalizePort(val) {
 /**
  * Get port from environment and store in Express.
  */
-const port = normalizePort(process.env.PORT || '3000');
+const port = 443;
 
 /**
  * Event listener for HTTP server "error" event.

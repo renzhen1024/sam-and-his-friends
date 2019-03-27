@@ -8,7 +8,6 @@ function createMiniPost() {
 		title: fakerZh.Name.findName(),
 		date: faker.date.past(),
 		authorImageUrl: faker.image.avatar(),
-		imageUrl: faker.image.image(),
 		originPost: faker.internet.url(),
 		isReaderMode: config.isReaderMode,
 	};

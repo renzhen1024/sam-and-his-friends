@@ -21,11 +21,12 @@ function singlePostFormatter(post) {
  * in this category, so use hard code string as a compromise solution.
  */
 function postFormatter(post) {
+	debugger;
 	return {
 		id: post.id,
 		title: post.title,
 		subTitle: post.fancy_title || '这张帖子没有副标题',
-		date: post.bumped_at,
+		date: new Date(post.created_at),
 		name: '小山',
 		authorImageUrl:
 			'https://renzhen1024.com/user_avatar/renzhen1024.com/mountainsun1988/240/90_2.png',

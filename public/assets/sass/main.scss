@@ -92,3 +92,8 @@ $header-image-width: 172px;
   width: $header-image-width;
   vertical-align: middle;
 }
+
+.single-post-content img {
+  width: 100%;
+  height: auto;
+}

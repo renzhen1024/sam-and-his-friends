@@ -19,7 +19,7 @@ function _getUrl(type, id) {
 
 function request(requestType, reqParams = {}) {
 	return axios.get(_getUrl(requestType, reqParams.id), {
-		params: { ...reqParams },
+		params: { ...reqParams, _: Date.now() },
 	});
 }
 

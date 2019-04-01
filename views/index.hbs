@@ -4,12 +4,18 @@
 	<!-- Pagination -->
 	<ul class="actions pagination">
 		<li>
-			<a href="" class="disabled button large previous">
+			<a
+				href="/?currentPage={{previouPage}}"
+				class="{{eq previouPage 0 'disabled'}} button large previous"
+			>
 				{{t "i18n-pagination-previous-page"}}
 			</a>
 		</li>
 		<li>
-			<a href="#" class="button large next">
+			<a
+				href="/?currentPage={{nextPage}}"
+				class="{{eq nextPage 0 'disabled'}} button large next"
+			>
 				{{t "i18n-pagination-next-page"}}
 			</a>
 		</li>

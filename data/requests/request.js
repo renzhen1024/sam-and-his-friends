@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-const DOMAIN = 'https://renzhen1024.com/';
+const { DOMAIN } = include('utils/constants');
 /**
  * Discourse API: https://docs.discourse.org/
  * /c/{id}.json - Get a list of topics in the specified category
@@ -8,7 +8,7 @@ const DOMAIN = 'https://renzhen1024.com/';
  * /posts/{id}.json - Get a single post
  */
 const DISCOURSE_API_MAP = {
-	category: 'c/',
+	category: 'topics/created-by/',
 	topic: 't/',
 	post: 'posts/',
 };
@@ -17,9 +17,10 @@ function _getUrl(type, id) {
 	return `${DOMAIN}${DISCOURSE_API_MAP[type]}${id}.json`;
 }
 
-function request(requestType, id) {
-	const apiEndpoint = _getUrl(requestType, id);
-	return axios.get(apiEndpoint);
+function request(requestType, reqParams = {}) {
+	return axios.get(_getUrl(requestType, reqParams.id), {
+		params: { ...reqParams },
+	});
 }
 
 exports.request = request;

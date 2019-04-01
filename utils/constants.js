@@ -4,4 +4,6 @@ exports.API_REQUEST_TYPE = {
 	POST: 'post',
 };
 
-exports.CATEGORY_ID = '7';
+exports.CATEGORY_ID = 'mountainsun1988';
+
+exports.DOMAIN = 'https://renzhen1024.com/';

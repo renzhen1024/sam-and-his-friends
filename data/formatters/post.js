@@ -21,7 +21,6 @@ function singlePostFormatter(post) {
  * in this category, so use hard code string as a compromise solution.
  */
 function postFormatter(post) {
-	debugger;
 	return {
 		id: post.id,
 		title: post.title,
@@ -38,8 +37,7 @@ function postFormatter(post) {
 	};
 }
 
-function postsFormatter({ data = {} } = {}) {
-	const { topics } = data.topic_list;
+function postsFormatter(topics) {
 	return topics
 		.map(topic => postFormatter(topic))
 		.sort((a, b) => b.date - a.date);

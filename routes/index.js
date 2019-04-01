@@ -10,7 +10,7 @@ const { API_REQUEST_TYPE, CATEGORY_ID } = include('utils/constants');
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
 	let posts;
 	let miniPosts;
 	let postList;
@@ -24,12 +24,13 @@ router.get('/', (req, res) => {
 		postList = createMiniPosts(6);
 		res.render('index', { posts, miniPosts, postList, config });
 	} else {
-		request(API_REQUEST_TYPE.CATEGORY, CATEGORY_ID).then(response => {
-			posts = postsFormatter(response);
-			miniPosts = createMiniPosts(4);
-			postList = createMiniPosts(6);
-			res.render('index', { posts, miniPosts, postList, ...config });
+		const response = await request(API_REQUEST_TYPE.CATEGORY, {
+			id: CATEGORY_ID,
 		});
+		posts = postsFormatter(response.data.topic_list.topics);
+		miniPosts = createMiniPosts(4);
+		postList = createMiniPosts(6);
+		res.render('index', { posts, miniPosts, postList, ...config });
 	}
 });
 

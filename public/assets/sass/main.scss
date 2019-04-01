@@ -97,3 +97,18 @@ $header-image-width: 172px;
   width: 100%;
   height: auto;
 }
+
+.mini-post-content {
+  font-size: 0.7em;
+  padding: 8px 14px;
+}
+
+.mini-posts {
+  height: 600px;
+  overflow-y: scroll;
+}
+
+// Override
+.mini-post header {
+  padding: 8px 14px;
+}

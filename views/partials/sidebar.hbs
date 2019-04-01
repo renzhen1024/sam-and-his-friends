@@ -1,19 +1,15 @@
 <section id="sidebar">
 	{{> sidebar/intro creator}}
-  <section>
-    <div class="mini-posts">
-			{{#each miniPosts}}
-				{{> sidebar/miniPost}}
-			{{/each}}
-    </div>
-  </section>
-  <section>
-    <ul class="posts">
-			{{#each postList}}
-				{{> sidebar/postList}}
-			{{/each}}
-    </ul>
-  </section>
-	{{> sidebar/about about}}
-	{{> footer socialMedias}}
+	<section>
+		<div class="mini-posts">
+			<h3>{{t "i18n-sidebar-latest-comments"}}</h3>
+			{{#each miniPosts}} {{> sidebar/miniPost}} {{/each}}
+		</div>
+	</section>
+	<section>
+		<ul class="posts">
+			{{#each postList}} {{> sidebar/postList}} {{/each}}
+		</ul>
+	</section>
+	{{> sidebar/about about}} {{> footer socialMedias}}
 </section>

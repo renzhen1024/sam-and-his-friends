@@ -1,18 +1,11 @@
 <article class="mini-post">
 	<header>
 		<h3>
-			<a href={{originPost}}>{{title}}</a>
+			<a href="single-post/{{id}}">{{title}}</a>
 		</h3>
-		<time class="published" datetime={{date}}>
+		<time class="published" datetime="{{date}}">
 			{{dateFormatter date}}
 		</time>
-		<a href="#" class="author">
-			<img src={{authorImageUrl}} alt="" />
-		</a>
 	</header>
-		{{#unless isReaderMode}}
-			<a href={{originPost}} class="image">
-				<img src={{imageUrl}} alt="" />
-			</a>
-		{{/unless}}
+	<div class="mini-post-content">{{strPreview content previewLength=50}}</div>
 </article>

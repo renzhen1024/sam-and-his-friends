@@ -1,4 +1,18 @@
 const config = include('config');
+
+function miniPostFormatter(miniPost) {
+	return {
+		id: miniPost.topic_id,
+		title: miniPost.title,
+		date: miniPost.created_at,
+		content: miniPost.excerpt,
+	};
+}
+
+function miniPostsFormatter(miniPosts) {
+	return miniPosts.map(miniPost => miniPostFormatter(miniPost));
+}
+
 /**
  * Hard code string is not good, the response only has a user id, so need to send
  * anther request to get the name and authorImageUrl. Since only Sam will post
@@ -43,6 +57,7 @@ function postsFormatter(topics) {
 		.sort((a, b) => b.date - a.date);
 }
 
+exports.miniPostsFormatter = miniPostsFormatter;
 exports.postFormatter = postFormatter;
 exports.postsFormatter = postsFormatter;
 exports.singlePostFormatter = singlePostFormatter;

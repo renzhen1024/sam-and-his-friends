@@ -1,5 +1,6 @@
 exports.API_REQUEST_TYPE = {
 	CATEGORY: 'category',
+	MINI_POST: 'miniPost',
 	TOPIC: 'topic',
 	POST: 'post',
 };

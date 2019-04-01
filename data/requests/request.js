@@ -9,6 +9,7 @@ const { DOMAIN } = include('utils/constants');
  */
 const DISCOURSE_API_MAP = {
 	category: 'topics/created-by/',
+	miniPost: '',
 	topic: 't/',
 	post: 'posts/',
 };

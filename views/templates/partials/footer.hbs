@@ -1,0 +1,17 @@
+<section id="footer">
+	<ul class="icons">
+		{{#each this as |socialMedia|}}
+		<li>
+			<a href="{{socialMedia.url}}" class="fa-{{socialMedia.className}}">
+				<span class="label">
+					{{socialMedia.name}}
+				</span>
+			</a>
+		</li>
+		{{/each}}
+	</ul>
+	<p class="copyright">
+		© From:
+		<a href="https://renzhen1024.com" target="_blank">renzhen1024.com</a>
+	</p>
+</section>

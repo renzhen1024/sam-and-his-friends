@@ -1,9 +1,9 @@
 const express = require('express');
 
-const { singlePostFormatter } = include('data/formatters/post');
+const { singlePostFormatter } = include('data/formatters/singlePostFormatter');
 const { request } = include('data/requests/request');
-const config = include('config');
-const { API_REQUEST_TYPE } = include('utils/constants');
+const config = include('utils/config');
+const { DISCOURSE_API_MAP } = include('utils/constants');
 
 const router = express.Router();
 
@@ -14,15 +14,13 @@ const router = express.Router();
  */
 router.get('/:topicId', async (req, res) => {
 	const { topicId } = req.params;
-	const { data: topicResponse } = await request(API_REQUEST_TYPE.TOPIC, {
-		id: topicId,
+	const topicResponse = await request(DISCOURSE_API_MAP.TOPIC, {
+		resource: topicId,
 	});
 
-	const { title } = topicResponse;
-	const postId = topicResponse.post_stream.posts[0].id;
+	const { title } = topicResponse.data;
 
-	const postResponse = await request(API_REQUEST_TYPE.POST, { id: postId });
-	const post = singlePostFormatter(postResponse.data);
+	const post = singlePostFormatter(topicResponse.data.post_stream.posts[0]);
 
 	res.render('singlePost', {
 		...post,

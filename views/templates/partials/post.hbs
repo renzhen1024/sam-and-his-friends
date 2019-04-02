@@ -1,0 +1,60 @@
+<article class="post">
+	<header>
+		<div class="title">
+			<h2>
+				<a href="single-post/{{id}}">
+					{{title}}
+				</a>
+			</h2>
+			{{!--
+			<p>
+				{{strPreview subTitle previewLength=50}}
+			</p>
+			--}}
+		</div>
+		<div class="meta">
+			<time class="published" datetime="{{dateFormatter" date}}>
+				{{dateFormatter date}}
+			</time>
+			<a
+				href="https://renzhen1024.com/u/mountainsun1988/summary"
+				class="author"
+				target="_blank"
+			>
+				<span class="name">
+					{{name}}
+				</span>
+				<img src="{{authorImageUrl}}" alt="" />
+			</a>
+		</div>
+	</header>
+	<p>
+		{{strPreview content previewLength=150}}
+	</p>
+	<footer>
+		<ul class="actions">
+			<li>
+				<a href="single-post/{{id}}" class="button large">
+					{{t "i18n-post-continue-reading"}}
+				</a>
+			</li>
+		</ul>
+		<ul class="stats">
+			<li>
+				<a href="#" class="border-none">
+					{{t "i18n-post-category" category=category}}
+				</a>
+			</li>
+			<li>
+				<a href="#" class="icon fa-heart">
+					{{numLikes}}
+				</a>
+			</li>
+			<li>
+				<a href="#" class="icon fa-comment">
+					{{numComments}}
+				</a>
+			</li>
+		</ul>
+	</footer>
+</article>

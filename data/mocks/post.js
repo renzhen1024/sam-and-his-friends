@@ -1,8 +1,6 @@
 const fakerZh = require('faker-zh-cn');
 const faker = require('faker');
 
-const config = include('config');
-
 function createPost() {
 	return {
 		id: faker.random.number(),
@@ -38,7 +36,7 @@ function createPost() {
 		category_id: 7,
 		pinned_globally: false,
 		featured_link: null,
-		isReaderMode: config.isReaderMode,
+		isReaderMode: false,
 	};
 }
 

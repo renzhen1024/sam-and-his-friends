@@ -8,17 +8,16 @@ const hbs = require('hbs');
 
 require('./setup-global')();
 
-include('hbs-helpers');
-
-const indexRouter = require('./routes/index');
-const singlePostRouter = require('./routes/single-post');
+const indexRouter = include('routes/index');
+const singlePostRouter = include('routes/single-post');
 
 const app = express();
 
 // view engine setup
-hbs.registerPartials(path.join(__dirname, '/views/partials'));
-app.set('views', path.join(__dirname, 'views'));
+hbs.registerPartials(path.join(__dirname, '/views/templates/partials'));
+app.set('views', path.join(__dirname, 'views/templates'));
 app.set('view engine', 'hbs');
+include('views/hbs-helpers');
 
 app.use(logger('dev'));
 app.use(express.json());

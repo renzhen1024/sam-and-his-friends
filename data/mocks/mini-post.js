@@ -1,15 +1,13 @@
 const fakerZh = require('faker-zh-cn');
 const faker = require('faker');
 
-const config = include('config');
-
 function createMiniPost() {
 	return {
 		title: fakerZh.Name.findName(),
 		date: faker.date.past(),
 		authorImageUrl: faker.image.avatar(),
 		originPost: faker.internet.url(),
-		isReaderMode: config.isReaderMode,
+		isReaderMode: false,
 	};
 }
 

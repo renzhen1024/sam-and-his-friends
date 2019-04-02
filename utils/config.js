@@ -6,7 +6,6 @@ module.exports = {
 		description: '论师义后着语开注固解关字几,汉尊之语典相帝学年家相而',
 		profileImage: 'images/logo.jpg',
 	},
-	isReaderMode: true,
 	about:
 		'篇也解十柏版俗于语二三育论科宝文,行举教通世子阳评子位语宝命,语语出译货编手国考国不通八,一相间结语省',
 	socialMedias: [

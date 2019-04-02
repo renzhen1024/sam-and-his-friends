@@ -2,15 +2,50 @@ const express = require('express');
 
 const { createPosts } = include('data/mocks/post');
 const { createMiniPosts } = include('data/mocks/mini-post');
-const { postsFormatter, miniPostsFormatter } = include('data/formatters/post');
+const { postsFormatter } = include('data/formatters/post');
+const { miniPostsFormatter } = include('data/formatters/miniPostsFormatter');
 const { request } = include('data/requests/request');
-const config = include('config');
+const config = include('utils/config');
 
-const { API_REQUEST_TYPE, CATEGORY_ID, NUMBER_OF_POSTS_IN_ONE_PAGE } = include(
-	'utils/constants'
-);
+const {
+	DISCOURSE_API_MAP,
+	USER,
+	USER_ACTIONS,
+	NUMBER_OF_POSTS_IN_ONE_PAGE,
+} = include('utils/constants');
 
 const router = express.Router();
+
+async function _getPosts(currentPage) {
+	const postsReqParams = {
+		resource: USER,
+		page: currentPage,
+	};
+
+	const postsResponse = await request(
+		DISCOURSE_API_MAP.CATEGORY,
+		postsReqParams
+	);
+
+	return postsFormatter(postsResponse.data.topic_list.topics);
+}
+
+async function _getMiniPosts() {
+	const miniPostsReqParams = {
+		resource: USER_ACTIONS,
+		offset: 0,
+		filter: 5, // discouse api doesn't take filter properly, the return payload may lager than 5
+		username: USER,
+		no_results_help_key: 'user_activity.no_replies',
+	};
+
+	const miniPostsResponse = await request(
+		DISCOURSE_API_MAP.MINI_POST,
+		miniPostsReqParams
+	);
+
+	return miniPostsFormatter(miniPostsResponse.data.user_actions);
+}
 
 router.get('/', async (req, res) => {
 	let posts;
@@ -27,34 +62,14 @@ router.get('/', async (req, res) => {
 		res.render('index', { posts, miniPosts, postList, config });
 	} else {
 		const { currentPage = 0 } = req.query;
-		const postsReqParams = {
-			id: CATEGORY_ID,
-			page: currentPage,
-		};
-
-		const postsResponse = await request(
-			API_REQUEST_TYPE.CATEGORY,
-			postsReqParams
-		);
-		posts = postsFormatter(postsResponse.data.topic_list.topics);
-
-		const miniPostsReqParams = {
-			id: 'user_actions',
-			offset: 0,
-			filter: 5, // discouse api doesn't take filter properly, the return payload may lager than 5
-			username: CATEGORY_ID,
-			no_results_help_key: 'user_activity.no_replies',
-		};
-		const miniPostsResponse = await request(
-			API_REQUEST_TYPE.MINI_POST,
-			miniPostsReqParams
-		);
-		miniPosts = miniPostsFormatter(miniPostsResponse.data.user_actions);
+		posts = await _getPosts(currentPage);
+		miniPosts = await _getMiniPosts();
 		postList = createMiniPosts(6);
 
 		const previouPage = Math.max(currentPage - 1, 0);
 		const nextPage =
 			posts.length < NUMBER_OF_POSTS_IN_ONE_PAGE ? 0 : currentPage + 1;
+
 		res.render('index', {
 			posts,
 			miniPosts,

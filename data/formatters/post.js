@@ -8,7 +8,7 @@ function _postFormatter(post) {
 		id: post.id,
 		title: post.title,
 		subTitle: post.fancy_title || '这张帖子没有副标题',
-		date: new Date(post.created_at),
+		date: post.created_at,
 		name: '小山',
 		authorImageUrl:
 			'https://renzhen1024.com/user_avatar/renzhen1024.com/mountainsun1988/240/90_2.png',

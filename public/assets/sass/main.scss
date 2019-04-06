@@ -106,11 +106,19 @@ $header-image-width: 172px;
 .mini-posts {
   height: 600px;
   overflow-y: scroll;
+
+  @include breakpoint('<=medium') {
+    height: 100%;
+  }
 }
 
 // Override
 .mini-posts-header {
   padding-left: 14px;
+
+  @include breakpoint('<=medium') {
+    display: none;
+  }
 }
 
 .mini-post header {
@@ -139,5 +147,22 @@ $header-image-width: 172px;
 
   .comment-content p {
     font-size: 0.8em;
+  }
+
+  @include breakpoint('<=medium') {
+    .comment-meta {
+      padding-top: 0;
+      border-right: 0;
+      text-align: center;
+      width: 100%;
+    }
+
+    .comment-author {
+      justify-content: center;
+    }
+
+    .title.comment-content {
+      text-align: left;
+    }
   }
 }

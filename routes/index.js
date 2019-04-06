@@ -31,6 +31,10 @@ async function _getPosts(currentPage) {
 
 	const postsResponse = await request(postsReqParams);
 
+	const formattedActiveUsers = activeUsersFormatter(postsResponse.data.users);
+
+	addActiveUsersToCache(formattedActiveUsers);
+
 	return postsFormatter(postsResponse.data.topic_list.topics);
 }
 
@@ -56,9 +60,11 @@ async function _getActiveUsers() {
 
 	const activeUsersResponse = await request(activeUsersReqParams);
 
-	const formattedActiveUsers = activeUsersFormatter(
-		activeUsersResponse.data.directory_items
+	const activeUsers = activeUsersResponse.data.directory_items.map(
+		userObj => userObj.user
 	);
+
+	const formattedActiveUsers = activeUsersFormatter(activeUsers);
 
 	addActiveUsersToCache(formattedActiveUsers);
 

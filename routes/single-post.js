@@ -6,8 +6,11 @@ const { singlePostFormatter } = include(
 const { request } = include('data/requests/request');
 const { socialMedias } = include('utils/config');
 const { DISCOURSE_RESOURCE_MAP } = include('utils/constants');
-
 const router = express.Router();
+const { activeUsersFormatter } = include(
+	'data/formatters/active-users-formatter'
+);
+const { addActiveUsersToCache } = include('data/cache/active-users');
 
 /**
  * To get a single post in a topic:
@@ -18,6 +21,12 @@ router.get('/:topicId', async (req, res) => {
 	const topicResponse = await request({
 		resource: DISCOURSE_RESOURCE_MAP.TOPIC(req.params.topicId),
 	});
+
+	const formattedActiveUsers = activeUsersFormatter(
+		topicResponse.data.details.participants
+	);
+
+	addActiveUsersToCache(formattedActiveUsers);
 
 	const {
 		title,

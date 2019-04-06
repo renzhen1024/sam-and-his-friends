@@ -1,6 +1,6 @@
 const { api } = include('utils/config');
 
-function activeUserFormatter({ user } = {}) {
+function activeUserFormatter(user) {
 	const username = `@${user.username}`;
 	const userImageUrl = `${api}${user.avatar_template
 		.replace('{size}', '240')

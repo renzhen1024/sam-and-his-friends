@@ -1,5 +1,4 @@
-module.exports = {
-	userName: 'mountainsun1988',
+exports.siteInfo = {
 	siteTitle: 'Sam And This Friends',
 	creator: {
 		firstName: '江山',
@@ -24,4 +23,12 @@ module.exports = {
 			url: 'mailto:mountainsun1988@gmail.com',
 		},
 	],
+};
+
+exports.api = 'https://renzhen1024.com/';
+
+exports.username = 'mountainsun1988';
+
+exports.layout = {
+	lengthOfActiveUsersAtIndexPage: 5,
 };

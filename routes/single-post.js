@@ -4,7 +4,7 @@ const { singlePostFormatter } = include(
 	'data/formatters/single-post-formatter'
 );
 const { request } = include('data/requests/request');
-const config = include('utils/config');
+const { siteInfo } = include('utils/config');
 const { DISCOURSE_RESOURCE_MAP } = include('utils/constants');
 
 const router = express.Router();
@@ -25,7 +25,7 @@ router.get('/:topicId', async (req, res) => {
 
 	res.render('singlePost', {
 		...post,
-		...config,
+		...siteInfo,
 		title,
 		isSinglePost: true,
 	});

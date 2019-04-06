@@ -7,8 +7,9 @@
 		</div>
 	</section>
 	<section>
+		<h3>{{t "i18n-sidebar-recommend-users"}}</h3>
 		<ul class="posts">
-			{{#each postList}} {{> sidebar/postList}} {{/each}}
+			{{#each activeUsersList}} {{> sidebar/activeUsersList}} {{/each}}
 		</ul>
 	</section>
 	{{> sidebar/about about}} {{> footer socialMedias}}

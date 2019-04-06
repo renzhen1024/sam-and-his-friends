@@ -1,7 +1,10 @@
-const { userName } = include('utils/config');
+const { username } = include('utils/config');
 
 /**
  * Discourse API: https://docs.discourse.org/
+ * - ACTIVE_USERS
+ * 		- Sample url: https://renzhen1024.com/directory_items.json?period=monthly
+ * 		- Description: Get a list of active users
  * - CATEGORY_BY_USER
  * 		- Sample url: https://renzhen1024.com/topics/created-by/mountainsun1988.json?page=0&_=1553724992605
  * 		- Description: Get a list of topics created by user name, by convention
@@ -17,7 +20,8 @@ const { userName } = include('utils/config');
  * 		- Description: Get a list of posts created by user name
  */
 exports.DISCOURSE_RESOURCE_MAP = {
-	CATEGORY_BY_USER: `topics/created-by/${userName}`,
+	ACTIVE_USERS: 'directory_items',
+	CATEGORY_BY_USER: `topics/created-by/${username}`,
 	TOPIC: topicId => `t/${topicId}`,
 	USER_ACTIONS: 'user_actions',
 };

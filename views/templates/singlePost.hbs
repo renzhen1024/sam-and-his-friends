@@ -1,5 +1,4 @@
 <div id="main">
-	<!-- Post -->
 	<article class="post">
 		<header>
 			<div class="title">
@@ -8,15 +7,10 @@
 						{{ title }}
 					</a>
 				</h2>
-				{{!--
-				<p>
-					{{ title }}
-				</p>
-				--}}
 			</div>
 			<div class="meta">
 				<time class="published" datetime="2015-11-01">
-					{{dateFormatter date}}
+					{{dateFormatter post.date}}
 				</time>
 				<a
 					href="https://renzhen1024.com/u/mountainsun1988/summary"
@@ -24,21 +18,16 @@
 					target="_blank"
 				>
 					<span class="name">
-						{{ name }}
+						{{ post.name }}
 					</span>
-					<img src="{{ authorImageUrl }}" alt="" />
+					<img src="{{ post.authorImageUrl }}" alt="" />
 				</a>
 			</div>
 		</header>
-		{{!--
-		<span class="image featured">
-			<img src="/images/pic01.jpg" alt="" />
-		</span>
-		--}}
-		<div class="single-post-content">{{{content}}}</div>
+		<div class="single-post-content">{{{post.content}}}</div>
 		<footer>
 			<ul class="stats">
-				<li>Reads: {{ reads }}</li>
+				<li>Reads: {{ post.reads }}</li>
 				<li>
 					<a href="#" class="icon fa-heart">
 						28

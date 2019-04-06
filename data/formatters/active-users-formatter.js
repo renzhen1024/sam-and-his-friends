@@ -1,11 +1,11 @@
-const config = include('utils/config');
+const { api } = include('utils/config');
 
 function activeUserFormatter({ user } = {}) {
 	const username = `@${user.username}`;
-	const userImageUrl = `${config.api}${user.avatar_template
+	const userImageUrl = `${api}${user.avatar_template
 		.replace('{size}', '240')
 		.replace('/', '')}`;
-	const userProfileUrl = `${config.api}u/${user.username}/summary`;
+	const userProfileUrl = `${api}u/${user.username}/summary`;
 
 	const formattedUser = Object.assign({}, user, {
 		username,

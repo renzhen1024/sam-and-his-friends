@@ -4,7 +4,7 @@ const { singlePostFormatter } = include(
 	'data/formatters/single-post-formatter'
 );
 const { request } = include('data/requests/request');
-const { siteInfo } = include('utils/config');
+const { socialMedias } = include('utils/config');
 const { DISCOURSE_RESOURCE_MAP } = include('utils/constants');
 
 const router = express.Router();
@@ -24,8 +24,8 @@ router.get('/:topicId', async (req, res) => {
 	const post = singlePostFormatter(topicResponse.data.post_stream.posts[0]);
 
 	res.render('singlePost', {
-		...post,
-		...siteInfo,
+		post,
+		socialMedias,
 		title,
 		isSinglePost: true,
 	});

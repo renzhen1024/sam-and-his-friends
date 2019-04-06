@@ -8,7 +8,14 @@ const { activeUsersFormatter } = include(
 	'data/formatters/active-users-formatter'
 );
 const { request } = include('data/requests/request');
-const { siteInfo, layout, username } = include('utils/config');
+const {
+	about,
+	creator,
+	lengthOfActiveUsersAtIndexPage,
+	siteTitle,
+	socialMedias,
+	username,
+} = include('utils/config');
 const { addActiveUsersToCache } = include('data/cache/active-users');
 const { DISCOURSE_RESOURCE_MAP, NUMBER_OF_POSTS_IN_ONE_PAGE } = include(
 	'utils/constants'
@@ -55,7 +62,7 @@ async function _getActiveUsers() {
 
 	addActiveUsersToCache(formattedActiveUsers);
 
-	return formattedActiveUsers.slice(0, layout.lengthOfActiveUsersAtIndexPage);
+	return formattedActiveUsers.slice(0, lengthOfActiveUsersAtIndexPage);
 }
 
 router.get('/', async (req, res) => {
@@ -71,7 +78,7 @@ router.get('/', async (req, res) => {
 
 		miniPosts = createMiniPosts(4);
 		activeUsersList = createMiniPosts(6);
-		res.render('index', { posts, miniPosts, activeUsersList, siteInfo });
+		res.render('index', { posts, miniPosts, activeUsersList });
 	} else {
 		const { currentPage = 0 } = req.query;
 		posts = await _getPosts(currentPage);
@@ -88,7 +95,10 @@ router.get('/', async (req, res) => {
 			activeUsersList,
 			previouPage,
 			nextPage,
-			...siteInfo,
+			about,
+			creator,
+			siteTitle,
+			socialMedias,
 		});
 	}
 });

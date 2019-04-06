@@ -1,4 +1,5 @@
 module.exports = {
+	userName: 'mountainsun1988',
 	siteTitle: 'Sam And This Friends',
 	creator: {
 		firstName: '江山',

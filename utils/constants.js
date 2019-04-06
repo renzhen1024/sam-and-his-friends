@@ -1,19 +1,26 @@
+const { userName } = include('utils/config');
+
 /**
  * Discourse API: https://docs.discourse.org/
- * /c/{id}.json - Get a list of topics in the specified category
- * /t/{id}.json - Get a single topic
- * /posts/{id}.json - Get a single post
+ * - CATEGORY_BY_USER
+ * 		- Sample url: https://renzhen1024.com/topics/created-by/mountainsun1988.json?page=0&_=1553724992605
+ * 		- Description: Get a list of topics created by user name, by convention
+ * 			with renzhen1024.com this app take topics(first post) as article. If you
+ * 			can't understand this point, talk to me @tningjs.
+ * 			TODO: add docs about how topics works as article
+ * TOPIC
+ * 		- Sample url: https://renzhen1024.com/t/76.json
+ *    - Description: Get a single topic. Notice needs to create a function,
+ * 			because topicId is decided at run time
+ * USER_ACTIONS
+ * 		- Sample url: https://renzhen1024.com/user_actions.json?offset=0&username=mountainsun1988&filter=5&no_results_help_key=user_activity.no_replies&_=1553724992603
+ * 		- Description: Get a list of posts created by user name
  */
-exports.DISCOURSE_API_MAP = {
-	CATEGORY: 'topics/created-by/',
-	MINI_POST: '',
-	TOPIC: 't/',
-	POST: 'posts/',
+exports.DISCOURSE_RESOURCE_MAP = {
+	CATEGORY_BY_USER: `topics/created-by/${userName}`,
+	TOPIC: topicId => `t/${topicId}`,
+	USER_ACTIONS: 'user_actions',
 };
-
-exports.USER = 'mountainsun1988';
-
-exports.USER_ACTIONS = 'user_actions';
 
 exports.DOMAIN = 'https://renzhen1024.com/';
 

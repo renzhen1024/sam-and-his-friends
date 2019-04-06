@@ -3,7 +3,7 @@ const express = require('express');
 const { singlePostFormatter } = include('data/formatters/singlePostFormatter');
 const { request } = include('data/requests/request');
 const config = include('utils/config');
-const { DISCOURSE_API_MAP } = include('utils/constants');
+const { DISCOURSE_RESOURCE_MAP } = include('utils/constants');
 
 const router = express.Router();
 
@@ -13,9 +13,8 @@ const router = express.Router();
  * 2. Use the first post id to query the post backend
  */
 router.get('/:topicId', async (req, res) => {
-	const { topicId } = req.params;
-	const topicResponse = await request(DISCOURSE_API_MAP.TOPIC, {
-		resource: topicId,
+	const topicResponse = await request({
+		resource: DISCOURSE_RESOURCE_MAP.TOPIC(req.params.topicId),
 	});
 
 	const { title } = topicResponse.data;

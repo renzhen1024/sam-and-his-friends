@@ -2,7 +2,7 @@ const express = require('express');
 
 const { createPosts } = include('data/mocks/post');
 const { createMiniPosts } = include('data/mocks/mini-post');
-const { postsFormatter } = include('data/formatters/post');
+const { postsFormatter } = include('data/formatters/post-formatter');
 const { miniPostsFormatter } = include('data/formatters/mini-posts-formatter');
 const { activeUsersFormatter } = include(
 	'data/formatters/active-users-formatter'

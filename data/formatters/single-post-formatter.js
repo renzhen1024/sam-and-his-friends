@@ -1,9 +1,8 @@
-/**
- * Hard code string is not good, the response only has a user id, so need to send
- * anther request to get the name and authorImageUrl. Since only Sam will post
- * in this category, so use hard code string as a compromise solution.
- */
+const { getActiveUserFromCache } = include('data/cache/active-users');
+
 function singlePostFormatter(postData) {
+	const poster = getActiveUserFromCache(postData.details.created_by.id);
+
 	const { title, views, like_count: numLikes } = postData;
 	const numComments = postData.posts_count + postData.reply_count;
 	const post = postData.post_stream.posts[0];
@@ -13,12 +12,11 @@ function singlePostFormatter(postData) {
 		views,
 		numLikes,
 		numComments,
-		name: '小山',
+		name: poster.name,
 		content: post.cooked,
 		date: post.updated_at,
 		reads: post.reads,
-		authorImageUrl:
-			'https://renzhen1024.com/user_avatar/renzhen1024.com/mountainsun1988/240/90_2.png',
+		authorImageUrl: poster.userImageUrl,
 	};
 }
 

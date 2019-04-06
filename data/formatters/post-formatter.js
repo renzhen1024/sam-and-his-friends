@@ -1,17 +1,14 @@
-/**
- * Hard code string is not good, the response only has a user id, so need to send
- * anther request to get the name and authorImageUrl. Since only Sam will post
- * in this category, so use hard code string as a compromise solution.
- */
+const { getActiveUserFromCache } = include('data/cache/active-users');
+
 function _postFormatter(post) {
+	// The first poster is the topic author
+	const poster = getActiveUserFromCache(post.posters[0].user_id);
 	return {
 		id: post.id,
 		title: post.title,
-		subTitle: post.fancy_title || '这张帖子没有副标题',
 		date: post.created_at,
-		name: '小山',
-		authorImageUrl:
-			'https://renzhen1024.com/user_avatar/renzhen1024.com/mountainsun1988/240/90_2.png',
+		name: poster.name,
+		authorImageUrl: poster.userImageUrl,
 		content: post.excerpt || '内容被山姆哥藏起来了，点击“继续阅读”',
 		category: '山姆哥',
 		numLikes: post.like_count,

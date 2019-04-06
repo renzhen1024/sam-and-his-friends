@@ -1,4 +1,4 @@
-function _miniPostFormatter(miniPost) {
+function miniPostFormatter(miniPost) {
 	return {
 		id: miniPost.topic_id,
 		title: miniPost.title,
@@ -8,7 +8,7 @@ function _miniPostFormatter(miniPost) {
 }
 
 function miniPostsFormatter(miniPosts) {
-	return miniPosts.map(miniPost => _miniPostFormatter(miniPost));
+	return miniPosts.map(miniPost => miniPostFormatter(miniPost));
 }
 
 exports.miniPostsFormatter = miniPostsFormatter;

@@ -22,7 +22,7 @@ function commentFormatter(comment) {
 function commentsFormatter(comments) {
 	return comments
 		.map(comment => commentFormatter(comment))
-		.filter(comment => comment.content);
+		.filter(comment => !!comment.content);
 }
 
 exports.commentsFormatter = commentsFormatter;

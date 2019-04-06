@@ -8,7 +8,9 @@ function miniPostFormatter(miniPost) {
 }
 
 function miniPostsFormatter(miniPosts) {
-	return miniPosts.map(miniPost => miniPostFormatter(miniPost));
+	return miniPosts
+		.map(miniPost => miniPostFormatter(miniPost))
+		.filter(miniPost => !!miniPost.content);
 }
 
 exports.miniPostsFormatter = miniPostsFormatter;

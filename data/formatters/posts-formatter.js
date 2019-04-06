@@ -7,7 +7,7 @@ function _postFormatter(post) {
 		id: post.id,
 		title: post.title,
 		date: post.created_at,
-		name: poster.name,
+		name: poster.name || poster.username,
 		authorImageUrl: poster.userImageUrl,
 		content: post.excerpt || '内容被山姆哥藏起来了，点击“继续阅读”',
 		category: '山姆哥',

@@ -33,11 +33,13 @@ router.get('/:topicId', async (req, res) => {
 		views,
 		numLikes,
 		numComments,
+		comments,
 		name,
 		content,
 		date,
 		reads,
 		authorImageUrl,
+		userProfileUrl,
 	} = singlePostFormatter(topicResponse.data);
 
 	res.render('singlePost', {
@@ -45,12 +47,14 @@ router.get('/:topicId', async (req, res) => {
 		views,
 		numLikes,
 		numComments,
+		comments,
 		name,
 		content,
 		date,
 		reads,
 		authorImageUrl,
 		socialMedias,
+		userProfileUrl,
 		isSinglePost: true,
 	});
 });

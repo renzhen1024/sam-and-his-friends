@@ -22,22 +22,26 @@ router.get('/:topicId', async (req, res) => {
 	const {
 		title,
 		views,
-		posts_count: postCount,
-		reply_count: replyCount,
-		like_count: numLikes,
-	} = topicResponse.data;
-
-	const numComments = postCount + replyCount;
-
-	const post = singlePostFormatter(topicResponse.data.post_stream.posts[0]);
+		numLikes,
+		numComments,
+		name,
+		content,
+		date,
+		reads,
+		authorImageUrl,
+	} = singlePostFormatter(topicResponse.data);
 
 	res.render('singlePost', {
-		views,
-		numComments,
-		numLikes,
-		post,
-		socialMedias,
 		title,
+		views,
+		numLikes,
+		numComments,
+		name,
+		content,
+		date,
+		reads,
+		authorImageUrl,
+		socialMedias,
 		isSinglePost: true,
 	});
 });

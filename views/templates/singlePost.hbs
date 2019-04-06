@@ -10,7 +10,7 @@
 			</div>
 			<div class="meta">
 				<time class="published" datetime="2015-11-01">
-					{{dateFormatter post.date}}
+					{{dateFormatter date}}
 				</time>
 				<a
 					href="https://renzhen1024.com/u/mountainsun1988/summary"
@@ -18,13 +18,13 @@
 					target="_blank"
 				>
 					<span class="name">
-						{{ post.name }}
+						{{ name }}
 					</span>
-					<img src="{{ post.authorImageUrl }}" alt="" />
+					<img src="{{ authorImageUrl }}" alt="" />
 				</a>
 			</div>
 		</header>
-		<div class="single-post-content">{{{post.content}}}</div>
+		<div class="single-post-content">{{{content}}}</div>
 		<footer>
 			<ul class="stats">
 				<li>Reads: {{ views }}</li>

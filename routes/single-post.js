@@ -19,11 +19,22 @@ router.get('/:topicId', async (req, res) => {
 		resource: DISCOURSE_RESOURCE_MAP.TOPIC(req.params.topicId),
 	});
 
-	const { title } = topicResponse.data;
+	const {
+		title,
+		views,
+		posts_count: postCount,
+		reply_count: replyCount,
+		like_count: numLikes,
+	} = topicResponse.data;
+
+	const numComments = postCount + replyCount;
 
 	const post = singlePostFormatter(topicResponse.data.post_stream.posts[0]);
 
 	res.render('singlePost', {
+		views,
+		numComments,
+		numLikes,
 		post,
 		socialMedias,
 		title,

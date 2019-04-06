@@ -15,7 +15,7 @@ function _postFormatter(post) {
 		content: post.excerpt || '内容被山姆哥藏起来了，点击“继续阅读”',
 		category: '山姆哥',
 		numLikes: post.like_count,
-		numComments: post.posts_count,
+		numComments: post.posts_count + post.reply_count,
 		isReaderMode: false,
 	};
 }

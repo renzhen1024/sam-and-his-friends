@@ -27,15 +27,15 @@
 		<div class="single-post-content">{{{post.content}}}</div>
 		<footer>
 			<ul class="stats">
-				<li>Reads: {{ post.reads }}</li>
+				<li>Reads: {{ views }}</li>
 				<li>
 					<a href="#" class="icon fa-heart">
-						28
+						{{ numLikes }}
 					</a>
 				</li>
 				<li>
 					<a href="#" class="icon fa-comment">
-						128
+						{{ numComments }}
 					</a>
 				</li>
 			</ul>

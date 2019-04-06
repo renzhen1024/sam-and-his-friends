@@ -149,6 +149,11 @@ $header-image-width: 172px;
     font-size: 0.8em;
   }
 
+  .comment-content img:not(.emoji) {
+    width: 100%;
+    height: auto;
+  }
+
   @include breakpoint('<=medium') {
     .comment-meta {
       padding-top: 0;

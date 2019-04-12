@@ -8,4 +8,5 @@ module.exports = {
 	'i18n-sidebar-latest-comments': '山姆哥的最新评论',
 	'i18n-sidebar-latest-comments-scroll-to-see-more': '（下滑查看更多）',
 	'i18n-sidebar-recommend-users': '山姆哥的伙伴们',
+	'i18n-single-post-comment-title': '小伙伴们给山姆哥的留言：',
 };

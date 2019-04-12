@@ -109,16 +109,16 @@ $header-image-width: 172px;
 
   @include breakpoint('<=medium') {
     height: 100%;
+
+    .mini-posts-header-desktop {
+      display: none;
+    }
   }
 }
 
 // Override
 .mini-posts-header {
   padding-left: 14px;
-
-  @include breakpoint('<=medium') {
-    display: none;
-  }
 }
 
 .mini-post header {

@@ -5,6 +5,7 @@ module.exports = {
 	'i18n-pagination-next-page': '下一页',
 	'i18n-sidebar-about': 'About',
 	'i18n-sidebar-learn-more': '了解更多',
-	'i18n-sidebar-latest-comments': '山姆哥的最新评论（下滑查看更多）',
+	'i18n-sidebar-latest-comments': '山姆哥的最新评论',
+	'i18n-sidebar-latest-comments-scroll-to-see-more': '（下滑查看更多）',
 	'i18n-sidebar-recommend-users': '山姆哥的伙伴们',
 };

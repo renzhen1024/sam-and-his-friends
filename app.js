@@ -44,13 +44,24 @@ app.use((req, res, next) => {
 // error handler
 // eslint-disable-next-line no-unused-vars
 app.use((err, req, res, next) => {
-	// set locals, only providing error in development
-	res.locals.message = err.message;
-	res.locals.error = req.app.get('env') === 'development' ? err : {};
+	const isDev = req.app.get('env') === 'development';
 
-	// render the error page
+	// only providing error in development
+	const error = isDev ? err : {};
+
 	res.status(err.status || 500);
-	res.render('error');
+
+	if (err.status === 404) {
+		res.render('404', {
+			layout: '404-layout',
+		});
+	} else {
+		res.render('error', {
+			error,
+			isDev,
+			layout: 'error-layout',
+		});
+	}
 });
 
 module.exports = app;

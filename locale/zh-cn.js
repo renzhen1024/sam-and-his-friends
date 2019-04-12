@@ -9,4 +9,7 @@ module.exports = {
 	'i18n-sidebar-latest-comments-scroll-to-see-more': '（下滑查看更多）',
 	'i18n-sidebar-recommend-users': '山姆哥的伙伴们',
 	'i18n-single-post-comment-title': '小伙伴们给山姆哥的留言：',
+	'i18n-error-page-title': '抱歉~ 山姆哥家的服务器好像出了故障',
+	'i18n-404-page-title': '抱歉~ 访问的页面被山姆哥搬走了',
+	'i18n-return-home': '返回主页',
 };

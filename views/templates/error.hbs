@@ -1,3 +1,28 @@
-<h1>{{message}}</h1>
-<h2>{{error.status}}</h2>
-<pre>{{error.stack}}</pre>
+{{#if isDev}}
+  <h1>
+    {{error.message}}
+  </h1>
+  <h2>
+    {{error.status}}
+  </h2>
+  <pre>
+    {{error.stack}}
+  </pre>
+{{else}}
+  <div class="face">
+    <div class="band">
+      <div class="red"></div>
+      <div class="white"></div>
+      <div class="blue"></div>
+    </div>
+    <div class="eyes"></div>
+    <div class="dimples"></div>
+    <div class="mouth"></div>
+  </div>
+  <h1>
+    {{t "i18n-error-page-title"}}
+  </h1>
+  <a href="/" class="btn">
+    {{t "i18n-return-home"}}
+  </a>
+{{/if}}

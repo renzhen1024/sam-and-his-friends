@@ -1,4 +1,4 @@
-const express = require('express');
+const { Router } = require('express');
 
 const { createPosts } = include('data/mocks/post');
 const { createMiniPosts } = include('data/mocks/mini-post');
@@ -20,8 +20,6 @@ const { addActiveUsersToCache } = include('data/cache/active-users');
 const { DISCOURSE_RESOURCE_MAP, NUMBER_OF_POSTS_IN_ONE_PAGE } = include(
 	'utils/constants'
 );
-
-const router = express.Router();
 
 async function _getPosts(currentPage) {
 	const postsReqParams = {
@@ -71,42 +69,44 @@ async function _getActiveUsers() {
 	return formattedActiveUsers.slice(0, lengthOfActiveUsersAtIndexPage);
 }
 
-router.get('/', async (req, res) => {
-	let posts;
-	let miniPosts;
-	let activeUsersList;
+module.exports = (router = new Router()) => {
+	router.get('/', async (req, res) => {
+		let posts;
+		let miniPosts;
+		let activeUsersList;
 
-	if (process.env.IS_TEST) {
-		// Fix: will the adding of activeUsersList, this is out date now
-		// TODO: This is a temp solution, it's better to mock API
-		const response = createPosts(3);
-		posts = postsFormatter(response);
+		if (process.env.IS_TEST) {
+			// Fix: will the adding of activeUsersList, this is out date now
+			// TODO: This is a temp solution, it's better to mock API
+			const response = createPosts(3);
+			posts = postsFormatter(response);
 
-		miniPosts = createMiniPosts(4);
-		activeUsersList = createMiniPosts(6);
-		res.render('index', { posts, miniPosts, activeUsersList });
-	} else {
-		const { currentPage = 0 } = req.query;
-		posts = await _getPosts(currentPage);
-		miniPosts = await _getMiniPosts();
-		activeUsersList = await _getActiveUsers();
+			miniPosts = createMiniPosts(4);
+			activeUsersList = createMiniPosts(6);
+			res.render('index', { posts, miniPosts, activeUsersList });
+		} else {
+			const { currentPage = 0 } = req.query;
+			posts = await _getPosts(currentPage);
+			miniPosts = await _getMiniPosts();
+			activeUsersList = await _getActiveUsers();
 
-		const previouPage = Math.max(currentPage - 1, 0);
-		const nextPage =
-			posts.length < NUMBER_OF_POSTS_IN_ONE_PAGE ? 0 : currentPage + 1;
+			const previouPage = Math.max(currentPage - 1, 0);
+			const nextPage =
+				posts.length < NUMBER_OF_POSTS_IN_ONE_PAGE ? 0 : currentPage + 1;
 
-		res.render('index', {
-			posts,
-			miniPosts,
-			activeUsersList,
-			previouPage,
-			nextPage,
-			about,
-			creator,
-			siteTitle,
-			socialMedias,
-		});
-	}
-});
+			res.render('index', {
+				posts,
+				miniPosts,
+				activeUsersList,
+				previouPage,
+				nextPage,
+				about,
+				creator,
+				siteTitle,
+				socialMedias,
+			});
+		}
+	});
 
-module.exports = router;
+	return router;
+};

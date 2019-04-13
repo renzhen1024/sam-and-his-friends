@@ -33,8 +33,8 @@ app.use(
 );
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/single-post', singlePostRouter);
+app.use('/', indexRouter());
+app.use('/single-post', singlePostRouter());
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

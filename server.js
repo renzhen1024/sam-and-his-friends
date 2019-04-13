@@ -7,7 +7,9 @@ const debug = require('debug')('sam-and-his-friends:server');
 const https = require('https');
 const fs = require('fs');
 
-const app = require('../app');
+require('./setup-global')();
+
+const app = include('app');
 
 // set up ssl
 const key = fs.readFileSync(absPath('encryption/private.key'));
@@ -16,30 +18,8 @@ const ca = fs.readFileSync(absPath('encryption/samandhisfriends_com.ca'));
 
 const options = { key, cert, ca };
 
-const server = https.createServer(options, app);
+const server = https.createServer(options, app());
 
-/**
- * Normalize a port into a number, string, or false.
- */
-function normalizePort(val) {
-	const port = parseInt(val, 10);
-
-	if (Number.isNaN(port)) {
-		// named pipe
-		return val;
-	}
-
-	if (port >= 0) {
-		// port number
-		return port;
-	}
-
-	return false;
-}
-
-/**
- * Get port from environment and store in Express.
- */
 const port = 443;
 
 /**
@@ -83,5 +63,3 @@ function onListening() {
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
-
-app.set('port', port);

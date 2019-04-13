@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www",
-    "debug": "node --inspect-brk ./bin/www"
+    "start": "nodemon server.js",
+    "debug": "node --inspect-brk server.js"
   },
   "engines": {
     "node": ">=7.6.0"

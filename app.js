@@ -6,62 +6,60 @@ const logger = require('morgan');
 const sassMiddleware = require('node-sass-middleware');
 const hbs = require('hbs');
 
-require('./setup-global')();
+hbs.registerPartials(path.join(__dirname, '/views/templates/partials'));
+include('views/hbs-helpers');
 
 const indexRouter = include('routes/index');
 const singlePostRouter = include('routes/single-post');
 
-const app = express();
+module.exports = (app = express()) => {
+	app.set('views', path.join(__dirname, 'views/templates'));
+	app.set('view engine', 'hbs');
 
-// view engine setup
-hbs.registerPartials(path.join(__dirname, '/views/templates/partials'));
-app.set('views', path.join(__dirname, 'views/templates'));
-app.set('view engine', 'hbs');
-include('views/hbs-helpers');
+	app.use(logger('dev'));
+	app.use(express.json());
+	app.use(express.urlencoded({ extended: false }));
+	app.use(cookieParser());
+	app.use(
+		sassMiddleware({
+			src: path.join(__dirname, 'public'),
+			dest: path.join(__dirname, 'public'),
+			indentedSyntax: false, // true = .sass and false = .scss
+			sourceMap: true,
+		})
+	);
+	app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(
-	sassMiddleware({
-		src: path.join(__dirname, 'public'),
-		dest: path.join(__dirname, 'public'),
-		indentedSyntax: false, // true = .sass and false = .scss
-		sourceMap: true,
-	})
-);
-app.use(express.static(path.join(__dirname, 'public')));
+	app.use('/', indexRouter());
+	app.use('/single-post', singlePostRouter());
 
-app.use('/', indexRouter());
-app.use('/single-post', singlePostRouter());
+	// catch 404 and forward to error handler
+	app.use((req, res, next) => {
+		next(createError(404));
+	});
 
-// catch 404 and forward to error handler
-app.use((req, res, next) => {
-	next(createError(404));
-});
+	// error handler
+	// eslint-disable-next-line no-unused-vars
+	app.use((err, req, res, next) => {
+		const isDev = req.app.get('env') === 'development';
 
-// error handler
-// eslint-disable-next-line no-unused-vars
-app.use((err, req, res, next) => {
-	const isDev = req.app.get('env') === 'development';
+		// only providing error in development
+		const error = isDev ? err : {};
 
-	// only providing error in development
-	const error = isDev ? err : {};
+		res.status(err.status || 500);
 
-	res.status(err.status || 500);
+		if (err.status === 404) {
+			res.render('404', {
+				layout: '404-layout',
+			});
+		} else {
+			res.render('error', {
+				error,
+				isDev,
+				layout: 'error-layout',
+			});
+		}
+	});
 
-	if (err.status === 404) {
-		res.render('404', {
-			layout: '404-layout',
-		});
-	} else {
-		res.render('error', {
-			error,
-			isDev,
-			layout: 'error-layout',
-		});
-	}
-});
-
-module.exports = app;
+	return app;
+};

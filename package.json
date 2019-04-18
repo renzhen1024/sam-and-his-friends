@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon server.js",
-    "debug": "node --inspect-brk server.js"
+    "start": "DEBUG=sam-and-his-friends:* nodemon server.js",
+    "debug": "DEBUG=sam-and-his-friends:* node --inspect-brk server.js"
   },
   "engines": {
     "node": ">=7.6.0"

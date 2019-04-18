@@ -20,9 +20,9 @@ function _getUrl(resource) {
 }
 
 function request(reqParams = {}) {
-	return axios.get(_getUrl(reqParams.resource), {
-		params: { ...reqParams, _: Date.now() },
-	});
+	const { resource, ...params } = reqParams;
+	params._ = Date.now();
+	return axios.get(_getUrl(resource), { params });
 }
 
 exports.request = request;

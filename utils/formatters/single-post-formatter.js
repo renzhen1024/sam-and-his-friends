@@ -1,5 +1,5 @@
 const { getActiveUserFromCache } = include('data/cache/active-users');
-const { commentsFormatter } = include('data/formatters/comments-formatter');
+const { commentsFormatter } = include('utils/formatters/comments-formatter');
 
 function singlePostFormatter(postData) {
 	const poster = getActiveUserFromCache(postData.details.created_by.id);

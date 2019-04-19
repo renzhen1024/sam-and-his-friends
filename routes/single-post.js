@@ -1,13 +1,13 @@
 const { Router } = require('express');
 
 const { singlePostFormatter } = include(
-	'data/formatters/single-post-formatter'
+	'utils/formatters/single-post-formatter'
 );
-const { request } = include('data/requests/request');
+const { request } = include('data/request');
 const { socialMedias } = include('utils/config');
 const { DISCOURSE_RESOURCE_MAP } = include('utils/constants');
 const { activeUsersFormatter } = include(
-	'data/formatters/active-users-formatter'
+	'utils/formatters/active-users-formatter'
 );
 const { addActiveUsersToCache } = include('data/cache/active-users');
 

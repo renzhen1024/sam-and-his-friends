@@ -6,9 +6,9 @@ const app = require('../app');
 
 hbs.registerPartials(path.join(__dirname, '/views/templates/partials'));
 
-const postsMock = include('data/mocks/index/posts.json');
-const miniPostsMock = include('data/mocks/index/mini-posts.json');
-const activeUsersListMock = include('data/mocks/index/active-users.json');
+const postsMock = include('data/route-mocks/index/posts.json');
+const miniPostsMock = include('data/route-mocks/index/mini-posts.json');
+const activeUsersListMock = include('data/route-mocks/index/active-users.json');
 const RESOURCE_MAP = [
 	{
 		URL: /https:\/\/renzhen1024\.com\/topics\/created-by\/mountainsun1988\.json\?page=0&_=\d+/,

@@ -1,13 +1,11 @@
 const { Router } = require('express');
 
-const { createPosts } = include('data/mocks/post');
-const { createMiniPosts } = include('data/mocks/mini-post');
-const { postsFormatter } = include('data/formatters/posts-formatter');
-const { miniPostsFormatter } = include('data/formatters/mini-posts-formatter');
+const { postsFormatter } = include('utils/formatters/posts-formatter');
+const { miniPostsFormatter } = include('utils/formatters/mini-posts-formatter');
 const { activeUsersFormatter } = include(
-	'data/formatters/active-users-formatter'
+	'utils/formatters/active-users-formatter'
 );
-const { request } = include('data/requests/request');
+const { request } = include('data/request');
 const {
 	about,
 	creator,
@@ -71,41 +69,26 @@ async function _getActiveUsers() {
 
 module.exports = (router = new Router()) => {
 	router.get('/', async (req, res) => {
-		let posts;
-		let miniPosts;
-		let activeUsersList;
+		const { currentPage = 0 } = req.query;
+		const posts = await _getPosts(currentPage);
+		const miniPosts = await _getMiniPosts();
+		const activeUsersList = await _getActiveUsers();
 
-		if (process.env.IS_TEST) {
-			// Fix: will the adding of activeUsersList, this is out date now
-			// TODO: This is a temp solution, it's better to mock API
-			const response = createPosts(3);
-			posts = postsFormatter(response);
+		const previouPage = Math.max(currentPage - 1, 0);
+		const nextPage =
+			posts.length < NUMBER_OF_POSTS_IN_ONE_PAGE ? 0 : currentPage + 1;
 
-			miniPosts = createMiniPosts(4);
-			activeUsersList = createMiniPosts(6);
-			res.render('index', { posts, miniPosts, activeUsersList });
-		} else {
-			const { currentPage = 0 } = req.query;
-			posts = await _getPosts(currentPage);
-			miniPosts = await _getMiniPosts();
-			activeUsersList = await _getActiveUsers();
-
-			const previouPage = Math.max(currentPage - 1, 0);
-			const nextPage =
-				posts.length < NUMBER_OF_POSTS_IN_ONE_PAGE ? 0 : currentPage + 1;
-
-			res.render('index', {
-				posts,
-				miniPosts,
-				activeUsersList,
-				previouPage,
-				nextPage,
-				about,
-				creator,
-				siteTitle,
-				socialMedias,
-			});
-		}
+		res.render('index', {
+			posts,
+			miniPosts,
+			activeUsersList,
+			previouPage,
+			nextPage,
+			about,
+			creator,
+			siteTitle,
+			socialMedias,
+		});
 	});
 
 	return router;

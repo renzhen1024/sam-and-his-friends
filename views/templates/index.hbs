@@ -1,5 +1,5 @@
 <div id="main">
-	{{#each posts}} {{>post}} {{/each}}
+	{{#each posts}} {{> post}} {{/each}}
 
 	<!-- Pagination -->
 	<ul class="actions pagination">
@@ -22,4 +22,26 @@
 	</ul>
 </div>
 
-{{> sidebar}}
+<section id="sidebar">
+	{{> intro creator}}
+	<section>
+		<div class="mini-posts">
+			<h3 class="mini-posts-header">
+				{{t "i18n-sidebar-latest-comments"}}
+				<span class="mini-posts-header-desktop">
+					{{t "i18n-sidebar-latest-comments-scroll-to-see-more"}}
+				</span>
+			</h3>
+			{{#each miniPosts}} {{> miniPost}} {{/each}}
+		</div>
+	</section>
+	<section>
+		<h3>{{t "i18n-sidebar-recommend-users"}}</h3>
+		<ul class="posts">
+			{{#each activeUsersList}} {{> activeUsersList}} {{/each}}
+		</ul>
+	</section>
+	{{> about about}}
+	{{> footer socialMedias}}
+</section>
+

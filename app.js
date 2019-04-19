@@ -52,13 +52,13 @@ module.exports = (app = express()) => {
 
 		if (err.status === 404) {
 			res.render('404', {
-				layout: '404-layout',
+				layout: '404Layout',
 			});
 		} else {
 			res.render('error', {
 				error,
 				isDev,
-				layout: 'error-layout',
+				layout: 'errorLayout',
 			});
 		}
 	});

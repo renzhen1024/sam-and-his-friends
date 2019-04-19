@@ -1,0 +1,300 @@
+{
+  "users": [
+    {
+      "id": 6,
+      "username": "mountainsun1988",
+      "name": "小山",
+      "avatar_template": "/user_avatar/renzhen1024.com/mountainsun1988/{size}/90_2.png"
+    },
+    {
+      "id": 4,
+      "username": "tningjs",
+      "name": "Tao Ning",
+      "avatar_template": "/user_avatar/renzhen1024.com/tningjs/{size}/14_2.png"
+    },
+    {
+      "id": 9,
+      "username": "Vivian",
+      "name": "",
+      "avatar_template": "/user_avatar/renzhen1024.com/vivian/{size}/40_2.png"
+    },
+    {
+      "id": 7,
+      "username": "306970744",
+      "name": "阿壮",
+      "avatar_template": "/user_avatar/renzhen1024.com/306970744/{size}/49_2.png"
+    }
+  ],
+  "primary_groups": [],
+  "topic_list": {
+    "can_create_topic": true,
+    "draft": null,
+    "draft_key": "new_topic",
+    "draft_sequence": 25,
+    "per_page": 30,
+    "topics": [
+      {
+        "id": 125,
+        "title": "R&D, Designer 和 Engineer的区别",
+        "fancy_title": "R&amp;D, Designer 和 Engineer的区别",
+        "slug": "topic",
+        "posts_count": 4,
+        "reply_count": 0,
+        "highest_post_number": 4,
+        "image_url": null,
+        "created_at": "2019-04-17T18:53:25.701Z",
+        "last_posted_at": "2019-04-18T21:10:03.790Z",
+        "bumped": true,
+        "bumped_at": "2019-04-18T21:10:03.790Z",
+        "unseen": false,
+        "last_read_post_number": 4,
+        "unread": 0,
+        "new_posts": 0,
+        "pinned": true,
+        "unpinned": null,
+        "excerpt": "最近刚刚了解到R&amp;D， Designer和engineer工作定位是不一样的，至少在机械制造业是有区别的，简单来说，就如同建筑行业里，分别对应的 建筑画家、建筑设计师和土木工程师。 \nR&amp;D，全称是research and development。一般属于比较前沿的研究，跟学校里的研究单位有点接近。都是对未来行业的一些探索，不以商业利益为主要目标。从事这样的职位，可以接触到最前沿的理念，也有对本行业很宽阔的视野。缺点是，对于企业往往都是&hellip;",
+        "visible": true,
+        "closed": false,
+        "archived": false,
+        "notification_level": 2,
+        "bookmarked": false,
+        "liked": true,
+        "views": 15,
+        "like_count": 2,
+        "has_summary": false,
+        "archetype": "regular",
+        "last_poster_username": "Vivian",
+        "category_id": 7,
+        "pinned_globally": false,
+        "featured_link": null,
+        "posters": [
+          {
+            "extras": null,
+            "description": "原始作者",
+            "user_id": 6,
+            "primary_group_id": null
+          },
+          {
+            "extras": null,
+            "description": "频繁发帖者",
+            "user_id": 4,
+            "primary_group_id": null
+          },
+          {
+            "extras": "latest",
+            "description": "当前大部分帖子作者",
+            "user_id": 9,
+            "primary_group_id": null
+          }
+        ]
+      },
+      {
+        "id": 86,
+        "title": "一个例子看懂美国人解决问题方式的大不同",
+        "fancy_title": "一个例子看懂美国人解决问题方式的大不同",
+        "slug": "topic",
+        "posts_count": 4,
+        "reply_count": 0,
+        "highest_post_number": 4,
+        "image_url": null,
+        "created_at": "2019-03-25T21:14:15.349Z",
+        "last_posted_at": "2019-03-28T18:14:50.117Z",
+        "bumped": true,
+        "bumped_at": "2019-03-28T18:14:50.117Z",
+        "unseen": false,
+        "last_read_post_number": 4,
+        "unread": 0,
+        "new_posts": 0,
+        "pinned": true,
+        "unpinned": null,
+        "excerpt": "作为老板，假如你发现夜班有员工躲进更衣室，在换衣服的长椅上睡觉，你会怎么办？ \n对于员工出现这样的问题，国内的企业通常会怎么解决呢？ \n批评教育？罚款开除？把夜班班长骂一顿，写检查？然后在醒目的地方张贴告示，“严禁更衣室睡觉”？然后在早会上多多加强思想教育等等。。。 \n而我的美国同事们打算怎么去解决这个问题呢？ \n首先，没有任何人挨批评。 \n他们的计划是，把长椅移到洗手间，洗手间进出人流多，也没人会在洗手间里睡觉，然后把更衣室和隔壁的休&hellip;",
+        "visible": true,
+        "closed": false,
+        "archived": false,
+        "notification_level": 2,
+        "bookmarked": false,
+        "liked": false,
+        "views": 61,
+        "like_count": 1,
+        "has_summary": false,
+        "archetype": "regular",
+        "last_poster_username": "Vivian",
+        "category_id": 7,
+        "pinned_globally": false,
+        "featured_link": null,
+        "posters": [
+          {
+            "extras": null,
+            "description": "原始作者",
+            "user_id": 6,
+            "primary_group_id": null
+          },
+          {
+            "extras": null,
+            "description": "频繁发帖者",
+            "user_id": 4,
+            "primary_group_id": null
+          },
+          {
+            "extras": "latest",
+            "description": "当前大部分帖子作者",
+            "user_id": 9,
+            "primary_group_id": null
+          }
+        ]
+      },
+      {
+        "id": 88,
+        "title": "这本世界上发行量最大的书，到底都讲了些什么？",
+        "fancy_title": "这本世界上发行量最大的书，到底都讲了些什么？",
+        "slug": "topic",
+        "posts_count": 2,
+        "reply_count": 0,
+        "highest_post_number": 2,
+        "image_url": "https://renzhen1024.com/uploads/default/original/1X/a5f58e7d6fa5689fb2bcade4d9482b9046171262.jpeg",
+        "created_at": "2019-03-27T22:22:40.014Z",
+        "last_posted_at": "2019-03-28T15:46:34.457Z",
+        "bumped": true,
+        "bumped_at": "2019-03-27T23:12:23.079Z",
+        "unseen": false,
+        "last_read_post_number": 2,
+        "unread": 0,
+        "new_posts": 0,
+        "pinned": true,
+        "unpinned": null,
+        "excerpt": "1月20日，美国正式迎来第45任总统特朗普–一个大选前不被所有主流媒体看好，被戏称作 “史上唯一跟女人吵架吵赢了”的古稀之年老男人。在整个就职流程中，有些环节算是美国所特有的现象，比如明天的祷告和双手放在圣经上宣誓。 \n \n这张图片是特朗普在竞选期间的照片，很多人都在为他祷告，或许这正是一个七十岁老人的力量来源 \n说起祷告，我们国人往往想到的是老太太求菩萨保平安，又或者是百姓商贾求财神爷发大财。说白了，都是想跟神搞好关系，做交易，要好处&hellip;",
+        "visible": true,
+        "closed": false,
+        "archived": false,
+        "notification_level": 2,
+        "bookmarked": false,
+        "liked": false,
+        "views": 44,
+        "like_count": 0,
+        "has_summary": false,
+        "archetype": "regular",
+        "last_poster_username": "mountainsun1988",
+        "category_id": 7,
+        "pinned_globally": false,
+        "featured_link": null,
+        "posters": [
+          {
+            "extras": "latest single",
+            "description": "原始作者, 当前大部分帖子作者",
+            "user_id": 6,
+            "primary_group_id": null
+          }
+        ]
+      },
+      {
+        "id": 73,
+        "title": "美国职场的专业认证",
+        "fancy_title": "美国职场的专业认证",
+        "slug": "topic",
+        "posts_count": 4,
+        "reply_count": 0,
+        "highest_post_number": 4,
+        "image_url": null,
+        "created_at": "2019-03-15T03:12:09.453Z",
+        "last_posted_at": "2019-03-27T14:12:37.676Z",
+        "bumped": true,
+        "bumped_at": "2019-03-17T04:43:32.303Z",
+        "unseen": false,
+        "last_read_post_number": 4,
+        "unread": 0,
+        "new_posts": 0,
+        "pinned": true,
+        "unpinned": null,
+        "excerpt": "请问你所从事的专业证书有哪些？有哪些是你考过或者打算考的？含金量如何？对于专业发展会有哪些影响？",
+        "visible": true,
+        "closed": false,
+        "archived": false,
+        "notification_level": 2,
+        "bookmarked": false,
+        "liked": false,
+        "views": 45,
+        "like_count": 0,
+        "has_summary": false,
+        "archetype": "regular",
+        "last_poster_username": "tningjs",
+        "category_id": 7,
+        "pinned_globally": false,
+        "featured_link": null,
+        "posters": [
+          {
+            "extras": null,
+            "description": "原始作者",
+            "user_id": 6,
+            "primary_group_id": null
+          },
+          {
+            "extras": "latest",
+            "description": "当前大部分帖子作者",
+            "user_id": 4,
+            "primary_group_id": null
+          }
+        ]
+      },
+      {
+        "id": 56,
+        "title": "为什么我们吃着最好吃的饭，却体质不如人？",
+        "fancy_title": "为什么我们吃着最好吃的饭，却体质不如人？",
+        "slug": "topic",
+        "posts_count": 7,
+        "reply_count": 3,
+        "highest_post_number": 7,
+        "image_url": null,
+        "created_at": "2019-03-04T14:53:22.124Z",
+        "last_posted_at": "2019-03-05T21:53:06.594Z",
+        "bumped": true,
+        "bumped_at": "2019-03-05T21:53:06.594Z",
+        "unseen": false,
+        "last_read_post_number": 7,
+        "unread": 0,
+        "new_posts": 0,
+        "pinned": false,
+        "unpinned": null,
+        "visible": true,
+        "closed": false,
+        "archived": false,
+        "notification_level": 2,
+        "bookmarked": false,
+        "liked": true,
+        "views": 66,
+        "like_count": 1,
+        "has_summary": false,
+        "archetype": "regular",
+        "last_poster_username": "mountainsun1988",
+        "category_id": 5,
+        "pinned_globally": false,
+        "featured_link": null,
+        "posters": [
+          {
+            "extras": "latest",
+            "description": "原始作者, 当前大部分帖子作者",
+            "user_id": 6,
+            "primary_group_id": null
+          },
+          {
+            "extras": null,
+            "description": "频繁发帖者",
+            "user_id": 7,
+            "primary_group_id": null
+          },
+          {
+            "extras": null,
+            "description": "频繁发帖者",
+            "user_id": 4,
+            "primary_group_id": null
+          },
+          {
+            "extras": null,
+            "description": "频繁发帖者",
+            "user_id": 9,
+            "primary_group_id": null
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,14 +1,4 @@
-{{#if isDev}}
-  <h1>
-    {{error.message}}
-  </h1>
-  <h2>
-    {{error.status}}
-  </h2>
-  <pre>
-    {{error.stack}}
-  </pre>
-{{else}}
+{{#if isProd}}
   <div class="face">
     <div class="band">
       <div class="red"></div>
@@ -25,4 +15,14 @@
   <a href="/" class="btn">
     {{t "i18n-return-home"}}
   </a>
+{{else}}
+  <h1>
+    {{error.message}}
+  </h1>
+  <h2>
+    {{error.status}}
+  </h2>
+  <pre>
+    {{error.stack}}
+  </pre>
 {{/if}}

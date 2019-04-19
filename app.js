@@ -43,10 +43,12 @@ module.exports = (app = express()) => {
 	// error handler
 	// eslint-disable-next-line no-unused-vars
 	app.use((err, req, res, next) => {
-		const isDev = req.app.get('env') === 'development';
+		// NODE_ENV is an environment variable popularized by the Express framework.
+		// by default, the value is development
+		const isProd = process.env.NODE_ENV === 'production';
 
 		// only providing error in development
-		const error = isDev ? err : {};
+		const error = isProd ? {} : err;
 
 		res.status(err.status || 500);
 
@@ -57,7 +59,7 @@ module.exports = (app = express()) => {
 		} else {
 			res.render('error', {
 				error,
-				isDev,
+				isProd,
 				layout: 'errorLayout',
 			});
 		}

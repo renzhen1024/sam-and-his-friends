@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "start": "DEBUG=sam-and-his-friends:* nodemon server.js",
-    "debug": "DEBUG=sam-and-his-friends:* node --inspect-brk server.js"
+    "debug": "DEBUG=sam-and-his-friends:* node --inspect-brk server.js",
+    "jest": "DEBUG=sam-and-his-friends:* node_modules/.bin/jest",
+    "debug-jest": "DEBUG=sam-and-his-friends:* node --inspect-brk node_modules/.bin/jest --runInBand"
   },
   "engines": {
     "node": ">=7.6.0"
@@ -18,10 +20,13 @@
     "faker-zh-cn": "^0.5.9",
     "hbs": "~4.0.1",
     "http-errors": "~1.6.2",
+    "jest": "^24.7.1",
     "moment": "^2.24.0",
     "morgan": "~1.9.0",
+    "moxios": "^0.4.0",
     "node-polyglot": "^2.3.0",
-    "node-sass-middleware": "0.11.0"
+    "node-sass-middleware": "0.11.0",
+    "supertest": "^4.0.2"
   },
   "devDependencies": {
     "eslint": "^5.15.3",

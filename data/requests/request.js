@@ -5,10 +5,12 @@ const debug = require('debug')('sam-and-his-friends:request');
 axios.interceptors.request.use(function getFullUrlFromRequest(config) {
 	const { params, url } = config;
 	const queryParamArray = Object.entries(params);
-	const fullUrl = queryParamArray.reduce(
-		(acc, [key, value]) => `${acc}&${key}=${value}`,
-		queryParamArray.length === 0 ? url : `${url}?`
-	);
+	let firstParam = true;
+	const fullUrl = queryParamArray.reduce((acc, [key, value]) => {
+		const separator = firstParam ? '?' : '&';
+		firstParam = false;
+		return `${acc}${separator}${key}=${value}`;
+	}, url);
 	debug(fullUrl);
 	return config;
 });

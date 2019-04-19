@@ -7,9 +7,7 @@ const debug = require('debug')('sam-and-his-friends:server');
 const https = require('https');
 const fs = require('fs');
 
-require('./setup-global')();
-
-const app = include('app');
+const app = require('./app');
 
 // set up ssl
 const key = fs.readFileSync(absPath('encryption/private.key'));

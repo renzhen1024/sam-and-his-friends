@@ -6,6 +6,8 @@ const logger = require('morgan');
 const sassMiddleware = require('node-sass-middleware');
 const hbs = require('hbs');
 
+require('./setup-global')();
+
 hbs.registerPartials(path.join(__dirname, '/views/templates/partials'));
 include('views/hbs-helpers');
 

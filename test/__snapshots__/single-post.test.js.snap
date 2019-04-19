@@ -1,0 +1,218 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GET /single-post/:topicId It should match snapshot 1`] = `
+"<!DOCTYPE html>
+<!-- Future Imperfect by Pixelarity pixelarity.com | hello@pixelarity.com License: pixelarity.com/license -->
+<html>
+	<head>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script
+			async
+			src=\\"https://www.googletagmanager.com/gtag/js?id=UA-135903447-3\\"
+		></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag('js', new Date());
+
+			gtag('config', 'UA-135903447-3');
+		</script>
+		<title></title>
+		<meta charset=\\"utf-8\\" />
+		<meta
+			name=\\"viewport\\"
+			content=\\"width=device-width, initial-scale=1, user-scalable=no\\"
+		/>
+		<link rel=\\"icon\\" type=\\"image/png\\" href=\\"/images/favicon/favicon.ico\\" />
+		<link rel=\\"manifest\\" href=\\"/images/favicon/site.webmanifest\\" />
+		<link rel=\\"stylesheet\\" href=\\"/assets/sass/main.css\\" />
+	</head>
+	<body class=\\"is-preload single\\">
+		<div id=\\"wrapper\\">
+			<header id=\\"header\\">
+				<h1>
+					<a href=\\"/\\">
+						<div class=\\"header__image-container\\">
+							<img class=\\"header__image\\" src=\\"/images/logo.png\\" alt=\\"\\" />
+						</div>
+					</a>
+				</h1>
+			
+				<!-- hide the rest of nav due to work on home page first, and there are no content for those pages -->
+				<!-- <nav class=\\"links\\">
+			    <ul>
+			      <li>
+			        <a href=\\"#\\">
+			          Lorem
+			        </a>
+			      </li>
+			      <li>
+			        <a href=\\"#\\">
+			          Ipsum
+			        </a>
+			      </li>
+			      <li>
+			        <a href=\\"#\\">
+			          Feugiat
+			        </a>
+			      </li>
+			      <li>
+			        <a href=\\"#\\">
+			          Tempus
+			        </a>
+			      </li>
+			      <li>
+			        <a href=\\"#\\">
+			          Adipiscing
+			        </a>
+			      </li>
+			    </ul>
+			  </nav>
+			  <nav class=\\"main\\">
+			    <ul>
+			      <li class=\\"search\\">
+			        <a class=\\"fa-search\\" href=\\"#search\\">
+			          Search
+			        </a>
+			        <form id=\\"search\\" method=\\"get\\" action=\\"#\\">
+			          <input type=\\"text\\" name=\\"query\\" placeholder=\\"Search\\" />
+			        </form>
+			      </li>
+			      <li class=\\"menu\\">
+			        <a class=\\"fa-bars\\" href=\\"#menu\\">
+			          Menu
+			        </a>
+			      </li>
+			    </ul>
+				</nav> -->
+			</header>
+			<!-- hide menu, there are no content for those pages -->
+			 <div id=\\"main\\">
+	<article class=\\"post\\">
+		<header>
+			<div class=\\"title\\">
+				<h2>
+					<a href=\\"#\\">
+						R&amp;D, Designer 和 Engineer的区别
+					</a>
+				</h2>
+			</div>
+			<div class=\\"meta\\">
+				<time class=\\"published\\" datetime=2019-04-17T19:21:23.536Z>
+					2019年4月17日
+				</time>
+				<a
+					href=https://renzhen1024.com/u/mountainsun1988/summary
+					class=\\"author\\"
+					target=\\"_blank\\"
+				>
+					<span class=\\"name\\">
+						小山
+					</span>
+					<img src=\\"https://renzhen1024.com/user_avatar/renzhen1024.com/mountainsun1988/240/90_2.png\\" alt=\\"\\" />
+				</a>
+			</div>
+		</header>
+		<div class=\\"single-post-content\\"><p>最近刚刚了解到R&amp;D， Designer和engineer工作定位是不一样的，至少在机械制造业是有区别的，简单来说，就如同建筑行业里，分别对应的 建筑画家、建筑设计师和土木工程师。</p>
+<p>R&amp;D，全称是research and development。一般属于比较前沿的研究，跟学校里的研究单位有点接近。都是对未来行业的一些探索，不以商业利益为主要目标。从事这样的职位，可以接触到最前沿的理念，也有对本行业很宽阔的视野。缺点是，对于企业往往都是锦上添花，所以遇到危机时，会优先裁掉。</p>
+<p>Designer，在制造领域的设计师，更多是针对市场上的具体需求，或者是潜在需求，应用已经相对成熟的技术，来设计出满足这一需求的方案。同时兼顾用户体验、生产成本、安装组装制造可行性等等。</p>
+<p>而对于Engineer，定义要广泛的多。虽然很多企业Engineer跟designer工作范围是有些重合的，但两者的工作范围还是很容易区分的开的。或者说designer可以叫做engineer，但并不是每个engineer都可以design的。</p>
+<p>个人作为机械工程师的体验是，所做过的project可以分为两类，一类是工作内容相对确定，比如安装一台冷却机，从layout到utility供给，从选型到估价，从安装到调试，其实每一步都相对确定，需要的只是去实施，在这中间会遇到各种各样的技术挑战。这类工程师的工作，更多的是协调和管理；但另一类是完全不确定的项目，更接近从一个概念变为现实，需要自己在市面上找所需要的零件和成熟的技术，最终做成成品，这个过程需要不断地推倒重来，变更设计，范围不确定，成本不确定，时间也会常常变动，往往需要分期来推进。</p>
+<p>不知道大家怎么看？我个人观点是，如果喜欢理论研究，或者怀有纯粹的技术理想，就去R&amp;D部门或者高效，搞偏理论的前沿研究。如果喜欢动手应用和发明实用的创造，就做designer；如果是喜欢跟人打交道，喜欢协调资源，可以做更接近生产和客户的engineer。</p></div>
+		<footer>
+			<ul class=\\"stats\\">
+				<li>Reads: 13</li>
+				<li>
+					<a href=\\"#\\" class=\\"icon fa-heart\\">
+						1
+					</a>
+				</li>
+				<li>
+					<a href=\\"#\\" class=\\"icon fa-comment\\">
+						3
+					</a>
+				</li>
+			</ul>
+		</footer>
+	</article>
+
+	<h3>小伙伴们给山姆哥的留言：</h3>
+
+		<article class=\\"post comment\\">
+		  <header class=\\"comment-header\\">
+		    <div class=\\"comment-meta\\">
+		      <time class=\\"published\\" datetime=2019-04-18T19:42:35.539Z>
+		        2019年4月18日
+		      </time>
+		      <a href=https://renzhen1024.com/u/tningjs/summary class=\\"author comment-author\\" target=\\"_blank\\">
+		        <span class=\\"name\\">
+		          Tao Ning
+		        </span>
+		        <img src=\\"https://renzhen1024.com/user_avatar/renzhen1024.com/tningjs/240/14_2.png\\" alt=\\"\\" />
+		      </a>
+		    </div>
+		    <div class=\\"title comment-content\\">
+		      <p>在互联网行业也有这三个不同的职位，但是R&amp;D的意义很广泛，一般从事产品开发的都属于R&amp;D（其他部门还有HR，Sales，Marketing）。</p>
+		<p>一般的工作流程是：由Project Manger来确定应该做什么feature<br>
+		，Designer设计feature如何展现，包括图标、页面以及用户的交互等，Engineer则负责通过代码实现Desiner的设计。另外，团队一般还有Data Scientist，他们通过用户交互后产生的数据去决定这个feature是否成功，提出改进建议等。由于一个团队一般由6到10位Engineer，所以还有一个专职的Engineering Mananger来做管理工作。</p>
+		    </div>
+		  </header>
+		</article>
+</div>
+
+<section id=\\"footer\\">
+	<ul class=\\"icons\\">
+		<li>
+			<a href=\\"http://facebook.com\\" class=\\"fa-facebook\\">
+				<span class=\\"label\\">
+					Facebook
+				</span>
+			</a>
+		</li>
+		<li>
+			<a href=\\"http://twitter.com\\" class=\\"fa-twitter\\">
+				<span class=\\"label\\">
+					Twitter
+				</span>
+			</a>
+		</li>
+		<li>
+			<a href=\\"https://www.instagram.com\\" class=\\"fa-instagram\\">
+				<span class=\\"label\\">
+					Instagram
+				</span>
+			</a>
+		</li>
+		<li>
+			<a href=\\"https://rss.com/\\" class=\\"fa-rss\\">
+				<span class=\\"label\\">
+					RSS
+				</span>
+			</a>
+		</li>
+		<li>
+			<a href=\\"mailto:mountainsun1988@gmail.com\\" class=\\"fa-envelope\\">
+				<span class=\\"label\\">
+					Email
+				</span>
+			</a>
+		</li>
+	</ul>
+	<p class=\\"copyright\\">
+		© From:
+		<a href=\\"https://renzhen1024.com\\" target=\\"_blank\\">renzhen1024.com</a>
+	</p>
+</section>
+
+		</div>
+		<script src=\\"/assets/js/jquery.min.js\\"></script>
+		<script src=\\"/assets/js/browser.min.js\\"></script>
+		<script src=\\"/assets/js/breakpoints.min.js\\"></script>
+		<script src=\\"/assets/js/util.js\\"></script>
+		<script src=\\"/assets/js/main.js\\"></script>
+	</body>
+</html>
+"
+`;

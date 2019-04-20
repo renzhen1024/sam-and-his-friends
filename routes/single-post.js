@@ -1,3 +1,7 @@
+/**
+ * @module routes/single-post
+ */
+
 const { Router } = require('express');
 
 const { singlePostFormatter } = include(
@@ -11,6 +15,11 @@ const { activeUsersFormatter } = include(
 );
 const { addActiveUsersToCache } = include('data/cache/active-users');
 
+/**
+ * Single post router
+ * @param {object} router - router object init from express.Router
+ * @returns router middleware
+ */
 module.exports = (router = new Router()) => {
 	router.get('/:topicId', async (req, res) => {
 		const topicResponse = await request({

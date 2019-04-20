@@ -77,6 +77,11 @@ async function _getActiveUsers() {
 	return formattedActiveUsers.slice(0, lengthOfActiveUsersAtIndexPage);
 }
 
+/**
+ * Index router
+ * @param {object} router - router object init from express.Router
+ * @returns router middleware
+ */
 module.exports = (router = new Router()) => {
 	router.get('/', async (req, res) => {
 		const { currentPage = 0 } = req.query;

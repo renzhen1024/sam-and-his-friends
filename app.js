@@ -8,7 +8,7 @@ const hbs = require('hbs');
 
 require('./setup-global')();
 
-hbs.registerPartials(path.join(__dirname, '/views/templates/partials'));
+hbs.registerPartials(path.join(__dirname, 'views/templates/partials'));
 include('views/hbs-helpers');
 
 const indexRouter = include('routes/index');

@@ -1,10 +1,6 @@
 const moxios = require('moxios');
 const request = require('supertest');
-const path = require('path');
-const hbs = require('hbs');
-const app = require('../app');
-
-hbs.registerPartials(path.join(__dirname, '/views/templates/partials'));
+const app = require('../../app');
 
 const postsMock = include('data/route-mocks/index/posts.json');
 const miniPostsMock = include('data/route-mocks/index/mini-posts.json');

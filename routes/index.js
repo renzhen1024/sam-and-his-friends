@@ -1,3 +1,7 @@
+/**
+ * @module routes/index
+ */
+
 const { Router } = require('express');
 
 const { postsFormatter } = include('utils/formatters/posts-formatter');
@@ -22,7 +26,9 @@ const { DISCOURSE_RESOURCE_MAP, NUMBER_OF_POSTS_IN_ONE_PAGE } = include(
 async function _getPosts(currentPage) {
 	const postsReqParams = {
 		resource: DISCOURSE_RESOURCE_MAP.CATEGORY_BY_USER,
-		page: currentPage,
+		queryParams: {
+			page: currentPage,
+		},
 	};
 
 	const postsResponse = await request(postsReqParams);
@@ -36,11 +42,13 @@ async function _getPosts(currentPage) {
 
 async function _getMiniPosts() {
 	const miniPostsReqParams = {
-		username,
 		resource: DISCOURSE_RESOURCE_MAP.USER_ACTIONS,
-		offset: 0,
-		filter: 5, // discouse api doesn't take filter properly, the return payload may lager than 5
-		no_results_help_key: 'user_activity.no_replies',
+		queryParams: {
+			username,
+			offset: 0,
+			filter: 5, // discouse api doesn't take filter properly, the return payload may lager than 5
+			no_results_help_key: 'user_activity.no_replies',
+		},
 	};
 
 	const miniPostsResponse = await request(miniPostsReqParams);
@@ -51,7 +59,9 @@ async function _getMiniPosts() {
 async function _getActiveUsers() {
 	const activeUsersReqParams = {
 		resource: DISCOURSE_RESOURCE_MAP.ACTIVE_USERS,
-		period: 'monthly',
+		queryParams: {
+			period: 'monthly',
+		},
 	};
 
 	const activeUsersResponse = await request(activeUsersReqParams);

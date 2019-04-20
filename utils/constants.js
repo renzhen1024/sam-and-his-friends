@@ -26,6 +26,4 @@ exports.DISCOURSE_RESOURCE_MAP = {
 	USER_ACTIONS: 'user_actions',
 };
 
-exports.DOMAIN = 'https://renzhen1024.com/';
-
 exports.NUMBER_OF_POSTS_IN_ONE_PAGE = 30;

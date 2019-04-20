@@ -1,5 +1,5 @@
 /**
- * @module data/request/index.js
+ * @module data/request/index
  * A wrapper for axios to send out AJAX request
  */
 
@@ -11,14 +11,14 @@ if (process.env.NODE_ENV === 'development') {
 	axios.interceptors.request.use(getFullUrlFromRequest);
 }
 
-const { DOMAIN } = include('utils/constants');
+const { API } = include('utils/config');
 
 /**
  * Get full path
  * @param {string} resource - A resource string with map to API endpoints
  */
 function _getFullpath(resource) {
-	return `${DOMAIN}${resource}.json`;
+	return `${API}${resource}.json`;
 }
 
 /**

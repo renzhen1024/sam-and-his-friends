@@ -1,7 +1,7 @@
+exports.API = 'https://renzhen1024.com/';
+
 exports.about =
 	'篇也解十柏版俗于语二三育论科宝文,行举教通世子阳评子位语宝命,语语出译货编手国考国不通八,一相间结语省';
-
-exports.api = 'https://renzhen1024.com/';
 
 exports.creator = {
 	firstName: '江山',

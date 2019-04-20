@@ -1,7 +1,16 @@
+/**
+ * @module utils/formatters/comments-formatter
+ */
+
 const { getActiveUserFromCache } = include('data/cache/active-users');
 
+/**
+ * Format a comment
+ * @param {object} comment - Data returns from API
+ * @returns {object} Formatted comment
+ */
 function commentFormatter(comment) {
-	const commenter = getActiveUserFromCache(comment.user_id);
+	const commenter = getActiveUserFromCache(comment.user_id) || {};
 
 	return {
 		name: commenter.name || commenter.username,
@@ -12,17 +21,16 @@ function commentFormatter(comment) {
 		reads: comment.reads,
 	};
 }
+
 /**
- * Format comments
- * Notice that Discourse take pin/unpin as comment and this kind of comment doesn't has any contents
- *
- * @param {Array} comments
- * @returns {Array}
+ * Format array of comments from API data for rendering
+ * Notice that Discourse take pin/unpin as comment and this kind of comment
+ * doesn't has any meaningful contents. So filter them out.
+ * @param {array} comments - Array of comments
+ * @returns {array} Formatted comments array
  */
-function commentsFormatter(comments) {
+exports.commentsFormatter = function commentsFormatter(comments) {
 	return comments
 		.map(comment => commentFormatter(comment))
 		.filter(comment => !!comment.content);
-}
-
-exports.commentsFormatter = commentsFormatter;
+};

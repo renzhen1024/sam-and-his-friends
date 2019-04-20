@@ -1,7 +1,16 @@
+/**
+ * @module utils/formatters/single-post-formatter
+ */
+
 const { getActiveUserFromCache } = include('data/cache/active-users');
 const { commentsFormatter } = include('utils/formatters/comments-formatter');
 
-function singlePostFormatter(postData) {
+/**
+ * Format single post from API data for rendering
+ * @param {object} postData - Data from API
+ * @returns {object} Formatted post
+ */
+exports.singlePostFormatter = function singlePostFormatter(postData) {
 	const poster = getActiveUserFromCache(postData.details.created_by.id);
 	const { title, views, like_count: numLikes } = postData;
 	const numComments = postData.posts_count + postData.reply_count;
@@ -21,6 +30,4 @@ function singlePostFormatter(postData) {
 		authorImageUrl: poster.userImageUrl,
 		userProfileUrl: poster.userProfileUrl,
 	};
-}
-
-exports.singlePostFormatter = singlePostFormatter;
+};

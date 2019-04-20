@@ -3,23 +3,7 @@ const {
 	getActiveUserFromCache,
 	cleanCache,
 } = require('../../../data/cache/active-users');
-
-const mockUsers = [
-	{
-		id: 9,
-		username: 'Vivian',
-		name: '',
-		avatar_template: '/user_avatar/renzhen1024.com/vivian/{size}/40_2.png',
-		title: '',
-	},
-	{
-		id: 4,
-		username: 'tningjs',
-		name: 'Tao Ning',
-		avatar_template: '/user_avatar/renzhen1024.com/tningjs/{size}/14_2.png',
-		title: '山姆哥和他的小伙伴们',
-	},
-];
+const { mockUsers } = require('../../test-helpers');
 
 describe('Unit Test | data/cache/active-users', () => {
 	afterEach(() => {

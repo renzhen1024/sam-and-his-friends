@@ -171,3 +171,8 @@ $header-image-width: 172px;
     }
   }
 }
+
+// Remove meta data on some of the image return from API
+.lightbox .meta {
+  display: none;
+}

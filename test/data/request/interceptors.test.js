@@ -27,7 +27,7 @@ describe('Unit Test | data/request/interceptors', () => {
 		const expectedOutput = /https:\/\/renzhen1024\.com\/topics\/created-by\/mountainsun1988.json$/;
 
 		// config object is not been modified
-		expect(returnVal).toBe(false);
+		expect(returnVal).toBe(config);
 
 		// should only calls once to log output
 		expect(logStub.calledOnce).toBeTruthy();

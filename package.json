@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "start": "DEBUG=sam-and-his-friends:* nodemon server.js",
+    "test": "DEBUG=sam-and-his-friends:* node_modules/.bin/jest",
     "debug": "DEBUG=sam-and-his-friends:* node --inspect-brk server.js",
-    "jest": "DEBUG=sam-and-his-friends:* node_modules/.bin/jest",
-    "debug-jest": "DEBUG=sam-and-his-friends:* node --inspect-brk node_modules/.bin/jest --runInBand",
+    "debug-test": "DEBUG=sam-and-his-friends:* node --inspect-brk node_modules/.bin/jest --runInBand",
     "docs": "node_modules/.bin/jsdoc -r -d docs/out -c conf.json"
   },
   "engines": {

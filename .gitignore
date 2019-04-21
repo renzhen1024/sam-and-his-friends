@@ -8,8 +8,9 @@ Thumbs.db
 *.log
 package-lock.json
 
+docs
 light
-# TODO: Build the front-end code instead of using sass middleware
 main.css
+error.css
 *.css.map
 encryption/

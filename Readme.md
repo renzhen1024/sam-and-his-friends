@@ -26,7 +26,7 @@ In the production server, can use `$ pm2 logs` to see the logs.
 4. Install process manager: `$ sudo npm install -g pm2`
 5. CD into repository: `$ cd sam-and-his-friends`
 6. Start redirect server: `$ NODE_ENV=production pm2 start redirect-server.js`
-7. Start main server: `$ NODE_ENV=production pm2 start ./bin/www`
+7. Start main server: `$ NODE_ENV=production pm2 start ./server.js`
 
 ### How to deploy a new version production
 
@@ -44,7 +44,7 @@ In the production server, can use `$ pm2 logs` to see the logs.
 
 4. Start application again
 
-`$ NODE_ENV=production PORT=80 pm2 start ./bin/www`
+`$ NODE_ENV=production PORT=80 pm2 start ./server.js`
 
 ## Change log
 

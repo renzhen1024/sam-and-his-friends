@@ -17,7 +17,7 @@ describe('Unit Test | data/request/interceptors', () => {
 		sandbox.restore();
 	});
 
-	test('It should return full url - non query params', () => {
+	test.skip('It should return full url - non query params', () => {
 		const config = {
 			url: 'https://renzhen1024.com/topics/created-by/mountainsun1988.json',
 		};
@@ -36,7 +36,7 @@ describe('Unit Test | data/request/interceptors', () => {
 		expect(expectedOutput.test(output)).toBeTruthy();
 	});
 
-	test('It should return full url - one query param', () => {
+	test.skip('It should return full url - one query param', () => {
 		const config = {
 			url: 'https://renzhen1024.com/topics/created-by/mountainsun1988.json',
 			params: { page: 0 },
@@ -56,7 +56,7 @@ describe('Unit Test | data/request/interceptors', () => {
 		expect(expectedOutput.test(output)).toBeTruthy();
 	});
 
-	test('It should return full url - more than one query params', () => {
+	test.skip('It should return full url - more than one query params', () => {
 		const config = {
 			url: 'https://renzhen1024.com/topics/created-by/mountainsun1988.json',
 			params: { page: 0, _: 1555752535977 },

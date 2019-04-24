@@ -43,7 +43,13 @@
 		</footer>
 	</article>
 
-	<h3>{{t "i18n-single-post-comment-title"}}</h3>
+	{{#if comments.length}}
+		{{#if isPosterSiteOwner}}
+			<h3>{{t "i18n-single-post-comment-title"}}</h3>
+		{{else}}
+			<h3>{{t "i18n-single-post-comment-title-v2"}}</h3>
+		{{/if}}
+	{{/if}}
 
 	{{#each comments}}
 		{{>comment}}

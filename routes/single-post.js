@@ -32,35 +32,11 @@ module.exports = (router = new Router()) => {
 
 		addActiveUsersToCache(formattedActiveUsers);
 
-		const {
-			tags,
-			title,
-			views,
-			numLikes,
-			numComments,
-			comments,
-			name,
-			content,
-			date,
-			reads,
-			authorImageUrl,
-			userProfileUrl,
-		} = singlePostFormatter(topicResponse.data);
+		const formattedSinglePost = singlePostFormatter(topicResponse.data);
 
 		res.render('singlePost', {
-			tags,
-			title,
-			views,
-			numLikes,
-			numComments,
-			comments,
-			name,
-			content,
-			date,
-			reads,
-			authorImageUrl,
+			...formattedSinglePost,
 			socialMedias,
-			userProfileUrl,
 			isSinglePost: true,
 		});
 	});

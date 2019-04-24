@@ -7,7 +7,7 @@ exports.creator = {
 	firstName: '',
 	lastName: '北美山姆哥',
 	description: '一个赴美建厂及其自动化改造的亲历者',
-	profileImage: 'images/sam-site-profile-image.jpg',
+	profileImage: 'images/sam-site-profile-image.png',
 };
 
 exports.lengthOfActiveUsersAtIndexPage = 5;

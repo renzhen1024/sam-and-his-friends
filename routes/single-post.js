@@ -33,6 +33,7 @@ module.exports = (router = new Router()) => {
 		addActiveUsersToCache(formattedActiveUsers);
 
 		const {
+			tags,
 			title,
 			views,
 			numLikes,
@@ -47,6 +48,7 @@ module.exports = (router = new Router()) => {
 		} = singlePostFormatter(topicResponse.data);
 
 		res.render('singlePost', {
+			tags,
 			title,
 			views,
 			numLikes,

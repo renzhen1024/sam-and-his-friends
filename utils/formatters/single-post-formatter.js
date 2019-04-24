@@ -4,6 +4,7 @@
 
 const { getActiveUserFromCache } = include('data/cache/active-users');
 const { commentsFormatter } = include('utils/formatters/comments-formatter');
+const { tagsFormatter } = include('utils/formatters/tags-formatter');
 
 /**
  * Format single post from API data for rendering
@@ -16,8 +17,10 @@ exports.singlePostFormatter = function singlePostFormatter(postData) {
 	const numComments = postData.posts_count + postData.reply_count;
 	const post = postData.post_stream.posts[0];
 	const comments = commentsFormatter(postData.post_stream.posts.slice(1));
+	const tags = tagsFormatter(postData.category_id);
 
 	return {
+		tags,
 		title,
 		views,
 		numLikes,

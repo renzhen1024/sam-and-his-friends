@@ -10,5 +10,5 @@ const { categories } = include('utils/config');
  * @returns {array} tags list
  */
 exports.tagsFormatter = function tagsFormatter(categoryId) {
-	return categories[categoryId] || categories[categoryId].tags;
+	return categories[categoryId];
 };

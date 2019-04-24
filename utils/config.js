@@ -1,12 +1,12 @@
 exports.API = 'https://renzhen1024.com/';
 
 exports.about =
-	'篇也解十柏版俗于语二三育论科宝文,行举教通世子阳评子位语宝命,语语出译货编手国考国不通八,一省';
+	'重庆大学车辆工程学士，美国匹兹堡大学工业工程硕士。PMP项目管理专业人士资格认证；AUTODESK INVENTOR三维设计专业认证。个人公众号《山姆哥和他的小伙伴们》- 公众号ID：UncleSamChina';
 
 exports.creator = {
-	firstName: '江山',
-	lastName: '孙',
-	description: '论师义后着语开注固解关字几,汉尊之语典相帝学年家相而',
+	firstName: '',
+	lastName: '北美山姆哥',
+	description: '一个赴美建厂及其自动化改造的亲历者',
 	profileImage: 'images/sam-site-profile-image.jpg',
 };
 

@@ -6,8 +6,9 @@
 const axios = require('axios');
 
 const { getFullUrlFromRequest } = include('data/request/interceptors');
+const { isPro } = include('utils/isPro.js');
 
-if (process.env.NODE_ENV === 'development') {
+if (!isPro()) {
 	axios.interceptors.request.use(getFullUrlFromRequest);
 }
 

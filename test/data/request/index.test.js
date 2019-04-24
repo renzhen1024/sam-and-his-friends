@@ -29,14 +29,14 @@ describe('Unit Test | data/request/index', () => {
 	});
 
 	test('Interceptors is added in development environment', () => {
-		process.env.NODE_ENV = 'development';
+		process.env.DEBUG = true;
 		// eslint-disable-next-line global-require
 		require('../../../data/request/index');
 		expect(useSpy.calledOnce).toBeTruthy();
 	});
 
 	test('Interceptors is not added in production environment', () => {
-		process.env.NODE_ENV = 'production';
+		process.env.DEBUG = false;
 		// eslint-disable-next-line global-require
 		require('../../../data/request/index');
 		expect(useSpy.calledOnce).toBeFalsy();

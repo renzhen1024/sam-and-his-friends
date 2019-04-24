@@ -3,7 +3,7 @@
  */
 
 const { getActiveUserFromCache } = include('data/cache/active-users');
-
+const { tagsFormatter } = include('utils/formatters/tags-formatter');
 /**
  * Format post from API data for rendering
  * @param {object} post - Data from API
@@ -12,7 +12,10 @@ const { getActiveUserFromCache } = include('data/cache/active-users');
 function postFormatter(post) {
 	// The first poster is the topic author
 	const poster = getActiveUserFromCache(post.posters[0].user_id);
+	const tags = tagsFormatter(post.category_id);
+
 	return {
+		tags,
 		id: post.id,
 		title: post.title,
 		date: post.created_at,

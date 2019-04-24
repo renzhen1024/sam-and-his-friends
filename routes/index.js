@@ -4,11 +4,11 @@
 
 const { Router } = require('express');
 
-const { postsFormatter } = include('utils/formatters/posts-formatter');
-const { miniPostsFormatter } = include('utils/formatters/mini-posts-formatter');
 const { activeUsersFormatter } = include(
 	'utils/formatters/active-users-formatter'
 );
+const { miniPostsFormatter } = include('utils/formatters/mini-posts-formatter');
+const { postsFormatter } = include('utils/formatters/posts-formatter');
 const { request } = include('data/request');
 const {
 	about,

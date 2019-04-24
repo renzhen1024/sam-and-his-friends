@@ -13,6 +13,7 @@ include('views/hbs-helpers');
 
 const indexRouter = include('routes/index');
 const singlePostRouter = include('routes/single-post');
+const { isPro } = include('utils/isPro.js');
 
 module.exports = (app = express()) => {
 	app.set('views', path.join(__dirname, 'views/templates'));
@@ -45,7 +46,7 @@ module.exports = (app = express()) => {
 	app.use((err, req, res, next) => {
 		// NODE_ENV is an environment variable popularized by the Express framework.
 		// by default, the value is development
-		const isProd = process.env.NODE_ENV === 'production';
+		const isProd = isPro();
 
 		// only providing error in development
 		const error = isProd ? {} : err;

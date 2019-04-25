@@ -104,14 +104,124 @@ $header-image-width: 172px;
 }
 
 .mini-posts {
-  height: 600px;
+  $mini-posts-height: 600px;
+
+  height: $mini-posts-height;
+  padding-top: 16px;
   overflow-y: scroll;
 
-  @include breakpoint('<=medium') {
-    height: 100%;
+  -webkit-overflow-scrolling: touch;
+  // stylelint-disable-next-line function-linear-gradient-no-nonstandard-direction
+  mask-image: -webkit-linear-gradient(
+    to bottom,
+    transparent,
+    white 10px,
+    white 90%,
+    transparent
+  );
+  // stylelint-disable-next-line function-linear-gradient-no-nonstandard-direction
+  mask-image: -moz-linear-gradient(
+    to bottom,
+    transparent,
+    white 10px,
+    white 90%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    white 10px,
+    white 90%,
+    transparent
+  );
+  // stylelint-disable-next-line function-linear-gradient-no-nonstandard-direction
+  -webkit-mask-image: -webkit-linear-gradient(
+    to bottom,
+    transparent,
+    white 10px,
+    white 90%,
+    transparent
+  );
+  // stylelint-disable-next-line function-linear-gradient-no-nonstandard-direction
+  -webkit-mask-image: -moz-linear-gradient(
+    to bottom,
+    transparent,
+    white 10px,
+    white 90%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    white 10px,
+    white 90%,
+    transparent
+  );
 
-    .mini-posts-header-desktop {
-      display: none;
+  @include breakpoint('<=medium') {
+    $mini-posts-mobile-height: 240px;
+
+    height: $mini-posts-mobile-height;
+    padding-left: 8px;
+    overflow-x: scroll;
+    white-space: nowrap;
+
+    // stylelint-disable-next-line function-linear-gradient-no-nonstandard-direction
+    mask-image: -webkit-linear-gradient(
+      to right,
+      transparent,
+      white 10px,
+      white 90%,
+      transparent
+    );
+    // stylelint-disable-next-line function-linear-gradient-no-nonstandard-direction
+    mask-image: -moz-linear-gradient(
+      to right,
+      transparent,
+      white 10px,
+      white 90%,
+      transparent
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      white 10px,
+      white 90%,
+      transparent
+    );
+    // stylelint-disable-next-line function-linear-gradient-no-nonstandard-direction
+    -webkit-mask-image: -webkit-linear-gradient(
+      to right,
+      transparent,
+      white 10px,
+      white 90%,
+      transparent
+    );
+    // stylelint-disable-next-line function-linear-gradient-no-nonstandard-direction
+    -webkit-mask-image: -moz-linear-gradient(
+      to right,
+      transparent,
+      white 10px,
+      white 90%,
+      transparent
+    );
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      white 10px,
+      white 90%,
+      transparent
+    );
+
+    .mini-post {
+      $mini-post-mobile-height: 200px;
+
+      display: inline-block;
+      vertical-align: top;
+      white-space: normal;
+      width: 85%;
+      margin-right: 20px;
+      height: $mini-post-mobile-height;
     }
   }
 }

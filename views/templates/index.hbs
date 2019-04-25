@@ -25,13 +25,10 @@
 <section id="sidebar">
 	{{> intro creator}}
 	<section>
+		<h3 class="mini-posts-header">
+			{{t "i18n-sidebar-latest-comments"}}
+		</h3>
 		<div class="mini-posts">
-			<h3 class="mini-posts-header">
-				{{t "i18n-sidebar-latest-comments"}}
-				<span class="mini-posts-header-desktop">
-					{{t "i18n-sidebar-latest-comments-scroll-to-see-more"}}
-				</span>
-			</h3>
 			{{#each miniPosts}} {{> miniPost}} {{/each}}
 		</div>
 	</section>

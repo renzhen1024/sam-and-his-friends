@@ -220,10 +220,12 @@ exports.formattedPost = {
 	content:
 		'Perferendis et iusto dolor. Facere sequi et voluptate est nulla officiis.',
 	date: '2019-03-04T14:53:22.217Z',
+	isPosterSiteOwner: false,
 	name: 'Tao Ning',
 	numComments: 5,
 	numLikes: 1,
 	reads: 6,
+	tags: undefined,
 	title: '为什么我们吃着最好吃的饭，却体质不如人？',
 	userProfileUrl: 'https://renzhen1024.com/u/tningjs/summary',
 	views: 47,

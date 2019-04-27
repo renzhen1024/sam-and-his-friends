@@ -5,12 +5,21 @@ const sass = require('gulp-sass');
 const minify = require('gulp-cssnano');
 const md5 = require('gulp-md5-plus');
 
+const SASS_SOURCE_SOURCE = 'public/assets/sass/*.scss';
+const SASS_SOURCE_OUTPUT = 'public/assets/sass/output';
+const HBS_LAYOUT_SOURCE = 'views/templates/layout/*.hbs';
+const HBS_LAYOUT_OUTPUT = 'views/templates/layout-fingerprinted';
+
 function clean() {
-	return src('public/assets/sass/output').pipe(gulpClean());
+	return src([SASS_SOURCE_OUTPUT, HBS_LAYOUT_OUTPUT]).pipe(gulpClean());
 }
 
-function build() {
-	return src('public/assets/sass/*.scss')
+function html() {
+	return src(HBS_LAYOUT_SOURCE).pipe(dest(HBS_LAYOUT_OUTPUT));
+}
+
+function css() {
+	return src(SASS_SOURCE_SOURCE)
 		.pipe(
 			sass({
 				outputStyle: 'expanded',
@@ -24,8 +33,8 @@ function build() {
 				},
 			})
 		)
-		.pipe(md5(10, 'views/templates/layout/*.hbs'))
-		.pipe(dest('public/assets/sass/output'));
+		.pipe(md5(10, `${HBS_LAYOUT_OUTPUT}/*.hbs`))
+		.pipe(dest(SASS_SOURCE_OUTPUT));
 }
 
-exports.default = series(clean, build);
+exports.default = series(clean, html, css);

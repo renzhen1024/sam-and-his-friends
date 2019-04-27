@@ -17,7 +17,7 @@ const { isPro } = include('utils/isPro.js');
 module.exports = (app = express()) => {
 	app.set('views', path.join(__dirname, 'views/templates'));
 	app.set('view engine', 'hbs');
-	app.set('view options', { layout: 'layout/default' });
+	app.set('view options', { layout: 'layout-fingerprinted/default' });
 
 	app.use(logger('dev'));
 	app.use(express.json());
@@ -48,13 +48,13 @@ module.exports = (app = express()) => {
 
 		if (err.status === 404) {
 			res.render('404', {
-				layout: 'layout/404',
+				layout: 'layout-fingerprinted/404',
 			});
 		} else {
 			res.render('error', {
 				error,
 				isProd,
-				layout: 'layout/error',
+				layout: 'layout-fingerprinted/error',
 			});
 		}
 	});

@@ -10,6 +10,4 @@ package-lock.json
 
 docs
 light
-main.css
-error.css
-*.css.map
+public/assets/sass/output

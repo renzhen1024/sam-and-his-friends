@@ -10,3 +10,6 @@ package-lock.json
 
 docs
 light
+public/assets/sass/output
+public/assets/js/output
+views/templates/layout-fingerprinted

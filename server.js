@@ -10,7 +10,7 @@ const app = require('./app');
 
 const server = http.createServer(app());
 
-const port = 80;
+const port = 3000;
 
 /**
  * Event listener for HTTP server "error" event.

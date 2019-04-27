@@ -1,14 +1,16 @@
-const { src, dest } = require('gulp');
+const { src, dest, series } = require('gulp');
 
+const gulpClean = require('gulp-clean');
 const sass = require('gulp-sass');
 const minify = require('gulp-cssnano');
+const md5 = require('gulp-md5-plus');
+
+function clean() {
+	return src('public/assets/sass/output').pipe(gulpClean());
+}
 
 function build() {
-	return src([
-		'public/assets/sass/404.scss',
-		'public/assets/sass/error.scss',
-		'public/assets/sass/main.scss',
-	])
+	return src('public/assets/sass/*.scss')
 		.pipe(
 			sass({
 				outputStyle: 'expanded',
@@ -22,7 +24,8 @@ function build() {
 				},
 			})
 		)
+		.pipe(md5(10, 'views/templates/layout/*.hbs'))
 		.pipe(dest('public/assets/sass/output'));
 }
 
-exports.default = build;
+exports.default = series(clean, build);

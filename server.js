@@ -4,21 +4,13 @@
  * Module dependencies.
  */
 const debug = require('debug')('sam-and-his-friends:server');
-const https = require('https');
-const fs = require('fs');
+const http = require('http');
 
 const app = require('./app');
 
-// set up ssl
-const key = fs.readFileSync(absPath('encryption/private.key'));
-const cert = fs.readFileSync(absPath('encryption/samandhisfriends_com.crt'));
-const ca = fs.readFileSync(absPath('encryption/samandhisfriends_com.ca'));
+const server = http.createServer(app());
 
-const options = { key, cert, ca };
-
-const server = https.createServer(options, app());
-
-const port = 443;
+const port = 80;
 
 /**
  * Event listener for HTTP server "error" event.

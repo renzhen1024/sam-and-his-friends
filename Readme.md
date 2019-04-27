@@ -21,12 +21,11 @@ In the production server, can use `$ pm2 logs` to see the logs.
 ## How to run in production
 
 1. Checkout source code: `$ git clone git@github.com:tningjs/sam-and-his-friends.git`
-2. Upload ssl certificate: `$ scp -rf encryption root@104.248.56.29:/root/sam-and-his-friends`
-3. Install dependency: `$ yarn install`
-4. Install process manager: `$ sudo npm install -g pm2`
-5. CD into repository: `$ cd sam-and-his-friends`
-6. Start redirect server: `$ NODE_ENV=production pm2 start redirect-server.js`
-7. Start main server: `$ NODE_ENV=production pm2 start ./server.js`
+2. Install dependency: `$ yarn install`
+3. Install process manager: `$ sudo npm install -g pm2`
+4. CD into repository: `$ cd sam-and-his-friends`
+5. Start redirect server: `$ NODE_ENV=production pm2 start redirect-server.js`
+6. Start main server: `$ NODE_ENV=production pm2 start ./server.js`
 
 ### How to deploy a new version production
 

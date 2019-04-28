@@ -57,4 +57,10 @@ Everyone is welcome to contribute. Please take a moment to review the [contribut
 
 [Tao Ning](https://github.com/tningjs/sam-and-his-friends) and [contributors](https://github.com/tningjs/sam-and-his-friends/graphs/contributors).
 
-MIT License, see the included [License.md](License.md) file.
+MIT License, see the included [MIT-LICENSE.txt](MIT-LICENSE.txt) file.
+
+## Credits
+
+- Layout Design: Future Imperfect by [Pixelarity](pixelarity.com)
+- 404 page: [Saleh R. Qureshi](http://salehriaz.com/). [Codepen link](https://codepen.io/salehriaz/pen/erJrZM)
+- Error page: [@iremlopsum](https://codepen.io/iremlopsum/). [Codepen link](https://codepen.io/iremlopsum/pen/wagMZx)

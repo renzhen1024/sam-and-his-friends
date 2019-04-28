@@ -2,7 +2,7 @@
   "name": "sam-and-his-friends",
   "version": "4.0.0",
   "private": true,
-  "description": "A description for your project.",
+  "description": "An express application extrac discourse data from renzhen1024.com",
   "author": {
     "name": "Tao Ning",
     "url": "https://github.com/tningjs"
@@ -48,6 +48,7 @@
     "gulp-cli": "^2.2.0",
     "gulp-concat": "^2.6.1",
     "gulp-cssnano": "^2.1.3",
+    "gulp-header": "^2.0.7",
     "gulp-md5-plus": "^1.0.3",
     "gulp-sass": "^4.0.2",
     "gulp-terser": "^1.1.7",

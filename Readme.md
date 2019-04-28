@@ -39,7 +39,7 @@ In the production server, can use `$ pm2 logs` to see the logs.
 
 3. Update dependency
 
-`$ cd sam-and-his-friends && git pull && yarn install`
+`$ cd sam-and-his-friends && git pull && yarn install && npm run build`
 
 4. Start application again
 

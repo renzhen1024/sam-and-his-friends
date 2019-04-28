@@ -163,7 +163,9 @@ $header-image-width: 172px;
 
     height: $mini-posts-mobile-height;
     padding-left: 8px;
+    padding-top: 0;
     overflow-x: scroll;
+    overflow-y: hidden;
     white-space: nowrap;
 
     // stylelint-disable-next-line function-linear-gradient-no-nonstandard-direction

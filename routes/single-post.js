@@ -8,7 +8,7 @@ const { singlePostFormatter } = include(
 	'utils/formatters/single-post-formatter'
 );
 const { request } = include('data/request');
-const { socialMedias } = include('utils/config');
+const { siteTitle, socialMedias } = include('utils/config');
 const { DISCOURSE_RESOURCE_MAP } = include('utils/constants');
 const { activeUsersFormatter } = include(
 	'utils/formatters/active-users-formatter'
@@ -36,6 +36,7 @@ module.exports = (router = new Router()) => {
 
 		res.render('singlePost', {
 			...formattedSinglePost,
+			siteTitle,
 			socialMedias,
 			isSinglePost: true,
 		});

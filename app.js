@@ -10,6 +10,7 @@ require('./setup-global')();
 hbs.registerPartials(path.join(__dirname, 'views/templates/partials'));
 include('views/hbs-helpers');
 
+const { siteTitle } = include('utils/config');
 const indexRouter = include('routes/index');
 const singlePostRouter = include('routes/single-post');
 const { isPro } = include('utils/isPro.js');
@@ -48,12 +49,14 @@ module.exports = (app = express()) => {
 
 		if (err.status === 404) {
 			res.render('404', {
+				siteTitle,
 				layout: 'layout-fingerprinted/404',
 			});
 		} else {
 			res.render('error', {
 				error,
 				isProd,
+				siteTitle,
 				layout: 'layout-fingerprinted/error',
 			});
 		}

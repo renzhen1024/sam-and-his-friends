@@ -12,7 +12,7 @@ exports.creator = {
 
 exports.lengthOfActiveUsersAtIndexPage = 5;
 
-exports.siteTitle = 'Sam And This Friends';
+exports.siteTitle = '北美山姆哥';
 
 exports.socialMedias = [
 	{ name: 'Facebook', className: 'facebook', url: 'http://facebook.com' },

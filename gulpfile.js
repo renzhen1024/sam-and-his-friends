@@ -15,6 +15,10 @@ const sass = require('gulp-sass');
 const minify = require('gulp-cssnano');
 const md5 = require('gulp-md5-plus');
 
+// Images
+const imagemin = require('gulp-imagemin');
+
+const { isPro } = require('./utils/isPro');
 const packageInfo = require('./package.json');
 
 // Template for banner to add to file headers
@@ -32,21 +36,12 @@ const BANNER = {
 	CSS: `/*******************${HEADER}*******************/\n\n`,
 };
 
-const JS_SOURCE = [
-	'public/assets/js/jquery.min.js',
-	'public/assets/js/browser.min.js',
-	'public/assets/js/breakpoints.min.js',
-	'public/assets/js/util.js',
-	'public/assets/js/main.js',
-];
-const JS_OUTPUT = 'public/assets/js/output';
-const SASS_SOURCE = 'public/assets/sass/*.scss';
-const SASS_OUTPUT = 'public/assets/sass/output';
 const HBS_LAYOUT_SOURCE = 'views/templates/layout/*.hbs';
 const HBS_LAYOUT_OUTPUT = 'views/templates/layout-fingerprinted';
+const ASSETS_OUTPUT = 'output';
 
 function clean() {
-	return del([JS_OUTPUT, SASS_OUTPUT, HBS_LAYOUT_OUTPUT]);
+	return del([ASSETS_OUTPUT, HBS_LAYOUT_OUTPUT]);
 }
 
 function html() {
@@ -55,6 +50,15 @@ function html() {
 		.pipe(dest(HBS_LAYOUT_OUTPUT));
 }
 
+// Need to keep js in order
+const JS_SOURCE = [
+	'public/assets/js/jquery.min.js',
+	'public/assets/js/browser.min.js',
+	'public/assets/js/breakpoints.min.js',
+	'public/assets/js/util.js',
+	'public/assets/js/main.js',
+];
+const JS_OUTPUT = 'output/assets/js';
 function js() {
 	return src(JS_SOURCE)
 		.pipe(concat('bundle.js'))
@@ -64,6 +68,8 @@ function js() {
 		.pipe(dest(JS_OUTPUT));
 }
 
+const SASS_SOURCE = 'public/assets/sass/*.scss';
+const SASS_OUTPUT = 'output/assets/sass';
 function css() {
 	return src(SASS_SOURCE)
 		.pipe(
@@ -84,4 +90,21 @@ function css() {
 		.pipe(dest(SASS_OUTPUT));
 }
 
-exports.default = series(clean, html, js, css);
+const VENDORS_SOURCE = 'public/assets/vendors/**/*';
+const VENDORS_OUTPUT = 'output/assets/vendors';
+function vendors() {
+	return src(VENDORS_SOURCE).pipe(dest(VENDORS_OUTPUT));
+}
+
+const IMAGES_SOURCE = 'public/images/**/*';
+const IMAGES_OUTPUT = 'output/images';
+function image() {
+	// disable imagemin in develop because this plugin slow down build time for 6s
+	return isPro()
+		? src(IMAGES_SOURCE)
+				.pipe(imagemin())
+				.pipe(dest(IMAGES_OUTPUT))
+		: src(IMAGES_SOURCE).pipe(dest(IMAGES_OUTPUT));
+}
+
+exports.default = series(clean, html, js, css, vendors, image);

@@ -1,6 +1,11 @@
 {
-	"name": "",
-	"short_name": "",
+	"name": "北美山姆哥",
+	"short_name": "samandhisfriends",
+	"description": "一个赴美建厂及其自动化改造的亲历者",
+	"lang": "zh-Hans",
+	"theme_color": "#ffffff",
+	"background_color": "#ffffff",
+	"display": "standalone",
 	"icons": [
 		{
 			"src": "/images/favicon/android-chrome-192x192.png",
@@ -12,8 +17,5 @@
 			"sizes": "512x512",
 			"type": "image/png"
 		}
-	],
-	"theme_color": "#ffffff",
-	"background_color": "#ffffff",
-	"display": "standalone"
+	]
 }

@@ -35,7 +35,7 @@ async function _getPosts(currentPage) {
 
 	const formattedActiveUsers = activeUsersFormatter(postsResponse.data.users);
 
-	addActiveUsersToCache(formattedActiveUsers);
+	await addActiveUsersToCache(formattedActiveUsers);
 
 	return postsFormatter(postsResponse.data.topic_list.topics);
 }
@@ -72,7 +72,7 @@ async function _getActiveUsers() {
 
 	const formattedActiveUsers = activeUsersFormatter(activeUsers);
 
-	addActiveUsersToCache(formattedActiveUsers);
+	await addActiveUsersToCache(formattedActiveUsers);
 
 	return formattedActiveUsers.slice(0, lengthOfActiveUsersAtIndexPage);
 }

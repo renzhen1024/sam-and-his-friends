@@ -13,7 +13,7 @@ let activeUsers = {};
  * Add the user to cache
  * @param {object} user - User object get from API
  */
-function addActiveUserToCache(user) {
+async function addActiveUserToCache(user) {
 	if (!activeUsers[user.id]) {
 		activeUsers[user.id] = user;
 	}
@@ -24,12 +24,12 @@ function addActiveUserToCache(user) {
  * @param {(array|object)} users - Users or a single user get from API
  * @public
  */
-exports.addActiveUsersToCache = function addActiveUsersToCache(users) {
+exports.addActiveUsersToCache = async function addActiveUsersToCache(users) {
 	if (Array.isArray(users)) {
-		users.forEach(user => addActiveUserToCache(user));
-	} else {
-		addActiveUserToCache(users);
+		await users.map(user => addActiveUserToCache(user));
 	}
+
+	await addActiveUserToCache(users);
 };
 
 /**
@@ -39,12 +39,12 @@ exports.addActiveUsersToCache = function addActiveUsersToCache(users) {
  * @public
  */
 exports.getActiveUserFromCache = function getActiveUserFromCache(id) {
-	return activeUsers[id];
+	return Promise.resolve(activeUsers[id]);
 };
 
 /**
  * Clean local cache
  */
-exports.cleanCache = function cleanCache() {
+exports.cleanCache = async function cleanCache() {
 	activeUsers = {};
 };

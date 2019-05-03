@@ -13,17 +13,17 @@ const {
 } = include('test/test-helpers');
 
 describe('Unit Test | utils/formatters/single-post-formatter', () => {
-	beforeEach(() => {
+	beforeEach(async () => {
 		const userWithSameId = formattedUsers[1];
-		addActiveUsersToCache(userWithSameId);
+		await addActiveUsersToCache(userWithSameId);
 	});
 
-	afterEach(() => {
+	afterEach(async () => {
 		cleanCache();
 	});
 
-	test('It should format a single posts', () => {
-		const formattedPost = singlePostFormatter(mockPost);
+	test('It should format a single posts', async () => {
+		const formattedPost = await singlePostFormatter(mockPost);
 
 		expect(formattedPost).toEqual(expectedFormattedPost);
 	});

@@ -9,9 +9,9 @@ const { tagsFormatter } = include('utils/formatters/tags-formatter');
  * @param {object} post - Data from API
  * @returns {object} Formatted post
  */
-function postFormatter(post) {
+async function postFormatter(post) {
 	// The first poster is the topic author
-	const poster = getActiveUserFromCache(post.posters[0].user_id);
+	const poster = await getActiveUserFromCache(post.posters[0].user_id);
 	const tags = tagsFormatter(post.category_id);
 
 	return {
@@ -34,6 +34,8 @@ function postFormatter(post) {
  * @param {array} posts - Array of Posts
  * @returns {array} Formatted mintPosts array
  */
-exports.postsFormatter = function postsFormatter(posts) {
-	return posts.map(post => postFormatter(post)).sort((a, b) => b.date - a.date);
+exports.postsFormatter = async function postsFormatter(posts) {
+	return Promise.all(posts.map(post => postFormatter(post))).then(mappedPosts =>
+		mappedPosts.sort((a, b) => b.date - a.date)
+	);
 };

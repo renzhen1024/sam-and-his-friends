@@ -9,8 +9,9 @@ const { getActiveUserFromCache } = include('data/cache/active-users');
  * @param {object} comment - Data returns from API
  * @returns {object} Formatted comment
  */
-function commentFormatter(comment) {
-	const commenter = getActiveUserFromCache(comment.user_id) || {};
+async function commentFormatter(comment) {
+	const commenter =
+		(await getActiveUserFromCache(comment.user_id)) || Promise.resolve({});
 
 	return {
 		name: commenter.name || commenter.username,
@@ -30,7 +31,7 @@ function commentFormatter(comment) {
  * @returns {array} Formatted comments array
  */
 exports.commentsFormatter = function commentsFormatter(comments) {
-	return comments
-		.map(comment => commentFormatter(comment))
-		.filter(comment => !!comment.content);
+	return Promise.all(comments.map(comment => commentFormatter(comment))).then(
+		mappedComments => mappedComments.filter(comment => !!comment.content)
+	);
 };

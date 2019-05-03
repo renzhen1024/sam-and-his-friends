@@ -9,22 +9,22 @@ const { formattedComments, formattedUsers, mockComments } = include(
 );
 
 describe('Unit Test | utils/formatters/comments-formatter', () => {
-	beforeEach(() => {
+	beforeEach(async () => {
 		const userWithSameId = formattedUsers[1];
-		addActiveUsersToCache(userWithSameId);
+		await addActiveUsersToCache(userWithSameId);
 	});
 
-	afterEach(() => {
+	afterEach(async () => {
 		cleanCache();
 	});
 
-	test('It should format an array of comments', () => {
+	test('It should format an array of comments', async () => {
 		const [
 			expectedFormattedComment1,
 			expectedFormattedComment2,
 		] = formattedComments;
 
-		const resultArray = commentsFormatter(mockComments);
+		const resultArray = await commentsFormatter(mockComments);
 		const [comment1, comment2] = resultArray;
 
 		expect(resultArray.length).toEqual(2);

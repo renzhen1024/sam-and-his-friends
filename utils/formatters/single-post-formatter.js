@@ -12,14 +12,14 @@ const { username } = include('utils/config');
  * @param {object} postData - Data from API
  * @returns {object} Formatted post
  */
-exports.singlePostFormatter = function singlePostFormatter(postData) {
-	const poster = getActiveUserFromCache(postData.details.created_by.id);
+exports.singlePostFormatter = async function singlePostFormatter(postData) {
+	const poster = await getActiveUserFromCache(postData.details.created_by.id);
 	// Owner means the website owner who create article in index page
 	const isPosterSiteOwner = username === poster.username.slice(1); // poster.username begins with `@`
 	const { title, views, like_count: numLikes } = postData;
 	const numComments = postData.posts_count + postData.reply_count;
 	const post = postData.post_stream.posts[0];
-	const comments = commentsFormatter(postData.post_stream.posts.slice(1));
+	const comments = await commentsFormatter(postData.post_stream.posts.slice(1));
 	const tags = tagsFormatter(postData.category_id);
 
 	return {

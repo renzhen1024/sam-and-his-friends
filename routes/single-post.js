@@ -30,9 +30,9 @@ module.exports = (router = new Router()) => {
 			topicResponse.data.details.participants
 		);
 
-		addActiveUsersToCache(formattedActiveUsers);
+		await addActiveUsersToCache(formattedActiveUsers);
 
-		const formattedSinglePost = singlePostFormatter(topicResponse.data);
+		const formattedSinglePost = await singlePostFormatter(topicResponse.data);
 
 		res.render('singlePost', {
 			...formattedSinglePost,

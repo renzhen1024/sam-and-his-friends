@@ -1,35 +1,43 @@
 /**
  * @module data/cache/active-users
- * A super basic cache implementation
+ * A cache implementation use redis as client
  */
+const redis = require('redis');
+const { promisify } = require('util');
 
-/**
- * A list of users, key is user id
- * @type {object}
- */
-let activeUsers = {};
+const { REDIS_CONFIG } = require('../../utils/constants.js');
+const redisMock = require('../../test/test-helpers/redis-mock');
+
+const isTest = process.env.NODE_ENV === 'test';
+const client = isTest ? redisMock.createClient() : redis.createClient();
+const promisified = {
+	hset: isTest ? client.hset : promisify(client.hset).bind(client),
+	hget: isTest ? client.hget : promisify(client.hget).bind(client),
+};
 
 /**
  * Add the user to cache
  * @param {object} user - User object get from API
  */
-async function addActiveUserToCache(user) {
-	if (!activeUsers[user.id]) {
-		activeUsers[user.id] = user;
-	}
+function addActiveUserToCache(user) {
+	return promisified.hset(
+		REDIS_CONFIG.HASHSET_NAME,
+		`${REDIS_CONFIG.KEY_PREFIX.ACTIVE_USER}:${user.id}`,
+		JSON.stringify(user)
+	);
 }
 
 /**
- * Add user to local cache, input can be either a single user or array of users
+ * Add user to cache, input can be either a single user or array of users
  * @param {(array|object)} users - Users or a single user get from API
  * @public
  */
-exports.addActiveUsersToCache = async function addActiveUsersToCache(users) {
+exports.addActiveUsersToCache = function addActiveUsersToCache(users) {
 	if (Array.isArray(users)) {
-		await users.map(user => addActiveUserToCache(user));
+		return Promise.all(users.map(user => addActiveUserToCache(user)));
 	}
 
-	await addActiveUserToCache(users);
+	return addActiveUserToCache(users);
 };
 
 /**
@@ -39,12 +47,10 @@ exports.addActiveUsersToCache = async function addActiveUsersToCache(users) {
  * @public
  */
 exports.getActiveUserFromCache = function getActiveUserFromCache(id) {
-	return Promise.resolve(activeUsers[id]);
-};
-
-/**
- * Clean local cache
- */
-exports.cleanCache = async function cleanCache() {
-	activeUsers = {};
+	return promisified
+		.hget(
+			REDIS_CONFIG.HASHSET_NAME,
+			`${REDIS_CONFIG.KEY_PREFIX.ACTIVE_USER}:${id}`
+		)
+		.then(user => JSON.parse(user));
 };

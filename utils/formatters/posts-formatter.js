@@ -2,7 +2,7 @@
  * @module utils/formatters/posts-formatter
  */
 
-const { getActiveUserFromCache } = require('../../data/cache/active-users-v2');
+const { getActiveUserFromCache } = require('../../data/cache/active-users');
 const { tagsFormatter } = require('../../utils/formatters/tags-formatter');
 /**
  * Format post from API data for rendering

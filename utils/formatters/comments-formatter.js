@@ -2,7 +2,7 @@
  * @module utils/formatters/comments-formatter
  */
 
-const { getActiveUserFromCache } = require('../../data/cache/active-users-v2');
+const { getActiveUserFromCache } = require('../../data/cache/active-users');
 
 /**
  * Format a comment

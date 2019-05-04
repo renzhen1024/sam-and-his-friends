@@ -2,7 +2,7 @@
  * @module utils/formatters/single-post-formatter
  */
 
-const { getActiveUserFromCache } = require('../../data/cache/active-users-v2');
+const { getActiveUserFromCache } = require('../../data/cache/active-users');
 const {
 	commentsFormatter,
 } = require('../../utils/formatters/comments-formatter');

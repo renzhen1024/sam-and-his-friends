@@ -4,9 +4,9 @@ const sandbox = require('sinon').createSandbox();
 const { formattedUsers } = require('../../test-helpers/mock-data');
 const { REDIS_CONFIG } = require('../../../utils/constants.js');
 
-const activeUsersModule = rewire('../../../data/cache/active-users-v2');
+const activeUsersModule = rewire('../../../data/cache/active-users');
 
-describe('Unit Test | data/cache/active-users-v2', () => {
+describe('Unit Test | data/cache/active-users', () => {
 	beforeAll(() => {
 		const promisified = activeUsersModule.__get__('promisified');
 

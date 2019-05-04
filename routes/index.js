@@ -20,7 +20,7 @@ const {
 	socialMedias,
 	username,
 } = require('../utils/config');
-const { addActiveUsersToCache } = require('../data/cache/active-users-v2');
+const { addActiveUsersToCache } = require('../data/cache/active-users');
 const {
 	DISCOURSE_RESOURCE_MAP,
 	NUMBER_OF_POSTS_IN_ONE_PAGE,

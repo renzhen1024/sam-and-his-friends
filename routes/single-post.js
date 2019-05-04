@@ -13,7 +13,7 @@ const { DISCOURSE_RESOURCE_MAP } = require('../utils/constants');
 const {
 	activeUsersFormatter,
 } = require('../utils/formatters/active-users-formatter');
-const { addActiveUsersToCache } = require('../data/cache/active-users-v2');
+const { addActiveUsersToCache } = require('../data/cache/active-users');
 
 /**
  * Single post router

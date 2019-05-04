@@ -1,6 +1,6 @@
 {
   "name": "sam-and-his-friends",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "private": true,
   "description": "An express application extrac discourse data from renzhen1024.com",
   "author": {

@@ -4,16 +4,16 @@
 
 const { Router } = require('express');
 
-const { singlePostFormatter } = include(
-	'utils/formatters/single-post-formatter'
-);
-const { request } = include('data/request');
-const { siteTitle, socialMedias } = include('utils/config');
-const { DISCOURSE_RESOURCE_MAP } = include('utils/constants');
-const { activeUsersFormatter } = include(
-	'utils/formatters/active-users-formatter'
-);
-const { addActiveUsersToCache } = include('data/cache/active-users');
+const {
+	singlePostFormatter,
+} = require('../utils/formatters/single-post-formatter');
+const { request } = require('../data/request');
+const { siteTitle, socialMedias } = require('../utils/config');
+const { DISCOURSE_RESOURCE_MAP } = require('../utils/constants');
+const {
+	activeUsersFormatter,
+} = require('../utils/formatters/active-users-formatter');
+const { addActiveUsersToCache } = require('../data/cache/active-users-v2');
 
 /**
  * Single post router

@@ -2,10 +2,12 @@
  * @module utils/formatters/single-post-formatter
  */
 
-const { getActiveUserFromCache } = include('data/cache/active-users');
-const { commentsFormatter } = include('utils/formatters/comments-formatter');
-const { tagsFormatter } = include('utils/formatters/tags-formatter');
-const { username } = include('utils/config');
+const { getActiveUserFromCache } = require('../../data/cache/active-users-v2');
+const {
+	commentsFormatter,
+} = require('../../utils/formatters/comments-formatter');
+const { tagsFormatter } = require('../../utils/formatters/tags-formatter');
+const { username } = require('../../utils/config');
 
 /**
  * Format single post from API data for rendering

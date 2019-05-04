@@ -1,9 +1,11 @@
-require('../../../setup-global')();
+const {
+	activeUsersFormatter,
+} = require('../../../utils/formatters/active-users-formatter');
 
-const { activeUsersFormatter } = include(
-	'utils/formatters/active-users-formatter'
-);
-const { mockUsers, formattedUsers } = include('test/test-helpers');
+const {
+	mockUsers,
+	formattedUsers,
+} = require('../../../test/test-helpers/mock-data');
 
 describe('Unit Test | utils/formatters/active-users-formatter', () => {
 	test('It should format an array of user', () => {

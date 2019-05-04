@@ -2,9 +2,10 @@ const moxios = require('moxios');
 const request = require('supertest');
 const app = require('../../app');
 
-const postsMock = include('data/route-mocks/index/posts.json');
-const miniPostsMock = include('data/route-mocks/index/mini-posts.json');
-const activeUsersListMock = include('data/route-mocks/index/active-users.json');
+const postsMock = require('../../data/route-mocks/index/posts.json');
+const miniPostsMock = require('../../data/route-mocks/index/mini-posts.json');
+const activeUsersListMock = require('../../data/route-mocks/index/active-users.json');
+
 const RESOURCE_MAP = [
 	{
 		URL: /https:\/\/renzhen1024\.com\/topics\/created-by\/mountainsun1988\.json\?page=0&_=\d+/,

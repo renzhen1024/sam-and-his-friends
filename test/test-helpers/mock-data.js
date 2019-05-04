@@ -3,19 +3,27 @@ exports.mockUsers = [
 		id: 9,
 		username: 'Vivian',
 		name: '',
-		avatar_template: '/user_avatar/renzhen1024.com/vivian/{size}/40_2.png',
+		avatar_template: '/user_avatar/renzhen1024.com/vivian/240/40_2.png',
+		title: '',
+	},
+	{
+		id: 6,
+		username: 'mountainsun1988',
+		name: '小山',
+		avatar_template:
+			'/user_avatar/renzhen1024.com/mountainsun1988/240/40_2.png',
 		title: '',
 	},
 	{
 		id: 4,
 		username: 'tningjs',
 		name: 'Tao Ning',
-		avatar_template: '/user_avatar/renzhen1024.com/tningjs/{size}/14_2.png',
+		avatar_template: '/user_avatar/renzhen1024.com/tningjs/240/14_2.png',
 		title: '山姆哥和他的小伙伴们',
 	},
 ];
 
-exports.formattedUsers = [
+const formattedUsers = [
 	{
 		id: 9,
 		name: '',
@@ -24,6 +32,15 @@ exports.formattedUsers = [
 			'https://renzhen1024.com/user_avatar/renzhen1024.com/vivian/240/40_2.png',
 		userProfileUrl: 'https://renzhen1024.com/u/Vivian/summary',
 		username: '@Vivian',
+	},
+	{
+		id: 6,
+		name: '小山',
+		title: '',
+		userImageUrl:
+			'https://renzhen1024.com/user_avatar/renzhen1024.com/mountainsun1988/240/40_2.png',
+		userProfileUrl: 'https://renzhen1024.com/u/mountainsun1988/summary',
+		username: '@mountainsun1988',
 	},
 	{
 		id: 4,
@@ -58,7 +75,7 @@ exports.mockComments = [
 	},
 ];
 
-exports.formattedComments = [
+const formattedComments = [
 	{
 		authorImageUrl:
 			'https://renzhen1024.com/user_avatar/renzhen1024.com/tningjs/240/14_2.png',
@@ -102,7 +119,7 @@ exports.mockMiniPosts = [
 	},
 ];
 
-exports.formattedMiniPosts = [
+const formattedMiniPosts = [
 	{
 		content:
 			'Et voluptatibus quia voluptas magnam voluptatum necessitatibus. Dignissimos qui delectus. Voluptates doloremque autem sunt dolorem qui delectus sint tempore doloribus. Aspernatur veniam minima qui. Rerum eos nulla ipsum numquam fuga vel ut nihil nobis. Non magnam voluptas et voluptate illo laudantium rem.',
@@ -124,10 +141,9 @@ exports.mockPost = {
 		posts: [
 			{
 				id: 142,
-				name: '小山',
-				username: 'mountainsun1988',
-				avatar_template:
-					'/user_avatar/renzhen1024.com/mountainsun1988/{size}/90_2.png',
+				name: 'Tao Ning',
+				username: 'tningjs',
+				avatar_template: '/user_avatar/renzhen1024.com/tningjs/240/90_2.png',
 				created_at: '2019-03-04T14:53:22.217Z',
 				cooked:
 					'Perferendis et iusto dolor. Facere sequi et voluptate est nulla officiis.',
@@ -136,7 +152,7 @@ exports.mockPost = {
 				reads: 6,
 				topic_id: 56,
 				topic_slug: 'topic',
-				display_username: '小山',
+				display_username: 'Tao Ning',
 				version: 1,
 				can_edit: true,
 				can_delete: false,
@@ -178,12 +194,12 @@ exports.mockPost = {
 			id: 4,
 			username: 'tningjs',
 			name: 'Tao Ning',
-			avatar_template: '/user_avatar/renzhen1024.com/tningjs/{size}/14_2.png',
+			avatar_template: '/user_avatar/renzhen1024.com/tningjs/240/14_2.png',
 		},
 	},
 };
 
-exports.formattedPost = {
+const formattedPost = {
 	authorImageUrl:
 		'https://renzhen1024.com/user_avatar/renzhen1024.com/tningjs/240/14_2.png',
 	comments: [
@@ -229,4 +245,16 @@ exports.formattedPost = {
 	title: '为什么我们吃着最好吃的饭，却体质不如人？',
 	userProfileUrl: 'https://renzhen1024.com/u/tningjs/summary',
 	views: 47,
+};
+
+exports.formattedUsers = formattedUsers;
+exports.formattedComments = formattedComments;
+exports.formattedMiniPosts = formattedMiniPosts;
+exports.formattedPost = formattedPost;
+
+exports.mockDataMap = {
+	formattedUsers,
+	formattedComments,
+	formattedMiniPosts,
+	formattedPost,
 };

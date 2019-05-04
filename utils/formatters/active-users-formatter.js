@@ -2,7 +2,7 @@
  * @module utils/formatters/active-users-formatter
  */
 
-const { API } = include('utils/config');
+const { API } = require('../../utils/config');
 
 /**
  * Format a user

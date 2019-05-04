@@ -5,15 +5,13 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const hbs = require('hbs');
 
-require('./setup-global')();
-
 hbs.registerPartials(path.join(__dirname, 'views/templates/partials'));
-include('views/hbs-helpers');
+require('./views/hbs-helpers');
 
-const { siteTitle } = include('utils/config');
-const indexRouter = include('routes/index');
-const singlePostRouter = include('routes/single-post');
-const { isPro } = include('utils/isPro.js');
+const { siteTitle } = require('./utils/config');
+const indexRouter = require('./routes/index');
+const singlePostRouter = require('./routes/single-post');
+const { isPro } = require('./utils/isPro.js');
 
 module.exports = (app = express()) => {
 	app.set('views', path.join(__dirname, 'views/templates'));

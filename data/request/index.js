@@ -5,14 +5,13 @@
 
 const axios = require('axios');
 
-const { getFullUrlFromRequest } = include('data/request/interceptors');
-const { isPro } = include('utils/isPro.js');
+const { getFullUrlFromRequest } = require('../../data/request/interceptors');
+const { isPro } = require('../../utils/isPro.js');
+const { API } = require('../../utils/config');
 
 if (!isPro()) {
 	axios.interceptors.request.use(getFullUrlFromRequest);
 }
-
-const { API } = include('utils/config');
 
 /**
  * Get full path

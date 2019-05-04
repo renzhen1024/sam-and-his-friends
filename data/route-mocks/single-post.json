@@ -5,7 +5,7 @@
         "id": 329,
         "name": "小山",
         "username": "mountainsun1988",
-        "avatar_template": "/user_avatar/renzhen1024.com/mountainsun1988/{size}/90_2.png",
+        "avatar_template": "/user_avatar/renzhen1024.com/mountainsun1988/240/90_2.png",
         "created_at": "2019-04-17T18:53:25.800Z",
         "cooked": "\u003cp\u003e最近刚刚了解到R\u0026amp;D， Designer和engineer工作定位是不一样的，至少在机械制造业是有区别的，简单来说，就如同建筑行业里，分别对应的 建筑画家、建筑设计师和土木工程师。\u003c/p\u003e\n\u003cp\u003eR\u0026amp;D，全称是research and development。一般属于比较前沿的研究，跟学校里的研究单位有点接近。都是对未来行业的一些探索，不以商业利益为主要目标。从事这样的职位，可以接触到最前沿的理念，也有对本行业很宽阔的视野。缺点是，对于企业往往都是锦上添花，所以遇到危机时，会优先裁掉。\u003c/p\u003e\n\u003cp\u003eDesigner，在制造领域的设计师，更多是针对市场上的具体需求，或者是潜在需求，应用已经相对成熟的技术，来设计出满足这一需求的方案。同时兼顾用户体验、生产成本、安装组装制造可行性等等。\u003c/p\u003e\n\u003cp\u003e而对于Engineer，定义要广泛的多。虽然很多企业Engineer跟designer工作范围是有些重合的，但两者的工作范围还是很容易区分的开的。或者说designer可以叫做engineer，但并不是每个engineer都可以design的。\u003c/p\u003e\n\u003cp\u003e个人作为机械工程师的体验是，所做过的project可以分为两类，一类是工作内容相对确定，比如安装一台冷却机，从layout到utility供给，从选型到估价，从安装到调试，其实每一步都相对确定，需要的只是去实施，在这中间会遇到各种各样的技术挑战。这类工程师的工作，更多的是协调和管理；但另一类是完全不确定的项目，更接近从一个概念变为现实，需要自己在市面上找所需要的零件和成熟的技术，最终做成成品，这个过程需要不断地推倒重来，变更设计，范围不确定，成本不确定，时间也会常常变动，往往需要分期来推进。\u003c/p\u003e\n\u003cp\u003e不知道大家怎么看？我个人观点是，如果喜欢理论研究，或者怀有纯粹的技术理想，就去R\u0026amp;D部门或者高效，搞偏理论的前沿研究。如果喜欢动手应用和发明实用的创造，就做designer；如果是喜欢跟人打交道，喜欢协调资源，可以做更接近生产和客户的engineer。\u003c/p\u003e",
         "ignored": false,
@@ -58,7 +58,7 @@
         "id": 330,
         "name": "小山",
         "username": "mountainsun1988",
-        "avatar_template": "/user_avatar/renzhen1024.com/mountainsun1988/{size}/90_2.png",
+        "avatar_template": "/user_avatar/renzhen1024.com/mountainsun1988/240/90_2.png",
         "created_at": "2019-04-17T18:54:56.944Z",
         "cooked": "",
         "ignored": false,
@@ -112,7 +112,7 @@
         "id": 331,
         "name": "Tao Ning",
         "username": "tningjs",
-        "avatar_template": "/user_avatar/renzhen1024.com/tningjs/{size}/14_2.png",
+        "avatar_template": "/user_avatar/renzhen1024.com/tningjs/240/14_2.png",
         "created_at": "2019-04-18T19:42:35.539Z",
         "cooked": "\u003cp\u003e在互联网行业也有这三个不同的职位，但是R\u0026amp;D的意义很广泛，一般从事产品开发的都属于R\u0026amp;D（其他部门还有HR，Sales，Marketing）。\u003c/p\u003e\n\u003cp\u003e一般的工作流程是：由Project Manger来确定应该做什么feature\u003cbr\u003e\n，Designer设计feature如何展现，包括图标、页面以及用户的交互等，Engineer则负责通过代码实现Desiner的设计。另外，团队一般还有Data Scientist，他们通过用户交互后产生的数据去决定这个feature是否成功，提出改进建议等。由于一个团队一般由6到10位Engineer，所以还有一个专职的Engineering Mananger来做管理工作。\u003c/p\u003e",
         "ignored": false,
@@ -203,7 +203,7 @@
             "id": 6,
             "username": "mountainsun1988",
             "name": "小山",
-            "avatar_template": "/user_avatar/renzhen1024.com/mountainsun1988/{size}/90_2.png"
+            "avatar_template": "/user_avatar/renzhen1024.com/mountainsun1988/240/14_2.png"
           }
         },
         {
@@ -213,7 +213,7 @@
             "id": 4,
             "username": "tningjs",
             "name": "Tao Ning",
-            "avatar_template": "/user_avatar/renzhen1024.com/tningjs/{size}/14_2.png"
+            "avatar_template": "/user_avatar/renzhen1024.com/tningjs/240/14_2.png"
           }
         }
       ]
@@ -257,7 +257,7 @@
             "id": 4,
             "username": "tningjs",
             "name": "Tao Ning",
-            "avatar_template": "/user_avatar/renzhen1024.com/tningjs/{size}/14_2.png"
+            "avatar_template": "/user_avatar/renzhen1024.com/tningjs/240/14_2.png"
           }
         },
         {
@@ -267,7 +267,7 @@
             "id": 1,
             "username": "Jack",
             "name": null,
-            "avatar_template": "/user_avatar/renzhen1024.com/jack/{size}/8_2.png"
+            "avatar_template": "/user_avatar/renzhen1024.com/jack/240/8_2.png"
           }
         }
       ]
@@ -308,10 +308,10 @@
           "extras": null,
           "description": "原始作者",
           "user": {
-            "id": 6,
-            "username": "mountainsun1988",
-            "name": "小山",
-            "avatar_template": "/user_avatar/renzhen1024.com/mountainsun1988/{size}/90_2.png"
+            "id": 4,
+            "username": "tningjs",
+            "name": "Tao Ning",
+            "avatar_template": "/user_avatar/renzhen1024.com/mountainsun1988/240/90_2.png"
           }
         },
         {
@@ -321,7 +321,7 @@
             "id": 4,
             "username": "tningjs",
             "name": "Tao Ning",
-            "avatar_template": "/user_avatar/renzhen1024.com/tningjs/{size}/14_2.png"
+            "avatar_template": "/user_avatar/renzhen1024.com/tningjs/240/14_2.png"
           }
         },
         {
@@ -331,7 +331,7 @@
             "id": 9,
             "username": "Vivian",
             "name": "",
-            "avatar_template": "/user_avatar/renzhen1024.com/vivian/{size}/40_2.png"
+            "avatar_template": "/user_avatar/renzhen1024.com/vivian/240/40_2.png"
           }
         }
       ]
@@ -369,23 +369,23 @@
   "pinned": true,
   "details": {
     "created_by": {
-      "id": 6,
-      "username": "mountainsun1988",
-      "name": "小山",
-      "avatar_template": "/user_avatar/renzhen1024.com/mountainsun1988/{size}/90_2.png"
+      "id": 9,
+      "username": "@Vivian",
+      "name": "",
+      "avatar_template": "/user_avatar/renzhen1024.com/vivian/240/40_2.png"
     },
     "last_poster": {
       "id": 4,
       "username": "tningjs",
       "name": "Tao Ning",
-      "avatar_template": "/user_avatar/renzhen1024.com/tningjs/{size}/14_2.png"
+      "avatar_template": "/user_avatar/renzhen1024.com/tningjs/240/14_2.png"
     },
     "participants": [
       {
-        "id": 6,
-        "username": "mountainsun1988",
-        "name": "小山",
-        "avatar_template": "/user_avatar/renzhen1024.com/mountainsun1988/{size}/90_2.png",
+        "id": 9,
+        "username": "@Vivian",
+        "name": "",
+        "avatar_template": "/user_avatar/renzhen1024.com/vivian/240/40_2.png",
         "post_count": 2,
         "primary_group_name": null,
         "primary_group_flair_url": null,
@@ -396,7 +396,7 @@
         "id": 4,
         "username": "tningjs",
         "name": "Tao Ning",
-        "avatar_template": "/user_avatar/renzhen1024.com/tningjs/{size}/14_2.png",
+        "avatar_template": "/user_avatar/renzhen1024.com/tningjs/240/14_2.png",
         "post_count": 1,
         "primary_group_name": null,
         "primary_group_flair_url": null,

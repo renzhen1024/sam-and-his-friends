@@ -1,4 +1,4 @@
-const { username } = include('utils/config');
+const { username } = require('../utils/config');
 
 /**
  * Discourse API: https://docs.discourse.org/
@@ -27,3 +27,15 @@ exports.DISCOURSE_RESOURCE_MAP = {
 };
 
 exports.NUMBER_OF_POSTS_IN_ONE_PAGE = 30;
+
+/**
+ * Currently, the design is store everyting into one hashset. One entity is map
+ * to a field of the hashset:
+ * Redis-cli: HSET sam-and-his-friends active-user:user.id JSON.stringify(user)
+ */
+exports.REDIS_CONFIG = {
+	HASHSET_NAME: 'sam-and-his-friends',
+	KEY_PREFIX: {
+		ACTIVE_USER: 'active-user',
+	},
+};

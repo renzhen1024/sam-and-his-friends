@@ -1,5 +1,5 @@
-include('views/hbs-helpers/date-formatter');
-include('views/hbs-helpers/eq');
-include('views/hbs-helpers/full-name');
-include('views/hbs-helpers/str-preview');
-include('views/hbs-helpers/t');
+require('../../views/hbs-helpers/date-formatter');
+require('../../views/hbs-helpers/eq');
+require('../../views/hbs-helpers/full-name');
+require('../../views/hbs-helpers/str-preview');
+require('../../views/hbs-helpers/t');

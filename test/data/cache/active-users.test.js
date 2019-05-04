@@ -1,30 +1,60 @@
-const {
-	addActiveUsersToCache,
-	getActiveUserFromCache,
-	cleanCache,
-} = require('../../../data/cache/active-users');
-const { mockUsers } = require('../../test-helpers');
+const rewire = require('rewire');
+const sandbox = require('sinon').createSandbox();
 
-describe('Unit Test | data/cache/active-users', () => {
-	afterEach(async () => {
-		cleanCache();
+const { formattedUsers } = require('../../test-helpers/mock-data');
+const { REDIS_CONFIG } = require('../../../utils/constants.js');
+
+const activeUsersModule = rewire('../../../data/cache/active-users-v2');
+
+describe('Unit Test | data/cache/active-users-v2', () => {
+	beforeAll(() => {
+		const promisified = activeUsersModule.__get__('promisified');
+
+		this.hsetSpy = sandbox.spy(promisified, 'hset');
+		this.hgetSpy = sandbox.spy(promisified, 'hget');
 	});
 
-	test('It should add a single user to cache', async () => {
-		const [user] = mockUsers;
-		await addActiveUsersToCache(user);
-		expect(await getActiveUserFromCache(user.id)).toEqual(user);
+	afterEach(() => sandbox.resetHistory());
+
+	afterAll(() => sandbox.restore());
+
+	test('addActiveUsersToCache - single user', async () => {
+		const [user] = formattedUsers;
+
+		await activeUsersModule.addActiveUsersToCache(user);
+
+		const [arg1, arg2, arg3] = this.hsetSpy.getCall(0).args;
+
+		// Check params are pass in correct to redis client
+		expect(arg1).toEqual(REDIS_CONFIG.HASHSET_NAME);
+		expect(
+			arg2.startsWith(`${REDIS_CONFIG.KEY_PREFIX.ACTIVE_USER}:`)
+		).toBeTruthy();
+		expect(arg3).toEqual(JSON.stringify(user));
+
+		// Check only calls redis client once
+		expect(this.hsetSpy.calledOnce).toBeTruthy();
 	});
 
-	test('It should add a list of users to cache', async () => {
-		const [user1, user2] = mockUsers;
-		await addActiveUsersToCache(mockUsers);
-		expect(await getActiveUserFromCache(user1.id)).toEqual(user1);
-		expect(await getActiveUserFromCache(user2.id)).toEqual(user2);
+	test('addActiveUsersToCache - an array of users', async () => {
+		await activeUsersModule.addActiveUsersToCache(formattedUsers);
+
+		// Check calls redis client once for each user
+		expect(this.hsetSpy.callCount).toEqual(formattedUsers.length);
 	});
 
-	test('It should return undefined when user not exist', async () => {
-		const [user] = mockUsers;
-		expect(await getActiveUserFromCache(user.id)).toBeUndefined();
+	test('getActiveUserFromCache', async () => {
+		const [user] = formattedUsers;
+		const activeUser = await activeUsersModule.getActiveUserFromCache(user.id);
+
+		// Check params are pass in correct to redis client
+		const [arg1, arg2] = this.hgetSpy.getCall(0).args;
+		expect(arg1).toEqual(REDIS_CONFIG.HASHSET_NAME);
+		expect(
+			arg2.startsWith(`${REDIS_CONFIG.KEY_PREFIX.ACTIVE_USER}:`)
+		).toBeTruthy();
+
+		// Check result is parsed
+		expect(activeUser).toEqual(user);
 	});
 });

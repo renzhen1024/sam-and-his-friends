@@ -1,7 +1,10 @@
-require('../../../setup-global')();
-
-const { miniPostsFormatter } = include('utils/formatters/mini-posts-formatter');
-const { mockMiniPosts, formattedMiniPosts } = include('test/test-helpers');
+const {
+	miniPostsFormatter,
+} = require('../../../utils/formatters/mini-posts-formatter');
+const {
+	mockMiniPosts,
+	formattedMiniPosts,
+} = require('../../../test/test-helpers/mock-data');
 
 describe('Unit Test | utils/formatters/mini-posts-formatter', () => {
 	test('It should format an array of miniPosts', () => {

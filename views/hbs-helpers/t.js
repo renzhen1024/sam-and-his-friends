@@ -1,7 +1,7 @@
 const hbs = require('hbs');
 const Polyglot = require('node-polyglot');
 
-const locale = include('locale/zh-cn');
+const locale = require(',,/../../locale/zh-cn');
 
 const polyglot = new Polyglot();
 

@@ -4,12 +4,14 @@
 
 const { Router } = require('express');
 
-const { activeUsersFormatter } = include(
-	'utils/formatters/active-users-formatter'
-);
-const { miniPostsFormatter } = include('utils/formatters/mini-posts-formatter');
-const { postsFormatter } = include('utils/formatters/posts-formatter');
-const { request } = include('data/request');
+const {
+	activeUsersFormatter,
+} = require('../utils/formatters/active-users-formatter');
+const {
+	miniPostsFormatter,
+} = require('../utils/formatters/mini-posts-formatter');
+const { postsFormatter } = require('../utils/formatters/posts-formatter');
+const { request } = require('../data/request');
 const {
 	about,
 	creator,
@@ -17,11 +19,12 @@ const {
 	siteTitle,
 	socialMedias,
 	username,
-} = include('utils/config');
-const { addActiveUsersToCache } = include('data/cache/active-users');
-const { DISCOURSE_RESOURCE_MAP, NUMBER_OF_POSTS_IN_ONE_PAGE } = include(
-	'utils/constants'
-);
+} = require('../utils/config');
+const { addActiveUsersToCache } = require('../data/cache/active-users-v2');
+const {
+	DISCOURSE_RESOURCE_MAP,
+	NUMBER_OF_POSTS_IN_ONE_PAGE,
+} = require('../utils/constants');
 
 async function _getPosts(currentPage) {
 	const postsReqParams = {

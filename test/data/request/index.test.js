@@ -1,8 +1,6 @@
 const axios = require('axios');
 const sandbox = require('sinon').createSandbox();
 
-require('../../../setup-global')();
-
 describe('Unit Test | data/request/index', () => {
 	let env;
 	let getStub;

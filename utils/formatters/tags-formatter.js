@@ -2,7 +2,7 @@
  * @module utils/formatters/tags-formatter
  */
 
-const { categories } = include('utils/config');
+const { categories } = require('../../utils/config');
 
 /**
  * Get tags infor based on categoryId

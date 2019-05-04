@@ -2,8 +2,8 @@
  * @module utils/formatters/posts-formatter
  */
 
-const { getActiveUserFromCache } = include('data/cache/active-users');
-const { tagsFormatter } = include('utils/formatters/tags-formatter');
+const { getActiveUserFromCache } = require('../../data/cache/active-users-v2');
+const { tagsFormatter } = require('../../utils/formatters/tags-formatter');
 /**
  * Format post from API data for rendering
  * @param {object} post - Data from API

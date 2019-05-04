@@ -22,10 +22,11 @@ In the production server, can use `$ pm2 logs` to see the logs.
 
 1. Checkout source code: `$ git clone git@github.com:tningjs/sam-and-his-friends.git`
 2. Install dependency: `$ yarn install`
-3. Build: `$ npm run build`
-4. Install process manager: `$ sudo npm install -g pm2`
-5. CD into repository: `$ cd sam-and-his-friends`
-6. Start server: `$ NODE_ENV=production pm2 start ./server.js`
+3. [Install redis](https://redis.io/topics/quickstart)
+4. Build: `$ npm run build`
+5. Install process manager: `$ sudo npm install -g pm2`
+6. CD into repository: `$ cd sam-and-his-friends`
+7. Start server: `$ NODE_ENV=production pm2 start ./server.js`
 
 ### How to deploy a new version production
 

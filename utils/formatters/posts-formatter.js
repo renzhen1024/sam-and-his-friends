@@ -3,6 +3,7 @@
  */
 
 const { getActiveUserFromCache } = require('../../data/cache/active-users');
+// const { getPostFromCache } = require('../../data/cache/single-post');
 const { tagsFormatter } = require('../../utils/formatters/tags-formatter');
 /**
  * Format post from API data for rendering
@@ -14,14 +15,16 @@ async function postFormatter(post) {
 	const poster = await getActiveUserFromCache(post.posters[0].user_id);
 	const tags = tagsFormatter(post.category_id);
 
+	const content = post.excerpt;
+
 	return {
+		content,
 		tags,
 		id: post.id,
 		title: post.title,
 		date: post.created_at,
 		name: poster.name || poster.username,
 		authorImageUrl: poster.userImageUrl,
-		content: post.excerpt || '内容被山姆哥藏起来了，点击“继续阅读”',
 		category: '山姆哥',
 		numLikes: post.like_count,
 		numComments: post.posts_count + post.reply_count,

@@ -25,7 +25,11 @@
 		</div>
 	</header>
 	<p>
-		{{strPreview content previewLength=150}}
+		{{#if content}}
+			{{strPreview content previewLength=150}}
+		{{else}}
+			{{t "i18n-content-is-hidden"}}
+		{{/if}}
 	</p>
 	<footer>
 		<ul class="actions">

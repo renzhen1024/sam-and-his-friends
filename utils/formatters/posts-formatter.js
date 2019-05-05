@@ -15,9 +15,11 @@ async function postFormatter(topic) {
 	const poster = await getActiveUserFromCache(topic.posters[0].user_id);
 	const tags = tagsFormatter(topic.category_id);
 
-	// TODO: if get from excerpt returns from API, add pin-top tag
 	let content = topic.excerpt;
-	if (!content) {
+	if (content) {
+		// If topic.excerpt exists, then this topic is pinned in renzhen1024
+		tags.unshift({ name: '置顶', color: '#00E6E6' });
+	} else {
 		const cachedPost = await getPostFromCache(topic.id);
 		content = cachedPost && cachedPost.excerpt;
 	}
@@ -34,6 +36,7 @@ async function postFormatter(topic) {
 		numLikes: topic.like_count,
 		numComments: topic.posts_count + topic.reply_count,
 		isReaderMode: false,
+		isPinned: !!topic.excerpt,
 	};
 }
 
@@ -44,6 +47,18 @@ async function postFormatter(topic) {
  */
 exports.postsFormatter = async function postsFormatter(posts) {
 	return Promise.all(posts.map(post => postFormatter(post))).then(mappedPosts =>
-		mappedPosts.sort((a, b) => b.date - a.date)
+		mappedPosts
+			.sort((a, b) => b.date - a.date)
+			.sort((a, b) => {
+				if (a.isPinned && !b.isPinned) {
+					return -1;
+				}
+
+				if (!a.isPinned && b.isPinned) {
+					return 1;
+				}
+
+				return 0;
+			})
 	);
 };

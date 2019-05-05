@@ -10,5 +10,6 @@ const { categories } = require('../../utils/config');
  * @returns {array} tags list
  */
 exports.tagsFormatter = function tagsFormatter(categoryId) {
-	return categories[categoryId];
+	const tags = categories[categoryId];
+	return Array.isArray(tags) ? [...tags] : [];
 };

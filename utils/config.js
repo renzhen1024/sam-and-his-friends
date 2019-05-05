@@ -33,18 +33,10 @@ exports.socialMedias = [
 exports.username = 'mountainsun1988';
 
 exports.categories = {
-	5: { tags: [{ name: '热点讨论', color: '#0088CC' }] },
-	7: { tags: [{ name: '山姆哥', color: '#8C6238;' }] },
-	8: {
-		tags: [{ name: '文化逻辑', color: '#B3B5B4' }],
-	},
-	9: {
-		tags: [{ name: '管理制度', color: '#25AAE2' }],
-	},
-	10: {
-		tags: [{ name: '器物科技', color: '#9EB83B' }],
-	},
-	11: {
-		tags: [{ name: '案例分享', color: '#3AB54A' }],
-	},
+	5: [{ name: '热点讨论', color: '#0088CC' }],
+	7: [{ name: '山姆哥', color: '#8C6238;' }],
+	8: [{ name: '文化逻辑', color: '#B3B5B4' }],
+	9: [{ name: '管理制度', color: '#25AAE2' }],
+	10: [{ name: '器物科技', color: '#9EB83B' }],
+	11: [{ name: '案例分享', color: '#3AB54A' }],
 };

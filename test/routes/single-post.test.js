@@ -2,7 +2,7 @@ const moxios = require('moxios');
 const request = require('supertest');
 const app = require('../../app');
 
-const response = require('../../data/route-mocks/single-post.json');
+const response = require('../test-helpers/route-mocks/single-post.json');
 
 const REQUEST_URL = /https:\/\/renzhen1024\.com\/t\/125.json\?_=\d+/;
 

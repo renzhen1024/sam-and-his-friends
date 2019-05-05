@@ -2,9 +2,9 @@ const moxios = require('moxios');
 const request = require('supertest');
 const app = require('../../app');
 
-const postsMock = require('../../data/route-mocks/index/posts.json');
-const miniPostsMock = require('../../data/route-mocks/index/mini-posts.json');
-const activeUsersListMock = require('../../data/route-mocks/index/active-users.json');
+const postsMock = require('../test-helpers/route-mocks/index/posts.json');
+const miniPostsMock = require('../test-helpers/route-mocks/index/mini-posts.json');
+const activeUsersListMock = require('../test-helpers/route-mocks/index/active-users.json');
 
 const RESOURCE_MAP = [
 	{

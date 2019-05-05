@@ -39,7 +39,7 @@ exports[`GET /single-post/:topicId It should match snapshot 1`] = `
 						</div>
 					</a>
 				</h1>
-			
+
 				<!-- hide the rest of nav due to work on home page first, and there are no content for those pages -->
 				<!-- <nav class=\\"links\\">
 			    <ul>
@@ -104,14 +104,14 @@ exports[`GET /single-post/:topicId It should match snapshot 1`] = `
 					2019年4月17日
 				</time>
 				<a
-					href=https://renzhen1024.com/u/mountainsun1988/summary
+					href=https://renzhen1024.com/u/sambro/summary
 					class=\\"author\\"
 					target=\\"_blank\\"
 				>
 					<span class=\\"name\\">
 						小山
 					</span>
-					<img src=\\"https://renzhen1024.com/user_avatar/renzhen1024.com/mountainsun1988/240/90_2.png\\" alt=\\"\\" />
+					<img src=\\"https://renzhen1024.com/user_avatar/renzhen1024.com/sambro/240/90_2.png\\" alt=\\"\\" />
 				</a>
 			</div>
 		</header>
@@ -193,7 +193,7 @@ exports[`GET /single-post/:topicId It should match snapshot 1`] = `
 			</a>
 		</li>
 		<li>
-			<a href=\\"mailto:mountainsun1988@gmail.com\\" class=\\"fa-envelope\\">
+			<a href=\\"mailto:sambro@gmail.com\\" class=\\"fa-envelope\\">
 				<span class=\\"label\\">
 					Email
 				</span>

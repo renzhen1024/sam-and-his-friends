@@ -2,9 +2,9 @@
   "users": [
     {
       "id": 6,
-      "username": "mountainsun1988",
+      "username": "sambro",
       "name": "小山",
-      "avatar_template": "/user_avatar/renzhen1024.com/mountainsun1988/{size}/90_2.png"
+      "avatar_template": "/user_avatar/renzhen1024.com/sambro/{size}/90_2.png"
     },
     {
       "id": 4,
@@ -173,7 +173,7 @@
         "like_count": 0,
         "has_summary": false,
         "archetype": "regular",
-        "last_poster_username": "mountainsun1988",
+        "last_poster_username": "sambro",
         "category_id": 7,
         "pinned_globally": false,
         "featured_link": null,
@@ -264,7 +264,7 @@
         "like_count": 1,
         "has_summary": false,
         "archetype": "regular",
-        "last_poster_username": "mountainsun1988",
+        "last_poster_username": "sambro",
         "category_id": 5,
         "pinned_globally": false,
         "featured_link": null,

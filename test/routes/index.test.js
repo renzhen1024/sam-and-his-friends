@@ -8,11 +8,11 @@ const activeUsersListMock = require('../test-helpers/route-mocks/index/active-us
 
 const RESOURCE_MAP = [
 	{
-		URL: /https:\/\/renzhen1024\.com\/topics\/created-by\/mountainsun1988\.json\?page=0&_=\d+/,
+		URL: /https:\/\/renzhen1024\.com\/topics\/created-by\/sambro\.json\?page=0&_=\d+/,
 		response: postsMock,
 	},
 	{
-		URL: /https:\/\/renzhen1024\.com\/user_actions.json\?username=mountainsun1988&offset=0&filter=5&no_results_help_key=user_activity\.no_replies&_=\d+/,
+		URL: /https:\/\/renzhen1024\.com\/user_actions.json\?username=sambro&offset=0&filter=5&no_results_help_key=user_activity\.no_replies&_=\d+/,
 		response: miniPostsMock,
 	},
 	{

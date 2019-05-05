@@ -11,5 +11,7 @@ const { categories } = require('../../utils/config');
  */
 exports.tagsFormatter = function tagsFormatter(categoryId) {
 	const tags = categories[categoryId];
+	// The special 'pin' tag is dynamically add to post's tag array,
+	// need to clone it before return, because pram is passed by reference.
 	return Array.isArray(tags) ? [...tags] : [];
 };

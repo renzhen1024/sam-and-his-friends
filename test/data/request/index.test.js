@@ -60,7 +60,7 @@ describe('Unit Test | data/request/index', () => {
 
 		test('Pass in params to axios.get properly - with queryParams', () => {
 			const queryParams = {
-				username: 'mountainsun1988',
+				username: 'sambro',
 				offset: 0,
 				filter: 5,
 				no_results_help_key: 'user_activity.no_replies',

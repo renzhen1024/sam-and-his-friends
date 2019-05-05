@@ -19,12 +19,12 @@ describe('Unit Test | data/request/interceptors', () => {
 
 	test.skip('It should return full url - non query params', () => {
 		const config = {
-			url: 'https://renzhen1024.com/topics/created-by/mountainsun1988.json',
+			url: 'https://renzhen1024.com/topics/created-by/sambro.json',
 		};
 		const returnVal = getFullUrlFromRequest(config);
 
 		const output = logStub.args[0][0];
-		const expectedOutput = /https:\/\/renzhen1024\.com\/topics\/created-by\/mountainsun1988.json$/;
+		const expectedOutput = /https:\/\/renzhen1024\.com\/topics\/created-by\/sambro.json$/;
 
 		// config object is not been modified
 		expect(returnVal).toBe(config);
@@ -38,13 +38,13 @@ describe('Unit Test | data/request/interceptors', () => {
 
 	test.skip('It should return full url - one query param', () => {
 		const config = {
-			url: 'https://renzhen1024.com/topics/created-by/mountainsun1988.json',
+			url: 'https://renzhen1024.com/topics/created-by/sambro.json',
 			params: { page: 0 },
 		};
 		const returnVal = getFullUrlFromRequest(config);
 
 		const output = logStub.args[0][0];
-		const expectedOutput = /https:\/\/renzhen1024\.com\/topics\/created-by\/mountainsun1988.json\?page=0$/;
+		const expectedOutput = /https:\/\/renzhen1024\.com\/topics\/created-by\/sambro.json\?page=0$/;
 
 		// config object is not been modified
 		expect(returnVal).toBe(config);
@@ -58,13 +58,13 @@ describe('Unit Test | data/request/interceptors', () => {
 
 	test.skip('It should return full url - more than one query params', () => {
 		const config = {
-			url: 'https://renzhen1024.com/topics/created-by/mountainsun1988.json',
+			url: 'https://renzhen1024.com/topics/created-by/sambro.json',
 			params: { page: 0, _: 1555752535977 },
 		};
 		const returnVal = getFullUrlFromRequest(config);
 
 		const output = logStub.args[0][0];
-		const expectedOutput = /https:\/\/renzhen1024\.com\/topics\/created-by\/mountainsun1988.json\?page=0&_=1555752535977$/;
+		const expectedOutput = /https:\/\/renzhen1024\.com\/topics\/created-by\/sambro.json\?page=0&_=1555752535977$/;
 
 		// config object is not been modified
 		expect(returnVal).toBe(config);

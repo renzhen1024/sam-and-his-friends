@@ -30,7 +30,7 @@ exports.socialMedias = [
 	},
 ];
 
-exports.username = 'mountainsun1988';
+exports.username = 'sambro';
 
 exports.categories = {
 	5: [{ name: '热点讨论', color: '#0088CC' }],

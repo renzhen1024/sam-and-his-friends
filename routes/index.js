@@ -88,6 +88,7 @@ async function _getActiveUsers() {
 module.exports = (router = new Router()) => {
 	router.get('/', async (req, res) => {
 		const { currentPage = 0 } = req.query;
+
 		const posts = await _getPosts(currentPage);
 		const miniPosts = await _getMiniPosts();
 		const activeUsersList = await _getActiveUsers();

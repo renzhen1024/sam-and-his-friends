@@ -1,13 +1,29 @@
 /**
  * @module utils/formatters/single-post-formatter
  */
+const { JSDOM } = require('jsdom');
+const Readability = require('readability');
 
 const { getActiveUserFromCache } = require('../../data/cache/active-users');
+const { addPostToCache } = require('../../data/cache/single-post');
 const {
 	commentsFormatter,
 } = require('../../utils/formatters/comments-formatter');
 const { tagsFormatter } = require('../../utils/formatters/tags-formatter');
 const { username } = require('../../utils/config');
+
+function getExcerpt(post) {
+	if (!post.cooked) {
+		return '';
+	}
+
+	const doc = new JSDOM(post.cooked);
+	const article = new Readability(doc.window.document).parse();
+	const { textContent, excerpt } = article;
+	const extractedContent =
+		excerpt && excerpt.startsWith('摘要') ? excerpt : textContent;
+	return `${extractedContent.slice(0, 150)}...`;
+}
 
 /**
  * Format single post from API data for rendering
@@ -20,9 +36,12 @@ exports.singlePostFormatter = async function singlePostFormatter(postData) {
 	const isPosterSiteOwner = username === poster.username.slice(1); // poster.username begins with `@`
 	const { title, views, like_count: numLikes } = postData;
 	const numComments = postData.posts_count + postData.reply_count;
-	const post = postData.post_stream.posts[0];
 	const comments = await commentsFormatter(postData.post_stream.posts.slice(1));
 	const tags = tagsFormatter(postData.category_id);
+	const post = postData.post_stream.posts[0];
+
+	post.excerpt = getExcerpt(post);
+	addPostToCache(post);
 
 	return {
 		tags,

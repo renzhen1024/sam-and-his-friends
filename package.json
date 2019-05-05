@@ -31,10 +31,12 @@
     "hbs": "~4.0.1",
     "http-errors": "~1.6.2",
     "jest": "^24.7.1",
+    "jsdom": "^15.0.0",
     "moment": "^2.24.0",
     "morgan": "~1.9.0",
     "moxios": "^0.4.0",
     "node-polyglot": "^2.3.0",
+    "readability": "https://github.com/mozilla/readability.git",
     "redis": "^2.8.0",
     "supertest": "^4.0.2"
   },

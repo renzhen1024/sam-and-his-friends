@@ -37,5 +37,6 @@ exports.REDIS_CONFIG = {
 	HASHSET_NAME: 'sam-and-his-friends',
 	KEY_PREFIX: {
 		ACTIVE_USER: 'active-user',
+		SINGLE_POST: 'single-post',
 	},
 };

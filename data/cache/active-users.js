@@ -52,5 +52,5 @@ exports.getActiveUserFromCache = function getActiveUserFromCache(id) {
 			REDIS_CONFIG.HASHSET_NAME,
 			`${REDIS_CONFIG.KEY_PREFIX.ACTIVE_USER}:${id}`
 		)
-		.then(user => JSON.parse(user));
+		.then(user => (user ? JSON.parse(user) : ''));
 };

@@ -3,6 +3,7 @@ const { REDIS_CONFIG } = require('../../utils/constants.js');
 
 const MOCK_DATA_MAP = {
 	[REDIS_CONFIG.KEY_PREFIX.ACTIVE_USER]: 'formattedUsers',
+	[REDIS_CONFIG.KEY_PREFIX.SINGLE_POST]: 'formattedPosts',
 };
 
 module.exports = {

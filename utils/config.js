@@ -32,6 +32,8 @@ exports.socialMedias = [
 
 exports.username = 'sambro';
 
+exports.rootCategory = '7-category';
+
 exports.categories = {
 	5: [{ name: '热点讨论', color: '#0088CC' }],
 	7: [{ name: '山姆哥', color: '#8C6238;' }],

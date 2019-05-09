@@ -26,9 +26,9 @@ const {
 	NUMBER_OF_POSTS_IN_ONE_PAGE,
 } = require('../utils/constants');
 
-async function _getPosts(currentPage) {
+async function _getPosts(currentPage, subcategory) {
 	const postsReqParams = {
-		resource: DISCOURSE_RESOURCE_MAP.CATEGORY_BY_USER,
+		resource: DISCOURSE_RESOURCE_MAP.CATEGORY(subcategory),
 		queryParams: {
 			page: currentPage,
 		},
@@ -87,9 +87,9 @@ async function _getActiveUsers() {
  */
 module.exports = (router = new Router()) => {
 	router.get('/', async (req, res) => {
-		const { currentPage = 0 } = req.query;
+		const { currentPage = 0, subcategory = '' } = req.query;
 
-		const posts = await _getPosts(currentPage);
+		const posts = await _getPosts(currentPage, subcategory);
 		const miniPosts = await _getMiniPosts();
 		const activeUsersList = await _getActiveUsers();
 

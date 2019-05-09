@@ -1,16 +1,15 @@
-const { username } = require('../utils/config');
+const { rootCategory, username } = require('../utils/config');
 
 /**
  * Discourse API: https://docs.discourse.org/
  * - ACTIVE_USERS
  * 		- Sample url: https://renzhen1024.com/directory_items.json?period=monthly
  * 		- Description: Get a list of active users
- * - CATEGORY_BY_USER
- * 		- Sample url: https://renzhen1024.com/topics/created-by/sambro.json?page=0&_=1553724992605
- * 		- Description: Get a list of topics created by user name, by convention
- * 			with renzhen1024.com this app take topics(first post) as article. If you
- * 			can't understand this point, talk to me @tningjs.
- * 			TODO: add docs about how topics works as article
+ * - CATEGORY
+ * 		- Sample url:
+ * 			- https://renzhen1024.com/c/7-category.json
+ * 			- https://renzhen1024.com/c/7-category/%E6%96%87%E5%8C%96%E9%80%BB%E8%BE%91.json (/文化逻辑 before url encoding)
+ * 		- Description: Get a list of topics created by category, the top most category will have catetory id and subcategory will followed with category name in the url
  * TOPIC
  * 		- Sample url: https://renzhen1024.com/t/76.json
  *    - Description: Get a single topic. Notice needs to create a function,
@@ -22,7 +21,13 @@ const { username } = require('../utils/config');
 exports.DISCOURSE_RESOURCE_MAP = {
 	ACTIVE_USERS: 'directory_items',
 	CATEGORY_BY_USER: `topics/created-by/${username}`,
-	TOPIC: topicId => `t/${topicId}`,
+	CATEGORY(subcategory) {
+		const commonPath = `c/${rootCategory}`;
+		return subcategory ? `${commonPath}/${encodeURI(subcategory)}` : commonPath;
+	},
+	TOPIC(topicId) {
+		return `t/${topicId}`;
+	},
 	USER_ACTIONS: 'user_actions',
 };
 

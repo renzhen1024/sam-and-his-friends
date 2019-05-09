@@ -1,4 +1,5 @@
 module.exports = {
+	'i18n-post-subcategory': '分类浏览',
 	'i18n-post-continue-reading': '继续阅读',
 	'i18n-post-category': '分类: %{category}',
 	'i18n-pagination-previous-page': '上一页',

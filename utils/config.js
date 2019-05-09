@@ -42,10 +42,45 @@ exports.subCategories = [
 ];
 
 exports.categories = {
-	5: [{ name: '热点讨论', color: '#0088CC' }],
-	7: [{ name: '山姆哥', color: '#8C6238;' }],
-	8: [{ name: '文化逻辑', color: '#B3B5B4' }],
-	9: [{ name: '管理制度', color: '#25AAE2' }],
-	10: [{ name: '器物科技', color: '#9EB83B' }],
-	11: [{ name: '案例分享', color: '#3AB54A' }],
+	5: [
+		{
+			name: '热点讨论',
+			color: '#0088CC',
+		},
+	],
+	7: [
+		{
+			name: '山姆哥',
+			color: '#8C6238;',
+			link: `/`,
+		},
+	],
+	8: [
+		{
+			name: '文化逻辑',
+			color: '#B3B5B4',
+			link: `/?subcategory=${encodeURI('文化逻辑')}`,
+		},
+	],
+	9: [
+		{
+			name: '管理制度',
+			color: '#25AAE2',
+			link: `/?subcategory=${encodeURI('管理制度')}`,
+		},
+	],
+	10: [
+		{
+			name: '器物科技',
+			color: '#9EB83B',
+			link: `/?subcategory=${encodeURI('器物科技')}`,
+		},
+	],
+	11: [
+		{
+			name: '案例分享',
+			color: '#3AB54A',
+			link: `/?subcategory=${encodeURI('案例分享')}`,
+		},
+	],
 };

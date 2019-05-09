@@ -1,3 +1,9 @@
 {{#each this}}
-	<span class="tag" style="background-color:{{color}}">{{name}}</span>
+	{{#if link}}
+		<a href={{link}}>
+			<span class="tag" style="background-color:{{color}}">{{name}}</span>
+		</a>
+	{{else}}
+		<span class="tag" style="background-color:{{color}}">{{name}}</span>
+	{{/if}}
 {{/each}}

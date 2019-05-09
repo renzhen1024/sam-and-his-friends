@@ -8,7 +8,7 @@ const {
 	singlePostFormatter,
 } = require('../utils/formatters/single-post-formatter');
 const { request } = require('../data/request');
-const { siteTitle, socialMedias } = require('../utils/config');
+const { siteTitle, socialMedias, subCategories } = require('../utils/config');
 const { DISCOURSE_RESOURCE_MAP } = require('../utils/constants');
 const {
 	activeUsersFormatter,
@@ -39,6 +39,7 @@ module.exports = (router = new Router()) => {
 			siteTitle,
 			socialMedias,
 			isSinglePost: true,
+			subCategories,
 		});
 	});
 

@@ -30,8 +30,8 @@
 		{{!-- Body --}}
 		<div id="wrapper">
 			{{> header}}
-			<!-- hide menu, there are no content for those pages -->
-			{{!-- {{> menu}} --}} {{{body}}}
+			{{> menu subCategories}}
+			{{{body}}}
 		</div>
 		{{!-- Scripts --}}
 		<script src="/assets/js/bundle.js"></script>

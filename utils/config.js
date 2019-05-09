@@ -34,6 +34,13 @@ exports.username = 'sambro';
 
 exports.rootCategory = '7-category';
 
+exports.subCategories = [
+	{ name: '文化逻辑', description: '关于文化逻辑的分类' },
+	{ name: '管理制度', description: '关于管理制度的分类' },
+	{ name: '器物科技', description: '关于器物科技的分类' },
+	{ name: '案例分享', description: '关于案例分享的分类' },
+];
+
 exports.categories = {
 	5: [{ name: '热点讨论', color: '#0088CC' }],
 	7: [{ name: '山姆哥', color: '#8C6238;' }],

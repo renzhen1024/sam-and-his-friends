@@ -18,6 +18,7 @@ const {
 	lengthOfActiveUsersAtIndexPage,
 	siteTitle,
 	socialMedias,
+	subCategories,
 	username,
 } = require('../utils/config');
 const { addActiveUsersToCache } = require('../data/cache/active-users');
@@ -107,6 +108,7 @@ module.exports = (router = new Router()) => {
 			creator,
 			siteTitle,
 			socialMedias,
+			subCategories,
 		});
 	});
 

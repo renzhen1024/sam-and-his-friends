@@ -8,12 +8,7 @@ const {
 	singlePostFormatter,
 } = require('../utils/formatters/single-post-formatter');
 const { request } = require('../data/request');
-const {
-	API,
-	siteTitle,
-	socialMedias,
-	subCategories,
-} = require('../utils/config');
+const { siteTitle, socialMedias, subCategories } = require('../utils/config');
 const { DISCOURSE_RESOURCE_MAP } = require('../utils/constants');
 const {
 	activeUsersFormatter,
@@ -43,7 +38,7 @@ module.exports = (router = new Router()) => {
 		});
 		metaTags.push({
 			type: 'og:url',
-			content: `${API}/single-post/${req.params.topicId}`,
+			content: `https://samandhisfriends.com/single-post/${req.params.topicId}`,
 		});
 
 		const formattedActiveUsers = activeUsersFormatter(

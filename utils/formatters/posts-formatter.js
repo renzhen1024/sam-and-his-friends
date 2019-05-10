@@ -16,11 +16,11 @@ async function postFormatter(topic) {
 	const tags = tagsFormatter(topic.category_id);
 
 	let content = topic.excerpt;
+	const cachedPost = await getPostFromCache(topic.id);
 	if (content) {
 		// If topic.excerpt exists, then this topic is pinned in renzhen1024
 		tags.unshift({ name: '置顶', color: '#00E6E6' });
 	} else {
-		const cachedPost = await getPostFromCache(topic.id);
 		content = cachedPost && cachedPost.excerpt;
 	}
 
@@ -37,6 +37,8 @@ async function postFormatter(topic) {
 		numComments: topic.posts_count + topic.reply_count,
 		isReaderMode: false,
 		isPinned: !!topic.excerpt,
+		images: cachedPost.images,
+		imageClasses: cachedPost.imageClasses,
 	};
 }
 

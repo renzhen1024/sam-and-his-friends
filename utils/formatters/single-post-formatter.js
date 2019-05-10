@@ -19,6 +19,59 @@ function getJsdom(cooked = '') {
 	return new JSDOM(`<!DOCTYPE html>${cooked}`);
 }
 
+function getImages(jsdom) {
+	const imgElements = jsdom.window.document.querySelectorAll('img');
+	return Array.from(imgElements).map(imgElement => ({
+		srcStr: imgElement.getAttribute('src'),
+		altStr: imgElement.getAttribute('alt') || '',
+	}));
+}
+
+function getImageClasses(images) {
+	const imageCount = images.length;
+
+	if (imageCount < 1) {
+		return '';
+	}
+
+	if (imageCount === 1) {
+		return 'post-image--single-image';
+	}
+
+	const classes = ['post-image--multi-image'];
+	switch (imageCount) {
+		case 2:
+			classes.push('post-image--has-two-images');
+			break;
+		case 3:
+			classes.push('post-image--has-three-images', 'post-image--span-first');
+			break;
+		case 4:
+			classes.push(
+				'post-image--has-four-images',
+				'post-image--split-last-three',
+				'post-image--span-first'
+			);
+			break;
+		case 5:
+			classes.push(
+				'post-image--has-five-images',
+				'post-image--split-last-three',
+				'post-image--span-first-two'
+			);
+			break;
+		default:
+			classes.push(
+				'post-image--has-excess-images',
+				'post-image--split-last-three',
+				'post-image--span-first-two'
+			);
+			break;
+	}
+
+	return classes.join(' ');
+}
+
 function getExcerpt(jsdom) {
 	const article = new Readability(jsdom.window.document).parse();
 	const { textContent, excerpt } = article;
@@ -26,13 +79,6 @@ function getExcerpt(jsdom) {
 	const extractedContent =
 		excerpt && excerpt.startsWith('摘要') ? excerpt : textContent;
 	return `${extractedContent.slice(0, 150)}...`;
-}
-
-function getImages(jsdom) {
-	const imgElements = jsdom.window.document.querySelectorAll('img');
-	return Array.from(imgElements).map(imgElement =>
-		imgElement.getAttribute('src')
-	);
 }
 
 /**
@@ -56,6 +102,7 @@ exports.singlePostFormatter = async function singlePostFormatter(postData) {
 
 		// Notice: getImages() has to be called before getExcerpt(). Because new Readability().parse() modify jsdom object
 		post.images = getImages(jsdom);
+		post.imageClasses = getImageClasses(post.images);
 		post.excerpt = getExcerpt(jsdom);
 		addPostToCache(post);
 	}

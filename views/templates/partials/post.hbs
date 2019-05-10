@@ -24,6 +24,7 @@
 			</a>
 		</div>
 	</header>
+	{{> image images=images imageClasses=imageClasses topicId=id}}
 	<p>
 		{{#if content}}
 			{{{content}}}
@@ -34,7 +35,7 @@
 	<footer>
 		<ul class="actions">
 			<li>
-				<a href="single-post/{{id}}" class="button large">
+				<a href="/single-post/{{id}}" class="button large">
 					{{t "i18n-post-continue-reading"}}
 				</a>
 			</li>

@@ -158,7 +158,7 @@ $header-image-width: 172px;
     transparent
   );
 
-  @include breakpoint('<=medium') {
+  @include breakpoint('<=small') {
     $mini-posts-mobile-height: 240px;
 
     height: $mini-posts-mobile-height;
@@ -266,7 +266,7 @@ $header-image-width: 172px;
     height: auto;
   }
 
-  @include breakpoint('<=medium') {
+  @include breakpoint('<=small') {
     .comment-meta {
       padding-top: 0;
       border-right: 0;

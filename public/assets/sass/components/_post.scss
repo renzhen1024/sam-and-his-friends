@@ -154,7 +154,6 @@
         @include vendor('justify-content', 'center');
         border-left: 0;
         margin: 0 0 _size(element-margin) 0;
-        padding-top: 0;
         padding: 0;
         text-align: left;
         width: 100%;
@@ -231,12 +230,12 @@
           margin: (_size(element-margin) * 0.5) 0 0 0;
           padding-left: 0;
         }
-
-        .author {
-          .name {
-            display: none;
-          }
-        }
+        // tningjs: still display the author name in small screen, hard to override in `main.scss`, so change this in place
+        // .author {
+        //   .name {
+        //     display: none;
+        //   }
+        // }
       }
     }
 

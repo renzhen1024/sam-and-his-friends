@@ -15,7 +15,13 @@
 
 			gtag('config', 'UA-135903447-3');
 		</script>
-		<title>{{ siteTitle }}</title>
+			<title>
+				{{#if title}}
+					{{title}}
+				{{else}}
+					{{ siteTitle }}
+				{{/if}}
+			</title>
 		<meta charset="utf-8" />
 		<meta
 			name="viewport"

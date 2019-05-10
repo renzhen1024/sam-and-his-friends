@@ -87,12 +87,19 @@ exports.categories = {
 	],
 };
 
-exports.websiteMetaTags = [
-	{ type: 'og:url', content: 'https://samandhisfriends.com' },
+const commonMetaTags = [
 	{
 		type: 'og:image',
 		content: 'https://samandhisfriends.com/images/post-og-image.jpg',
 	},
+	{
+		type: 'og:locale',
+		content: 'zh-CN',
+	},
+];
+
+exports.websiteMetaTags = [
+	{ type: 'og:url', content: 'https://samandhisfriends.com' },
 	{
 		type: 'og:type',
 		content: 'website',
@@ -102,4 +109,7 @@ exports.websiteMetaTags = [
 		type: 'og:description',
 		content: description,
 	},
+	...commonMetaTags,
 ];
+
+exports.commonMetaTags = commonMetaTags;

@@ -9,6 +9,7 @@ const MOCK_DATA_MAP = {
 module.exports = {
 	createClient() {
 		return {
+			on: () => {},
 			hset: () => Promise.resolve(),
 			hget: (hashsetName, fieldName) => {
 				if (hashsetName !== REDIS_CONFIG.HASHSET_NAME) {

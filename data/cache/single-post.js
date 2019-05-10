@@ -1,7 +1,9 @@
 /**
  * @module data/cache/single-post
  * A cache implementation use redis as client
+ * TODO: refactor cache/single-post.js and cache/active-users.js into one fiel
  */
+const debug = require('debug')('sam-and-his-friends:cache:single-post');
 const redis = require('redis');
 const { promisify } = require('util');
 
@@ -14,6 +16,18 @@ const promisified = {
 	hset: isTest ? client.hset : promisify(client.hset).bind(client),
 	hget: isTest ? client.hget : promisify(client.hget).bind(client),
 };
+
+client.on('error', err => {
+	debug(`Error ${err}`);
+});
+
+client.on('ready', () => {
+	debug(`Ready`);
+});
+
+client.on('connect', () => {
+	debug(`Connect`);
+});
 
 /**
  * Add a post to cache

@@ -54,6 +54,7 @@ exports.singlePostFormatter = async function singlePostFormatter(postData) {
 		comments,
 		isPosterSiteOwner,
 		name: poster.name || poster.username,
+		excerpt: post.excerpt,
 		content: post.cooked,
 		date: post.updated_at,
 		reads: post.reads,

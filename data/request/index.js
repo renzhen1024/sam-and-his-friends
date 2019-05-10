@@ -32,5 +32,3 @@ exports.request = function request(reqParams = {}) {
 	params._ = Date.now();
 	return axios.get(getFullpath(resource), { params });
 };
-
-exports.getFullpath = getFullpath;

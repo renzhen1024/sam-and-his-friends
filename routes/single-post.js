@@ -7,8 +7,13 @@ const { Router } = require('express');
 const {
 	singlePostFormatter,
 } = require('../utils/formatters/single-post-formatter');
-const { getFullpath, request } = require('../data/request');
-const { siteTitle, socialMedias, subCategories } = require('../utils/config');
+const { request } = require('../data/request');
+const {
+	API,
+	siteTitle,
+	socialMedias,
+	subCategories,
+} = require('../utils/config');
 const { DISCOURSE_RESOURCE_MAP } = require('../utils/constants');
 const {
 	activeUsersFormatter,
@@ -33,9 +38,13 @@ module.exports = (router = new Router()) => {
 			},
 		];
 
-		const resource = DISCOURSE_RESOURCE_MAP.TOPIC(req.params.topicId);
-		const topicResponse = await request({ resource });
-		metaTags.push({ type: 'og:url', content: getFullpath(resource) });
+		const topicResponse = await request({
+			resource: DISCOURSE_RESOURCE_MAP.TOPIC(req.params.topicId),
+		});
+		metaTags.push({
+			type: 'og:url',
+			content: `${API}/single-post/${req.params.topicId}`,
+		});
 
 		const formattedActiveUsers = activeUsersFormatter(
 			topicResponse.data.details.participants

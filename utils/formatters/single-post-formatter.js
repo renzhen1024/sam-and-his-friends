@@ -20,6 +20,7 @@ function getExcerpt(post) {
 	const doc = new JSDOM(post.cooked);
 	const article = new Readability(doc.window.document).parse();
 	const { textContent, excerpt } = article;
+	// Readability.js return first p as excerpt
 	const extractedContent =
 		excerpt && excerpt.startsWith('摘要') ? excerpt : textContent;
 	return `${extractedContent.slice(0, 150)}...`;
@@ -40,6 +41,7 @@ exports.singlePostFormatter = async function singlePostFormatter(postData) {
 	const tags = tagsFormatter(postData.category_id);
 	const post = postData.post_stream.posts[0];
 
+	// TODO: improve perf, check whether chace exist before Excerpt
 	post.excerpt = getExcerpt(post);
 	addPostToCache(post);
 

@@ -15,18 +15,14 @@
 
 			gtag('config', 'UA-135903447-3');
 		</script>
-			<title>
-				{{#if title}}
-					{{title}}
-				{{else}}
-					{{ siteTitle }}
-				{{/if}}
-			</title>
+		<title>{{#if title}}{{title}}{{else}}{{siteTitle}}{{/if}}</title>
 		<meta charset="utf-8" />
 		<meta
 			name="viewport"
 			content="width=device-width, initial-scale=1, user-scalable=no"
 		/>
+		{{> metaTags metaTags}}
+
 		<link rel="icon" type="image/png" href="/images/favicon/favicon.ico" />
 		<link rel="apple-touch-icon" href="/images/favicon/apple-touch-icon.png">
 		<link rel="manifest" href="/images/favicon/site.webmanifest" />

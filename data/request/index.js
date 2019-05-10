@@ -17,7 +17,7 @@ if (!isPro()) {
  * Get full path
  * @param {string} resource - A resource string with map to API endpoints
  */
-function _getFullpath(resource) {
+function getFullpath(resource) {
 	return `${API}${resource}.json`;
 }
 
@@ -30,5 +30,7 @@ function _getFullpath(resource) {
 exports.request = function request(reqParams = {}) {
 	const { resource, queryParams: params = {} } = reqParams;
 	params._ = Date.now();
-	return axios.get(_getFullpath(resource), { params });
+	return axios.get(getFullpath(resource), { params });
 };
+
+exports.getFullpath = getFullpath;

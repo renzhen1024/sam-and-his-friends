@@ -20,6 +20,7 @@ const {
 	socialMedias,
 	subCategories,
 	username,
+	websiteMetaTags: metaTags,
 } = require('../utils/config');
 const { addActiveUsersToCache } = require('../data/cache/active-users');
 const {
@@ -109,6 +110,7 @@ module.exports = (router = new Router()) => {
 			siteTitle,
 			socialMedias,
 			subCategories,
+			metaTags,
 		});
 	});
 

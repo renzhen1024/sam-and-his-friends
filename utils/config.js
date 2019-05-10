@@ -96,6 +96,10 @@ const commonMetaTags = [
 		type: 'og:locale',
 		content: 'zh-CN',
 	},
+	{
+		type: 'fb:app_id',
+		content: '381747502434242',
+	},
 ];
 
 exports.websiteMetaTags = [

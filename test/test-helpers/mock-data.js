@@ -235,6 +235,8 @@ const formattedPost = {
 	content:
 		'Perferendis et iusto dolor. Facere sequi et voluptate est nulla officiis.',
 	date: '2019-03-04T14:53:22.217Z',
+	excerpt:
+		'Perferendis et iusto dolor. Facere sequi et voluptate est nulla officiis....',
 	isPosterSiteOwner: false,
 	name: 'Tao Ning',
 	numComments: 5,

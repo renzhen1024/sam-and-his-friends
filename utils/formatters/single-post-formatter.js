@@ -5,25 +5,34 @@ const { JSDOM } = require('jsdom');
 const Readability = require('readability');
 
 const { getActiveUserFromCache } = require('../../data/cache/active-users');
-const { addPostToCache } = require('../../data/cache/single-post');
+const {
+	addPostToCache,
+	getPostFromCache,
+} = require('../../data/cache/single-post');
 const {
 	commentsFormatter,
 } = require('../../utils/formatters/comments-formatter');
 const { tagsFormatter } = require('../../utils/formatters/tags-formatter');
 const { username } = require('../../utils/config');
 
-function getExcerpt(post) {
-	if (!post.cooked) {
-		return '';
-	}
+function getJsdom(cooked = '') {
+	return new JSDOM(`<!DOCTYPE html>${cooked}`);
+}
 
-	const doc = new JSDOM(post.cooked);
-	const article = new Readability(doc.window.document).parse();
+function getExcerpt(jsdom) {
+	const article = new Readability(jsdom.window.document).parse();
 	const { textContent, excerpt } = article;
 	// Readability.js return first p as excerpt
 	const extractedContent =
 		excerpt && excerpt.startsWith('摘要') ? excerpt : textContent;
 	return `${extractedContent.slice(0, 150)}...`;
+}
+
+function getImages(jsdom) {
+	const imgElements = jsdom.window.document.querySelectorAll('img');
+	return Array.from(imgElements).map(imgElement =>
+		imgElement.getAttribute('src')
+	);
 }
 
 /**
@@ -41,9 +50,15 @@ exports.singlePostFormatter = async function singlePostFormatter(postData) {
 	const tags = tagsFormatter(postData.category_id);
 	const post = postData.post_stream.posts[0];
 
-	// TODO: improve perf, check whether chace exist before Excerpt
-	post.excerpt = getExcerpt(post);
-	addPostToCache(post);
+	// Only create JSDOM if the post is not in cache
+	if (!(await getPostFromCache(postData.id))) {
+		const jsdom = getJsdom(post.cooked);
+
+		// Notice: getImages() has to be called before getExcerpt(). Because new Readability().parse() modify jsdom object
+		post.images = getImages(jsdom);
+		post.excerpt = getExcerpt(jsdom);
+		addPostToCache(post);
+	}
 
 	return {
 		tags,

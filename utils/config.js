@@ -87,7 +87,7 @@ exports.categories = {
 	],
 };
 
-const commonMetaTags = [
+const fbCommonMetaTags = [
 	{
 		type: 'og:image',
 		content: 'https://samandhisfriends.com/images/post-og-image.jpg',
@@ -102,7 +102,7 @@ const commonMetaTags = [
 	},
 ];
 
-exports.websiteMetaTags = [
+exports.fbWebsiteMetaTags = [
 	{ type: 'og:url', content: 'https://samandhisfriends.com' },
 	{
 		type: 'og:type',
@@ -113,7 +113,39 @@ exports.websiteMetaTags = [
 		type: 'og:description',
 		content: description,
 	},
-	...commonMetaTags,
+	...fbCommonMetaTags,
 ];
 
-exports.commonMetaTags = commonMetaTags;
+const twitterCommonMetaTags = [
+	{
+		type: 'twitter:card',
+		content: 'summary_large_image',
+	},
+	{
+		type: 'twitter:site',
+		content: '@renzhen1024',
+	},
+	{
+		type: 'twitter:creator',
+		content: '@renzhen1024',
+	},
+	{
+		type: 'twitter:image',
+		content: 'https://samandhisfriends.com/images/post-og-image.jpg',
+	},
+];
+
+exports.twitterWebsiteMetaTags = [
+	{
+		type: 'twitter:title',
+		content: siteTitle,
+	},
+	{
+		type: 'twitter:description',
+		content: description,
+	},
+	...twitterCommonMetaTags,
+];
+
+exports.fbCommonMetaTags = fbCommonMetaTags;
+exports.twitterCommonMetaTags = twitterCommonMetaTags;

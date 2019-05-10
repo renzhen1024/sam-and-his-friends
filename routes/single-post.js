@@ -9,10 +9,11 @@ const {
 } = require('../utils/formatters/single-post-formatter');
 const { request } = require('../data/request');
 const {
-	commonMetaTags,
+	fbCommonMetaTags,
 	siteTitle,
 	socialMedias,
 	subCategories,
+	twitterCommonMetaTags,
 } = require('../utils/config');
 const { DISCOURSE_RESOURCE_MAP } = require('../utils/constants');
 const {
@@ -35,7 +36,16 @@ function getMetaTags(topicId, formattedSinglePost) {
 			type: 'og:description',
 			content: formattedSinglePost.excerpt,
 		},
-		...commonMetaTags,
+		{
+			type: 'twitter:title',
+			content: formattedSinglePost.title,
+		},
+		{
+			type: 'twitter:description',
+			content: formattedSinglePost.excerpt,
+		},
+		...fbCommonMetaTags,
+		...twitterCommonMetaTags,
 	];
 }
 

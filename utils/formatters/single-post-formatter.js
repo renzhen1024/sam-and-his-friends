@@ -50,15 +50,15 @@ exports.singlePostFormatter = async function singlePostFormatter(postData) {
 	const comments = await commentsFormatter(postData.post_stream.posts.slice(1));
 	const tags = tagsFormatter(postData.category_id);
 	const post = postData.post_stream.posts[0];
+	const cachedPost = await getPostFromCache(postData.id);
 
 	// Only create JSDOM if the post is not in cache
-	if (!(await getPostFromCache(postData.id))) {
+	if (!cachedPost) {
 		const jsdom = getJsdom(post.cooked);
 
 		// Notice: getImages() has to be called before getExcerpt(). Because new Readability().parse() modify jsdom object
-		const heroImage = getImages(jsdom)[0];
 		Object.assign(post, {
-			heroImage,
+			heroImage: getImages(jsdom)[0],
 			excerpt: getExcerpt(jsdom),
 		});
 
@@ -78,6 +78,7 @@ exports.singlePostFormatter = async function singlePostFormatter(postData) {
 		content: post.cooked,
 		date: post.updated_at,
 		reads: post.reads,
+		heroImage: cachedPost.heroImage || post.heroImage,
 		authorImageUrl: poster.userImageUrl,
 		userProfileUrl: poster.userProfileUrl,
 	};

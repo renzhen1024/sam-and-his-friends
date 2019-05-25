@@ -14,6 +14,7 @@ const {
 	socialMedias,
 	subCategories,
 	twitterCommonMetaTags,
+	defalutMetaTagImageSrcStr,
 } = require('../utils/config');
 const { DISCOURSE_RESOURCE_MAP } = require('../utils/constants');
 const {
@@ -37,12 +38,26 @@ function getMetaTags(topicId, formattedSinglePost) {
 			content: formattedSinglePost.excerpt,
 		},
 		{
+			type: 'og:image',
+			content:
+				(formattedSinglePost.heroImage &&
+					formattedSinglePost.heroImage.srcStr) ||
+				defalutMetaTagImageSrcStr,
+		},
+		{
 			type: 'twitter:title',
 			content: formattedSinglePost.title,
 		},
 		{
 			type: 'twitter:description',
 			content: formattedSinglePost.excerpt,
+		},
+		{
+			type: 'twitter:image',
+			content:
+				(formattedSinglePost.heroImage &&
+					formattedSinglePost.heroImage.srcStr) ||
+				defalutMetaTagImageSrcStr,
 		},
 		...fbCommonMetaTags,
 		...twitterCommonMetaTags,

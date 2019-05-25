@@ -3,7 +3,7 @@ exports.API = 'https://renzhen1024.com/';
 exports.about =
 	'重庆大学车辆工程学士，美国匹兹堡大学工业工程硕士。PMP项目管理专业人士资格认证；AUTODESK INVENTOR三维设计专业认证。个人公众号《山姆哥和他的小伙伴们》- 公众号ID：UncleSamChina';
 
-const description = '一个赴美建厂及其自动化改造的亲历者';
+const description = '一个赴美建厂 & 自动化改造的亲历者';
 exports.creator = {
 	description,
 	firstName: '',

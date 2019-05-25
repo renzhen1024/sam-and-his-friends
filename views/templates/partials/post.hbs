@@ -24,7 +24,11 @@
 			</a>
 		</div>
 	</header>
-	{{> image images=images imageClasses=imageClasses topicId=id}}
+	{{#if heroImage}}
+		<a href="/single-post/{{id}}" class="image featured heroImage">
+			<img src={{heroImage.srcStr}} alt={{heroImage.altStr}} />
+		</a>
+	{{/if}}
 	<p>
 		{{#if content}}
 			{{{content}}}

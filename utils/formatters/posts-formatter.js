@@ -37,8 +37,7 @@ async function postFormatter(topic) {
 		numComments: topic.posts_count + topic.reply_count,
 		isReaderMode: false,
 		isPinned: !!topic.excerpt,
-		images: cachedPost.images,
-		imageClasses: cachedPost.imageClasses,
+		heroImage: cachedPost.heroImage,
 	};
 }
 

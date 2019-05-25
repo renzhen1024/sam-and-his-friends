@@ -27,51 +27,6 @@ function getImages(jsdom) {
 	}));
 }
 
-function getImageClasses(images) {
-	const imageCount = images.length;
-
-	if (imageCount < 1) {
-		return '';
-	}
-
-	if (imageCount === 1) {
-		return 'post-image--single-image';
-	}
-
-	const classes = ['post-image--multi-image'];
-	switch (imageCount) {
-		case 2:
-			classes.push('post-image--has-two-images');
-			break;
-		case 3:
-			classes.push('post-image--has-three-images', 'post-image--span-first');
-			break;
-		case 4:
-			classes.push(
-				'post-image--has-four-images',
-				'post-image--split-last-three',
-				'post-image--span-first'
-			);
-			break;
-		case 5:
-			classes.push(
-				'post-image--has-five-images',
-				'post-image--split-last-three',
-				'post-image--span-first-two'
-			);
-			break;
-		default:
-			classes.push(
-				'post-image--has-excess-images',
-				'post-image--split-last-three',
-				'post-image--span-first-two'
-			);
-			break;
-	}
-
-	return classes.join(' ');
-}
-
 function getExcerpt(jsdom) {
 	const article = new Readability(jsdom.window.document).parse();
 	const { textContent, excerpt } = article;
@@ -101,9 +56,12 @@ exports.singlePostFormatter = async function singlePostFormatter(postData) {
 		const jsdom = getJsdom(post.cooked);
 
 		// Notice: getImages() has to be called before getExcerpt(). Because new Readability().parse() modify jsdom object
-		post.images = getImages(jsdom);
-		post.imageClasses = getImageClasses(post.images);
-		post.excerpt = getExcerpt(jsdom);
+		const heroImage = getImages(jsdom)[0];
+		Object.assign(post, {
+			heroImage,
+			excerpt: getExcerpt(jsdom),
+		});
+
 		addPostToCache(post);
 	}
 

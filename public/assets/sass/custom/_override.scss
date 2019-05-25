@@ -1,0 +1,212 @@
+$header-image-width: 172px;
+
+.header__image-container {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.header__image {
+  width: $header-image-width;
+  vertical-align: middle;
+}
+
+.single-post-content img {
+  width: 100%;
+  height: auto;
+}
+
+.mini-post-content {
+  font-size: 0.8em;
+  padding: 8px 14px;
+}
+
+.mini-posts {
+  $mini-posts-height: 600px;
+
+  height: $mini-posts-height;
+  padding-top: 16px;
+  overflow-y: scroll;
+
+  -webkit-overflow-scrolling: touch;
+  // stylelint-disable-next-line function-linear-gradient-no-nonstandard-direction
+  mask-image: -webkit-linear-gradient(
+    to bottom,
+    transparent,
+    white 10px,
+    white 90%,
+    transparent
+  );
+  // stylelint-disable-next-line function-linear-gradient-no-nonstandard-direction
+  mask-image: -moz-linear-gradient(
+    to bottom,
+    transparent,
+    white 10px,
+    white 90%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    white 10px,
+    white 90%,
+    transparent
+  );
+  // stylelint-disable-next-line function-linear-gradient-no-nonstandard-direction
+  -webkit-mask-image: -webkit-linear-gradient(
+    to bottom,
+    transparent,
+    white 10px,
+    white 90%,
+    transparent
+  );
+  // stylelint-disable-next-line function-linear-gradient-no-nonstandard-direction
+  -webkit-mask-image: -moz-linear-gradient(
+    to bottom,
+    transparent,
+    white 10px,
+    white 90%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    white 10px,
+    white 90%,
+    transparent
+  );
+
+  @include breakpoint('<=small') {
+    $mini-posts-mobile-height: 240px;
+
+    height: $mini-posts-mobile-height;
+    padding-left: 8px;
+    padding-top: 0;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+
+    // stylelint-disable-next-line function-linear-gradient-no-nonstandard-direction
+    mask-image: -webkit-linear-gradient(
+      to right,
+      transparent,
+      white 10px,
+      white 90%,
+      transparent
+    );
+    // stylelint-disable-next-line function-linear-gradient-no-nonstandard-direction
+    mask-image: -moz-linear-gradient(
+      to right,
+      transparent,
+      white 10px,
+      white 90%,
+      transparent
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      white 10px,
+      white 90%,
+      transparent
+    );
+    // stylelint-disable-next-line function-linear-gradient-no-nonstandard-direction
+    -webkit-mask-image: -webkit-linear-gradient(
+      to right,
+      transparent,
+      white 10px,
+      white 90%,
+      transparent
+    );
+    // stylelint-disable-next-line function-linear-gradient-no-nonstandard-direction
+    -webkit-mask-image: -moz-linear-gradient(
+      to right,
+      transparent,
+      white 10px,
+      white 90%,
+      transparent
+    );
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      white 10px,
+      white 90%,
+      transparent
+    );
+
+    .mini-post {
+      $mini-post-mobile-height: 200px;
+
+      display: inline-block;
+      vertical-align: top;
+      white-space: normal;
+      width: 85%;
+      margin-right: 20px;
+      height: $mini-post-mobile-height;
+    }
+  }
+}
+
+.mini-posts-header {
+  padding-left: 14px;
+}
+
+.mini-post header {
+  padding: 8px 14px;
+}
+
+.comment {
+  padding-bottom: 0;
+
+  .comment-header {
+    border-bottom: 0;
+    margin-bottom: 0;
+  }
+
+  .comment-meta {
+    padding: 3.75em 3em 1.75em 3em;
+    border-right: solid 1px rgba(160, 160, 160, 0.3);
+    min-width: 17em;
+    text-align: left;
+    width: 17em;
+  }
+
+  .comment-author {
+    justify-content: flex-start;
+  }
+
+  .comment-content p {
+    font-size: 0.8em;
+  }
+
+  .comment-content img:not(.emoji) {
+    width: 100%;
+    height: auto;
+  }
+
+  @include breakpoint('<=small') {
+    .comment-meta {
+      padding-top: 0;
+      border-right: 0;
+      text-align: center;
+      width: 100%;
+    }
+
+    .comment-author {
+      justify-content: center;
+    }
+
+    .title.comment-content {
+      text-align: left;
+    }
+  }
+}
+
+// Remove meta data on some of the image return from API
+.lightbox .meta.meta {
+  display: none;
+}
+
+.tag {
+  padding: 4px;
+  color: #fff;
+  font-weight: 700;
+}

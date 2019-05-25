@@ -15,12 +15,13 @@
 
 			gtag('config', 'UA-135903447-3');
 		</script>
-		<title>{{#if title}}{{title}}{{else}}{{siteTitle}}{{/if}}</title>
+		<title>{{siteTitle}}</title>
 		<meta charset="utf-8" />
 		<meta
 			name="viewport"
 			content="width=device-width, initial-scale=1, user-scalable=no"
 		/>
+		<meta name="description" content={{metaDescription}}>
 		{{> metaTags metaTags}}
 
 		<link rel="icon" type="image/png" href="/images/favicon/favicon.ico" />

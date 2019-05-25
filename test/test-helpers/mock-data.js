@@ -238,6 +238,9 @@ const formattedPost = {
 	excerpt:
 		'Perferendis et iusto dolor. Facere sequi et voluptate est nulla officiis....',
 	isPosterSiteOwner: false,
+	heroImage: undefined,
+	metaDescription: '一个赴美建厂&自动化改造的亲历者',
+	siteTitle: '北美山姆哥 | 为什么我们吃着最好吃的饭，却体质不如人？',
 	name: 'Tao Ning',
 	numComments: 5,
 	numLikes: 1,

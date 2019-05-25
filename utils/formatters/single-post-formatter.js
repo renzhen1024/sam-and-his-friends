@@ -13,7 +13,7 @@ const {
 	commentsFormatter,
 } = require('../../utils/formatters/comments-formatter');
 const { tagsFormatter } = require('../../utils/formatters/tags-formatter');
-const { username } = require('../../utils/config');
+const { metaDescription, siteTitle, username } = require('../../utils/config');
 
 function getJsdom(cooked = '') {
 	return new JSDOM(`<!DOCTYPE html>${cooked}`);
@@ -68,11 +68,13 @@ exports.singlePostFormatter = async function singlePostFormatter(postData) {
 	return {
 		tags,
 		title,
+		siteTitle: `${siteTitle} | ${title}`,
 		views,
 		numLikes,
 		numComments,
 		comments,
 		isPosterSiteOwner,
+		metaDescription,
 		name: poster.name || poster.username,
 		excerpt: post.excerpt,
 		content: post.cooked,

@@ -19,6 +19,8 @@ const {
 	siteTitle,
 	socialMedias,
 	subCategories,
+	metaDescription,
+	description,
 	username,
 	fbWebsiteMetaTags,
 	twitterWebsiteMetaTags,
@@ -108,9 +110,10 @@ module.exports = (router = new Router()) => {
 			nextPage,
 			about,
 			creator,
-			siteTitle,
 			socialMedias,
 			subCategories,
+			siteTitle: `${siteTitle} | ${description}`,
+			metaDescription,
 			metaTags: [...fbWebsiteMetaTags, ...twitterWebsiteMetaTags],
 		});
 	});

@@ -10,7 +10,6 @@ const {
 const { request } = require('../data/request');
 const {
 	fbCommonMetaTags,
-	siteTitle,
 	socialMedias,
 	subCategories,
 	twitterCommonMetaTags,
@@ -86,7 +85,6 @@ module.exports = (router = new Router()) => {
 
 		res.render('singlePost', {
 			metaTags,
-			siteTitle,
 			socialMedias,
 			subCategories,
 			isSinglePost: true,

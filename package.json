@@ -41,6 +41,7 @@
     "supertest": "^4.0.2"
   },
   "devDependencies": {
+    "codecov": "^3.5.0",
     "del": "^4.1.0",
     "eslint": "^5.15.3",
     "eslint-config-airbnb-base": "^13.1.0",

@@ -14,7 +14,8 @@
   },
   "scripts": {
     "start": "DEBUG=sam-and-his-friends:* npm run build && DEBUG=sam-and-his-friends:* nodemon server.js",
-    "test": "DEBUG=sam-and-his-friends:* node_modules/.bin/eslint data routes test utils && node_modules/.bin/jest --coverage",
+    "test": "DEBUG=sam-and-his-friends:* node_modules/.bin/eslint data routes test utils && node_modules/.bin/jest",
+    "coverage": "node_modules/.bin/jest --coverage && node_modules/.bin/codecov -t ad5d8655-7dd2-4607-98c9-e7188e7ad2f9",
     "build": "node_modules/.bin/gulp",
     "debug": "DEBUG=sam-and-his-friends:* node --inspect-brk server.js",
     "debug-test": "DEBUG=sam-and-his-friends:* node --inspect-brk node_modules/.bin/jest --runInBand",

@@ -1,7 +1,7 @@
 exports.API = 'https://renzhen1024.com/';
 
 exports.about =
-	'重庆大学车辆工程学士，美国匹兹堡大学工业工程硕士。PMP项目管理专业人士资格认证；AUTODESK INVENTOR三维设计专业认证。个人公众号《山姆哥和他的小伙伴们》- 公众号ID：UncleSamChina';
+	'重庆大学车辆工程学士，美国匹兹堡大学工业工程硕士。PMP项目管理专业人士资格认证；AUTODESK INVENTOR三维设计专业认证。个人公众号：《山姆哥和他的小伙伴们》(ID: UncleSamChina)，微信：UncleSam_China，邮箱：Unclesamchina2016@Gmail.com';
 
 const description = '一个赴美建厂&自动化改造的亲历者';
 exports.description = description;
@@ -12,7 +12,8 @@ exports.creator = {
 	profileImage: 'images/sam-site-profile-image.png',
 };
 
-exports.metaDescription = '一个赴美建厂&自动化改造的亲历者';
+exports.metaDescription =
+	'深入了解一个国家，需要从三个层面：底部的文化逻辑（根）到中间的管理制度（树干）再到最上面的器物科技（果子）。三者相辅相成，缺一不可。其中文化逻辑是最关键的，很多当下中美之间的误解，都源自于背后的文化逻辑不同。不同的逻辑观念下，即使建立了相同的制度，也很难执行出相同的结果，即使引进了相同的器物科技，也很难让拿来的科技器物保持住发展创新。通过《山姆哥和他的朋友们》这网站平台，山姆哥及其他在美国的朋友，一起从这三个层面上来分享他们在美国的所见所闻所感：第一类，文化逻辑。主要从宗教哲学层面，探讨美国人为什么会这么做？行为背后的思考逻辑是怎样的？第二类，管理制度。结合工作中的项目经历中，所看到的做事方式差异以及管理制度的不同；第三类，器物科技。主要是那些可能在中国不常见，但在美国很好用的工具和方法。第四类，案例分析。针对一些具体的代表性案例来分析讨论。';
 
 exports.lengthOfActiveUsersAtIndexPage = 5;
 

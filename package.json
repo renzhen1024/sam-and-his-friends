@@ -22,7 +22,7 @@
     "docs": "node_modules/.bin/jsdoc -r -d docs/out -c conf.json"
   },
   "engines": {
-    "node": ">=7.6.0"
+    "node": ">=8"
   },
   "dependencies": {
     "axios": "^0.18.0",

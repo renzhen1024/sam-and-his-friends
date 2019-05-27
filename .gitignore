@@ -11,4 +11,4 @@ package-lock.json
 docs
 light
 output
-views/templates/layout-fingerprinted
+src/views/templates/layout-fingerprinted

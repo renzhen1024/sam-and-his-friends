@@ -18,7 +18,7 @@ const md5 = require('gulp-md5-plus');
 // Images
 const imagemin = require('gulp-imagemin');
 
-const { isPro } = require('./utils/isPro');
+const { isPro } = require('./src/utils/isPro');
 const packageInfo = require('./package.json');
 
 // Template for banner to add to file headers
@@ -36,8 +36,8 @@ const BANNER = {
 	CSS: `/*******************${HEADER}*******************/\n\n`,
 };
 
-const HBS_LAYOUT_SOURCE = 'views/templates/layout/*.hbs';
-const HBS_LAYOUT_OUTPUT = 'views/templates/layout-fingerprinted';
+const HBS_LAYOUT_SOURCE = '/src/views/templates/layout/*.hbs';
+const HBS_LAYOUT_OUTPUT = '/src/views/templates/layout-fingerprinted';
 const ASSETS_OUTPUT = 'output';
 
 function clean() {
@@ -52,11 +52,11 @@ function html() {
 
 // Need to keep js in order
 const JS_SOURCE = [
-	'public/assets/js/jquery.min.js',
-	'public/assets/js/browser.min.js',
-	'public/assets/js/breakpoints.min.js',
-	'public/assets/js/util.js',
-	'public/assets/js/main.js',
+	'src/public/assets/js/jquery.min.js',
+	'src/public/assets/js/browser.min.js',
+	'src/public/assets/js/breakpoints.min.js',
+	'src/public/assets/js/util.js',
+	'src/public/assets/js/main.js',
 ];
 const JS_OUTPUT = 'output/assets/js';
 function js() {
@@ -68,7 +68,7 @@ function js() {
 		.pipe(dest(JS_OUTPUT));
 }
 
-const SASS_SOURCE = 'public/assets/sass/*.scss';
+const SASS_SOURCE = 'src/public/assets/sass/*.scss';
 const SASS_OUTPUT = 'output/assets/sass';
 function css() {
 	return src(SASS_SOURCE)
@@ -90,13 +90,13 @@ function css() {
 		.pipe(dest(SASS_OUTPUT));
 }
 
-const VENDORS_SOURCE = 'public/assets/vendors/**/*';
+const VENDORS_SOURCE = 'src/public/assets/vendors/**/*';
 const VENDORS_OUTPUT = 'output/assets/vendors';
 function vendors() {
 	return src(VENDORS_SOURCE).pipe(dest(VENDORS_OUTPUT));
 }
 
-const IMAGES_SOURCE = 'public/images/**/*';
+const IMAGES_SOURCE = 'src/public/images/**/*';
 const IMAGES_OUTPUT = 'output/images';
 function image() {
 	// disable imagemin in develop because this plugin slow down build time for 6s

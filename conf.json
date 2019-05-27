@@ -1,6 +1,0 @@
-{
-  "source": {
-    "include": ["data", "routes", "utils", "app.js"],
-    "includePattern": ".+\\.js$"
-  }
-}

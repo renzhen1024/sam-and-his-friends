@@ -36,8 +36,8 @@ const BANNER = {
 	CSS: `/*******************${HEADER}*******************/\n\n`,
 };
 
-const HBS_LAYOUT_SOURCE = '/src/views/templates/layout/*.hbs';
-const HBS_LAYOUT_OUTPUT = '/src/views/templates/layout-fingerprinted';
+const HBS_LAYOUT_SOURCE = 'src/views/templates/layout/*.hbs';
+const HBS_LAYOUT_OUTPUT = 'src/views/templates/layout-fingerprinted';
 const ASSETS_OUTPUT = 'output';
 
 function clean() {

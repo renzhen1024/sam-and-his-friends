@@ -1,7 +1,7 @@
 # Sam And His Friends
 
 [![Build Status](https://travis-ci.com/tningjs/sam-and-his-friends.svg?branch=master)](https://travis-ci.com/tningjs/sam-and-his-friends)
-[![codecov](https://codecov.io/gh/TechnionYP5777/sam-and-his-friends/branch/master/graph/badge.svg)](https://codecov.io/gh/TechnionYP5777/sam-and-his-friends)
+[![codecov](https://codecov.io/gh/tningjs/sam-and-his-friends/branch/master/graph/badge.svg)](https://codecov.io/gh/tningjs/sam-and-his-friends)
 
 ## Set Up In Local Dev
 

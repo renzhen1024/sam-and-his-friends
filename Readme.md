@@ -6,7 +6,6 @@
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/tningjs/sam-and-his-friends/issues)
 [![HitCount](https://hits.dwyl.com/tningjs/sam-and-his-friends.svg)](http://hits.dwyl.com/tningjs/sam-and-his-friends)
 [![Maintainability](https://api.codeclimate.com/v1/badges/5c1802e0db3e29b24d83/maintainability)](https://codeclimate.com/github/tningjs/sam-and-his-friends/maintainability)
-[![Known Vulnerabilities](https://snyk.io/test/github/tningjs/sam-and-his-friends/badge.svg?targetFile=package.json)](https://snyk.io/test/github/tningjs/sam-and-his-friends?targetFile=package.json)
 
 - [Set Up In Local Dev](#set-up-in-local-dev)
   - [How To Debug](#how-to-debug)

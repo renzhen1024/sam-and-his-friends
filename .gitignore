@@ -11,4 +11,5 @@ package-lock.json
 docs
 light
 output
+coverage
 src/views/templates/layout-fingerprinted

@@ -52,10 +52,11 @@ function html() {
 
 // Need to keep js in order
 const JS_SOURCE = [
-	'src/public/assets/js/jquery.min.js',
-	'src/public/assets/js/browser.min.js',
-	'src/public/assets/js/breakpoints.min.js',
-	'src/public/assets/js/util.js',
+	'node_modules/@renzhen1024/sam-and-his-friends-vendor/src/jquery.min.js',
+	'node_modules/@renzhen1024/sam-and-his-friends-vendor/src/browser.min.js',
+	'node_modules/@renzhen1024/sam-and-his-friends-vendor/src/breakpoints.min.js',
+	'node_modules/@renzhen1024/sam-and-his-friends-vendor/src/util.js',
+	'node_modules/@renzhen1024/sam-and-his-friends-vendor/src/main.js',
 	'src/public/assets/js/main.js',
 ];
 const JS_OUTPUT = 'output/assets/js';

@@ -3,7 +3,7 @@
   "version": "6.0.0",
   "description": "An express application extrac discourse data from renzhen1024.com",
   "author": {
-    "name": "Tao Ning",
+    "name": "tningjs",
     "url": "https://github.com/tningjs"
   },
   "license": "MIT",
@@ -25,6 +25,7 @@
     "node": ">=8"
   },
   "dependencies": {
+    "@renzhen1024/sam-and-his-friends-vendor": "^2.0.0",
     "axios": "^0.18.0",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",

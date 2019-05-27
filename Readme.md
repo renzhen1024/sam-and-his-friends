@@ -28,7 +28,7 @@
 1. Click "Inspect" in the Remote Target section (**Notice:** Cick the Node debug icon or click "Open dedicated DevTools for Node" not work for [some version](https://github.com/nodejs/node/issues/23693#issuecomment-440623410)). This step should pause the process in the first line of source code, click continue in the debug tool.
 1. Open anther tab, go to `localhost:3000`, this step should pause the programm in the `debugger;` statement which you put in the code.
 
-![Chrome Debug](public/images/node-debug.png)
+![Chrome Debug](src/public/images/node-debug.png)
 
 ## Deploy To Production
 

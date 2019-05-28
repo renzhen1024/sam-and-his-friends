@@ -29,14 +29,14 @@ describe('Unit Test | data/request/index', () => {
 	test('Interceptors is added in development environment', () => {
 		process.env.DEBUG = true;
 		// eslint-disable-next-line global-require
-		require('../../../data/request/index');
+		require('../../../src/data/request/index');
 		expect(useSpy.calledOnce).toBeTruthy();
 	});
 
 	test('Interceptors is not added in production environment', () => {
 		process.env.DEBUG = false;
 		// eslint-disable-next-line global-require
-		require('../../../data/request/index');
+		require('../../../src/data/request/index');
 		expect(useSpy.calledOnce).toBeFalsy();
 	});
 
@@ -44,7 +44,7 @@ describe('Unit Test | data/request/index', () => {
 		let request;
 		beforeAll(() => {
 			// eslint-disable-next-line
-			request = require('../../../data/request/index').request;
+			request = require('../../../src/data/request/index').request;
 		});
 
 		test('Pass in params to axios.get properly - no queryParams', () => {

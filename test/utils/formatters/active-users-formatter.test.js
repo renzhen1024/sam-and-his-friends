@@ -1,11 +1,8 @@
 const {
 	activeUsersFormatter,
-} = require('../../../utils/formatters/active-users-formatter');
+} = require('../../../src/utils/formatters/active-users-formatter');
 
-const {
-	mockUsers,
-	formattedUsers,
-} = require('../../../test/test-helpers/mock-data');
+const { mockUsers, formattedUsers } = require('../../test-helpers/mock-data');
 
 describe('Unit Test | utils/formatters/active-users-formatter', () => {
 	test('It should format an array of user', () => {

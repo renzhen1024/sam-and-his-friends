@@ -8,7 +8,7 @@ const redis = require('redis');
 const { promisify } = require('util');
 
 const { REDIS_CONFIG } = require('../../utils/constants.js');
-const redisMock = require('../../test/test-helpers/redis-mock');
+const redisMock = require('../../../test/test-helpers/redis-mock');
 
 const isTest = process.env.NODE_ENV === 'test';
 const client = isTest ? redisMock.createClient() : redis.createClient();

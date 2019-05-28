@@ -1,6 +1,6 @@
 const {
 	commentsFormatter,
-} = require('../../../utils/formatters/comments-formatter');
+} = require('../../../src/utils/formatters/comments-formatter');
 const {
 	formattedComments,
 	mockComments,

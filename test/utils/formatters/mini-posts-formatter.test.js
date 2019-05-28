@@ -1,6 +1,6 @@
 const {
 	miniPostsFormatter,
-} = require('../../../utils/formatters/mini-posts-formatter');
+} = require('../../../src/utils/formatters/mini-posts-formatter');
 const {
 	mockMiniPosts,
 	formattedMiniPosts,

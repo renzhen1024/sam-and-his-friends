@@ -1,6 +1,8 @@
 const debug = require('debug');
 const sandbox = require('sinon').createSandbox();
-const { getFullUrlFromRequest } = require('../../../data/request/interceptors');
+const {
+	getFullUrlFromRequest,
+} = require('../../../src/data/request/interceptors');
 
 describe('Unit Test | data/request/interceptors', () => {
 	let logStub;

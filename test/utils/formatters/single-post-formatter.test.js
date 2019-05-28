@@ -1,6 +1,6 @@
 const {
 	singlePostFormatter,
-} = require('../../../utils/formatters/single-post-formatter');
+} = require('../../../src/utils/formatters/single-post-formatter');
 
 const {
 	mockPost,

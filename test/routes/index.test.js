@@ -1,6 +1,6 @@
 const moxios = require('moxios');
 const request = require('supertest');
-const app = require('../../app');
+const app = require('../../src/app');
 
 const postsMock = require('../test-helpers/route-mocks/index/posts.json');
 const miniPostsMock = require('../test-helpers/route-mocks/index/mini-posts.json');

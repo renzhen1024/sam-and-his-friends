@@ -17,7 +17,7 @@
     "start": "DEBUG=sam-and-his-friends:* npm run build && DEBUG=sam-and-his-friends:* nodemon src/server.js",
     "test": "npm run lint && node_modules/.bin/jest",
     "coverage": "node_modules/.bin/jest --coverage && node_modules/.bin/codecov -t ad5d8655-7dd2-4607-98c9-e7188e7ad2f9",
-    "lint": "DEBUG=sam-and-his-friends:* node_modules/.bin/eslint src/data src/routes src/test src/utils",
+    "lint": "DEBUG=sam-and-his-friends:* node_modules/.bin/eslint src/**/*.js test/**/*.js",
     "debug": "DEBUG=sam-and-his-friends:* node --inspect-brk server.js",
     "debug-test": "DEBUG=sam-and-his-friends:* node --inspect-brk node_modules/.bin/jest --runInBand"
   },

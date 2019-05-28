@@ -2,9 +2,9 @@ const rewire = require('rewire');
 const sandbox = require('sinon').createSandbox();
 
 const { formattedPosts } = require('../../test-helpers/mock-data');
-const { REDIS_CONFIG } = require('../../../utils/constants.js');
+const { REDIS_CONFIG } = require('../../../src/utils/constants.js');
 
-const singlePostModule = rewire('../../../data/cache/single-post');
+const singlePostModule = rewire('../../../src/data/cache/single-post');
 
 describe('Unit Test | data/cache/single-post', () => {
 	beforeAll(() => {

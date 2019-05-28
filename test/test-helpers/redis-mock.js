@@ -1,5 +1,5 @@
 const { mockDataMap } = require('./mock-data');
-const { REDIS_CONFIG } = require('../../utils/constants.js');
+const { REDIS_CONFIG } = require('../../src/utils/constants.js');
 
 const MOCK_DATA_MAP = {
 	[REDIS_CONFIG.KEY_PREFIX.ACTIVE_USER]: 'formattedUsers',

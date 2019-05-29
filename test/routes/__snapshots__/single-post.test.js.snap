@@ -1,8 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`GET /single-post/:topicId It should match snapshot 1`] = `
-"<!DOCTYPE html>
-<!-- Future Imperfect by Pixelarity pixelarity.com | hello@pixelarity.com License: pixelarity.com/license -->
+"<!--
+ Name: sam-and-his-friends v6.0.0
+ Description: An express application extrac discourse data from renzhen1024.com
+ Copyright: (c) 2019 tningjs
+ License: MIT
+ https://github.com/tningjs/sam-and-his-friends
+ -->
+
+<!DOCTYPE html>
 <html>
 	<head>
 		<!-- Global site tag (gtag.js) - Google Analytics -->
@@ -19,99 +26,126 @@ exports[`GET /single-post/:topicId It should match snapshot 1`] = `
 
 			gtag('config', 'UA-135903447-3');
 		</script>
-		<title></title>
+		<title>北美山姆哥 | R&amp;D, Designer 和 Engineer的区别</title>
 		<meta charset=\\"utf-8\\" />
 		<meta
 			name=\\"viewport\\"
 			content=\\"width=device-width, initial-scale=1, user-scalable=no\\"
 		/>
+		<meta name=\\"description\\" content=深入了解一个国家，需要从三个层面：底部的文化逻辑（根）到中间的管理制度（树干）再到最上面的器物科技（果子）。三者相辅相成，缺一不可。其中文化逻辑是最关键的，很多当下中美之间的误解，都源自于背后的文化逻辑不同。不同的逻辑观念下，即使建立了相同的制度，也很难执行出相同的结果，即使引进了相同的器物科技，也很难让拿来的科技器物保持住发展创新。通过《山姆哥和他的朋友们》这网站平台，山姆哥及其他在美国的朋友，一起从这三个层面上来分享他们在美国的所见所闻所感：第一类，文化逻辑。主要从宗教哲学层面，探讨美国人为什么会这么做？行为背后的思考逻辑是怎样的？第二类，管理制度。结合工作中的项目经历中，所看到的做事方式差异以及管理制度的不同；第三类，器物科技。主要是那些可能在中国不常见，但在美国很好用的工具和方法。第四类，案例分析。针对一些具体的代表性案例来分析讨论。>
+			<meta property=og:type content=article />
+			<meta property=og:url content=https://samandhisfriends.com/single-post/125 />
+			<meta property=og:title content=R&amp;D, Designer 和 Engineer的区别 />
+			<meta property=og:description content=最近刚刚了解到R&amp;D， Designer和engineer工作定位是不一样的，至少在机械制造业是有区别的，简单来说，就如同建筑行业里，分别对应的 建筑画家、建筑设计师和土木工程师。
+		R&amp;D，全称是research and development。一般属于比较前沿的研究，跟学校里的研究单位有点接近。都... />
+			<meta property=og:image content=https://samandhisfriends.com/images/post-og-image.jpg />
+			<meta property=twitter:title content=R&amp;D, Designer 和 Engineer的区别 />
+			<meta property=twitter:description content=最近刚刚了解到R&amp;D， Designer和engineer工作定位是不一样的，至少在机械制造业是有区别的，简单来说，就如同建筑行业里，分别对应的 建筑画家、建筑设计师和土木工程师。
+		R&amp;D，全称是research and development。一般属于比较前沿的研究，跟学校里的研究单位有点接近。都... />
+			<meta property=twitter:image content=https://samandhisfriends.com/images/post-og-image.jpg />
+			<meta property=og:locale content=zh-CN />
+			<meta property=fb:app_id content=381747502434242 />
+			<meta property=twitter:card content=summary_large_image />
+			<meta property=twitter:site content=@renzhen1024 />
+			<meta property=twitter:creator content=@renzhen1024 />
+
 		<link rel=\\"icon\\" type=\\"image/png\\" href=\\"/images/favicon/favicon.ico\\" />
+		<link rel=\\"apple-touch-icon\\" href=\\"/images/favicon/apple-touch-icon.png\\">
 		<link rel=\\"manifest\\" href=\\"/images/favicon/site.webmanifest\\" />
-		<link rel=\\"stylesheet\\" href=\\"/assets/sass/main.css\\" />
+		<link rel=\\"stylesheet\\" href=\\"/assets/sass/main_dfca217ed8.css\\" />
 	</head>
 	<body class=\\"is-preload single\\">
 		<div id=\\"wrapper\\">
 			<header id=\\"header\\">
-				<h1>
-					<a href=\\"/\\">
-						<div class=\\"header__image-container\\">
-							<img class=\\"header__image\\" src=\\"/images/logo.png\\" alt=\\"\\" />
-						</div>
-					</a>
-				</h1>
-
-				<!-- hide the rest of nav due to work on home page first, and there are no content for those pages -->
-				<!-- <nav class=\\"links\\">
-			    <ul>
-			      <li>
-			        <a href=\\"#\\">
-			          Lorem
-			        </a>
-			      </li>
-			      <li>
-			        <a href=\\"#\\">
-			          Ipsum
-			        </a>
-			      </li>
-			      <li>
-			        <a href=\\"#\\">
-			          Feugiat
-			        </a>
-			      </li>
-			      <li>
-			        <a href=\\"#\\">
-			          Tempus
-			        </a>
-			      </li>
-			      <li>
-			        <a href=\\"#\\">
-			          Adipiscing
-			        </a>
-			      </li>
-			    </ul>
-			  </nav>
+			  <h1>
+			    <a href=\\"/\\">
+			      <div class=\\"header__image-container\\">
+			        <img class=\\"header__image\\" src=\\"/images/logo.png\\" alt=\\"\\" />
+			      </div>
+			    </a>
+			  </h1>
 			  <nav class=\\"main\\">
 			    <ul>
-			      <li class=\\"search\\">
-			        <a class=\\"fa-search\\" href=\\"#search\\">
-			          Search
-			        </a>
-			        <form id=\\"search\\" method=\\"get\\" action=\\"#\\">
-			          <input type=\\"text\\" name=\\"query\\" placeholder=\\"Search\\" />
-			        </form>
-			      </li>
 			      <li class=\\"menu\\">
 			        <a class=\\"fa-bars\\" href=\\"#menu\\">
 			          Menu
 			        </a>
 			      </li>
 			    </ul>
-				</nav> -->
+			  </nav>
 			</header>
-			<!-- hide menu, there are no content for those pages -->
-			 <div id=\\"main\\">
+			<section id=\\"menu\\">
+			  <section>
+					<h2>分类浏览</h2>
+			    <ul class=\\"links\\">
+			        <li>
+			          <a href=\\"/?subcategory=文化逻辑\\">
+			            <h3>
+			              文化逻辑
+			            </h3>
+			            <p>
+			              关于文化逻辑的分类
+			            </p>
+			          </a>
+			        </li>
+			        <li>
+			          <a href=\\"/?subcategory=管理制度\\">
+			            <h3>
+			              管理制度
+			            </h3>
+			            <p>
+			              关于管理制度的分类
+			            </p>
+			          </a>
+			        </li>
+			        <li>
+			          <a href=\\"/?subcategory=器物科技\\">
+			            <h3>
+			              器物科技
+			            </h3>
+			            <p>
+			              关于器物科技的分类
+			            </p>
+			          </a>
+			        </li>
+			        <li>
+			          <a href=\\"/?subcategory=案例分享\\">
+			            <h3>
+			              案例分享
+			            </h3>
+			            <p>
+			              关于案例分享的分类
+			            </p>
+			          </a>
+			        </li>
+			    </ul>
+			  </section>
+			</section>
+			<div id=\\"main\\">
 	<article class=\\"post\\">
 		<header>
 			<div class=\\"title\\">
 				<h2>
-					<a href=\\"#\\">
-						R&amp;D, Designer 和 Engineer的区别
-					</a>
+					R&amp;D, Designer 和 Engineer的区别
 				</h2>
+				<p>		<a href=/>
+			<span class=\\"tag\\" style=\\"background-color:#8C6238;\\">山姆哥</span>
+		</a>
+</p>
 			</div>
 			<div class=\\"meta\\">
 				<time class=\\"published\\" datetime=2019-04-17T19:21:23.536Z>
 					2019年4月17日
 				</time>
 				<a
-					href=https://renzhen1024.com/u/sambro/summary
+					href=https://renzhen1024.com/u/Vivian/summary
 					class=\\"author\\"
 					target=\\"_blank\\"
 				>
 					<span class=\\"name\\">
-						小山
+						@Vivian
 					</span>
-					<img src=\\"https://renzhen1024.com/user_avatar/renzhen1024.com/sambro/240/90_2.png\\" alt=\\"\\" />
+					<img src=\\"https://renzhen1024.com/user_avatar/renzhen1024.com/vivian/240/40_2.png\\" alt=\\"\\" />
 				</a>
 			</div>
 		</header>
@@ -138,7 +172,7 @@ exports[`GET /single-post/:topicId It should match snapshot 1`] = `
 		</footer>
 	</article>
 
-	<h3>小伙伴们给山姆哥的留言：</h3>
+			<h3>山姆哥和小伙伴们的评论：</h3>
 
 		<article class=\\"post comment\\">
 		  <header class=\\"comment-header\\">
@@ -193,7 +227,7 @@ exports[`GET /single-post/:topicId It should match snapshot 1`] = `
 			</a>
 		</li>
 		<li>
-			<a href=\\"mailto:sambro@gmail.com\\" class=\\"fa-envelope\\">
+			<a href=\\"mailto:mountainsun1988@gmail.com\\" class=\\"fa-envelope\\">
 				<span class=\\"label\\">
 					Email
 				</span>
@@ -207,11 +241,7 @@ exports[`GET /single-post/:topicId It should match snapshot 1`] = `
 </section>
 
 		</div>
-		<script src=\\"/assets/js/jquery.min.js\\"></script>
-		<script src=\\"/assets/js/browser.min.js\\"></script>
-		<script src=\\"/assets/js/breakpoints.min.js\\"></script>
-		<script src=\\"/assets/js/util.js\\"></script>
-		<script src=\\"/assets/js/main.js\\"></script>
+		<script src=\\"/assets/js/bundle_5fe32d6bcd.js\\"></script>
 	</body>
 </html>
 "

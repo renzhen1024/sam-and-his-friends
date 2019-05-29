@@ -1,0 +1,761 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GET /index It should render a tempate that match snapshot 1`] = `
+"<!--
+ Name: sam-and-his-friends v6.0.0
+ Description: An express application extrac discourse data from renzhen1024.com
+ Copyright: (c) 2019 tningjs
+ License: MIT
+ https://github.com/tningjs/sam-and-his-friends
+ -->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script
+			async
+			src=\\"https://www.googletagmanager.com/gtag/js?id=UA-135903447-3\\"
+		></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag('js', new Date());
+
+			gtag('config', 'UA-135903447-3');
+		</script>
+		<title>北美山姆哥 | 一个赴美建厂&amp;自动化改造的亲历者</title>
+		<meta charset=\\"utf-8\\" />
+		<meta
+			name=\\"viewport\\"
+			content=\\"width=device-width, initial-scale=1, user-scalable=no\\"
+		/>
+		<meta name=\\"description\\" content=深入了解一个国家，需要从三个层面：底部的文化逻辑（根）到中间的管理制度（树干）再到最上面的器物科技（果子）。三者相辅相成，缺一不可。其中文化逻辑是最关键的，很多当下中美之间的误解，都源自于背后的文化逻辑不同。不同的逻辑观念下，即使建立了相同的制度，也很难执行出相同的结果，即使引进了相同的器物科技，也很难让拿来的科技器物保持住发展创新。通过《山姆哥和他的朋友们》这网站平台，山姆哥及其他在美国的朋友，一起从这三个层面上来分享他们在美国的所见所闻所感：第一类，文化逻辑。主要从宗教哲学层面，探讨美国人为什么会这么做？行为背后的思考逻辑是怎样的？第二类，管理制度。结合工作中的项目经历中，所看到的做事方式差异以及管理制度的不同；第三类，器物科技。主要是那些可能在中国不常见，但在美国很好用的工具和方法。第四类，案例分析。针对一些具体的代表性案例来分析讨论。>
+			<meta property=og:url content=https://samandhisfriends.com />
+			<meta property=og:type content=website />
+			<meta property=og:title content=北美山姆哥 />
+			<meta property=og:description content=一个赴美建厂&amp;自动化改造的亲历者 />
+			<meta property=og:image content=https://samandhisfriends.com/images/post-og-image.jpg />
+			<meta property=og:locale content=zh-CN />
+			<meta property=fb:app_id content=381747502434242 />
+			<meta property=twitter:title content=北美山姆哥 />
+			<meta property=twitter:description content=一个赴美建厂&amp;自动化改造的亲历者 />
+			<meta property=twitter:image content=https://samandhisfriends.com/images/post-og-image.jpg />
+			<meta property=twitter:card content=summary_large_image />
+			<meta property=twitter:site content=@renzhen1024 />
+			<meta property=twitter:creator content=@renzhen1024 />
+
+		<link rel=\\"icon\\" type=\\"image/png\\" href=\\"/images/favicon/favicon.ico\\" />
+		<link rel=\\"apple-touch-icon\\" href=\\"/images/favicon/apple-touch-icon.png\\">
+		<link rel=\\"manifest\\" href=\\"/images/favicon/site.webmanifest\\" />
+		<link rel=\\"stylesheet\\" href=\\"/assets/sass/main_dfca217ed8.css\\" />
+	</head>
+	<body class=\\"is-preload \\">
+		<div id=\\"wrapper\\">
+			<header id=\\"header\\">
+			  <h1>
+			    <a href=\\"/\\">
+			      <div class=\\"header__image-container\\">
+			        <img class=\\"header__image\\" src=\\"/images/logo.png\\" alt=\\"\\" />
+			      </div>
+			    </a>
+			  </h1>
+			  <nav class=\\"main\\">
+			    <ul>
+			      <li class=\\"menu\\">
+			        <a class=\\"fa-bars\\" href=\\"#menu\\">
+			          Menu
+			        </a>
+			      </li>
+			    </ul>
+			  </nav>
+			</header>
+			<section id=\\"menu\\">
+			  <section>
+					<h2>分类浏览</h2>
+			    <ul class=\\"links\\">
+			        <li>
+			          <a href=\\"/?subcategory=文化逻辑\\">
+			            <h3>
+			              文化逻辑
+			            </h3>
+			            <p>
+			              关于文化逻辑的分类
+			            </p>
+			          </a>
+			        </li>
+			        <li>
+			          <a href=\\"/?subcategory=管理制度\\">
+			            <h3>
+			              管理制度
+			            </h3>
+			            <p>
+			              关于管理制度的分类
+			            </p>
+			          </a>
+			        </li>
+			        <li>
+			          <a href=\\"/?subcategory=器物科技\\">
+			            <h3>
+			              器物科技
+			            </h3>
+			            <p>
+			              关于器物科技的分类
+			            </p>
+			          </a>
+			        </li>
+			        <li>
+			          <a href=\\"/?subcategory=案例分享\\">
+			            <h3>
+			              案例分享
+			            </h3>
+			            <p>
+			              关于案例分享的分类
+			            </p>
+			          </a>
+			        </li>
+			    </ul>
+			  </section>
+			</section>
+			<div id=\\"main\\">
+	 <article class=\\"post\\">
+	<header>
+		<div class=\\"title\\">
+			<h2>
+				<a href=\\"/single-post/125\\">
+					R&amp;D, Designer 和 Engineer的区别
+				</a>
+			</h2>
+			<p>		<span class=\\"tag\\" style=\\"background-color:#00E6E6\\">置顶</span>
+		<a href=/>
+			<span class=\\"tag\\" style=\\"background-color:#8C6238;\\">山姆哥</span>
+		</a>
+</p>
+		</div>
+		<div class=\\"meta\\">
+			<time class=\\"published\\" datetime=(dateFormatter date)>
+				2019年4月17日
+			</time>
+			<a
+				href=\\"https://renzhen1024.com/u/sambro/summary\\"
+				class=\\"author\\"
+				target=\\"_blank\\"
+			>
+				<span class=\\"name\\">
+					小山
+				</span>
+				<img src=\\"https://renzhen1024.com/user_avatar/renzhen1024.com/sambro/240/40_2.png\\" alt=\\"\\" />
+			</a>
+		</div>
+	</header>
+	<p>
+			最近刚刚了解到R&amp;D， Designer和engineer工作定位是不一样的，至少在机械制造业是有区别的，简单来说，就如同建筑行业里，分别对应的 建筑画家、建筑设计师和土木工程师。 
+R&amp;D，全称是research and development。一般属于比较前沿的研究，跟学校里的研究单位有点接近。都是对未来行业的一些探索，不以商业利益为主要目标。从事这样的职位，可以接触到最前沿的理念，也有对本行业很宽阔的视野。缺点是，对于企业往往都是&hellip;
+	</p>
+	<footer>
+		<ul class=\\"actions\\">
+			<li>
+				<a href=\\"/single-post/125\\" class=\\"button large\\">
+					继续阅读
+				</a>
+			</li>
+		</ul>
+		<ul class=\\"stats\\">
+			<li>
+				<a href=\\"#\\" class=\\"border-none\\">
+					分类: 山姆哥
+				</a>
+			</li>
+			<li>
+				<a href=\\"#\\" class=\\"icon fa-heart\\">
+					2
+				</a>
+			</li>
+			<li>
+				<a href=\\"#\\" class=\\"icon fa-comment\\">
+					4
+				</a>
+			</li>
+		</ul>
+	</footer>
+</article>
+  <article class=\\"post\\">
+	<header>
+		<div class=\\"title\\">
+			<h2>
+				<a href=\\"/single-post/86\\">
+					一个例子看懂美国人解决问题方式的大不同
+				</a>
+			</h2>
+			<p>		<span class=\\"tag\\" style=\\"background-color:#00E6E6\\">置顶</span>
+		<a href=/>
+			<span class=\\"tag\\" style=\\"background-color:#8C6238;\\">山姆哥</span>
+		</a>
+</p>
+		</div>
+		<div class=\\"meta\\">
+			<time class=\\"published\\" datetime=(dateFormatter date)>
+				2019年3月25日
+			</time>
+			<a
+				href=\\"https://renzhen1024.com/u/sambro/summary\\"
+				class=\\"author\\"
+				target=\\"_blank\\"
+			>
+				<span class=\\"name\\">
+					小山
+				</span>
+				<img src=\\"https://renzhen1024.com/user_avatar/renzhen1024.com/sambro/240/40_2.png\\" alt=\\"\\" />
+			</a>
+		</div>
+	</header>
+	<p>
+			作为老板，假如你发现夜班有员工躲进更衣室，在换衣服的长椅上睡觉，你会怎么办？ 
+对于员工出现这样的问题，国内的企业通常会怎么解决呢？ 
+批评教育？罚款开除？把夜班班长骂一顿，写检查？然后在醒目的地方张贴告示，“严禁更衣室睡觉”？然后在早会上多多加强思想教育等等。。。 
+而我的美国同事们打算怎么去解决这个问题呢？ 
+首先，没有任何人挨批评。 
+他们的计划是，把长椅移到洗手间，洗手间进出人流多，也没人会在洗手间里睡觉，然后把更衣室和隔壁的休&hellip;
+	</p>
+	<footer>
+		<ul class=\\"actions\\">
+			<li>
+				<a href=\\"/single-post/86\\" class=\\"button large\\">
+					继续阅读
+				</a>
+			</li>
+		</ul>
+		<ul class=\\"stats\\">
+			<li>
+				<a href=\\"#\\" class=\\"border-none\\">
+					分类: 山姆哥
+				</a>
+			</li>
+			<li>
+				<a href=\\"#\\" class=\\"icon fa-heart\\">
+					1
+				</a>
+			</li>
+			<li>
+				<a href=\\"#\\" class=\\"icon fa-comment\\">
+					4
+				</a>
+			</li>
+		</ul>
+	</footer>
+</article>
+  <article class=\\"post\\">
+	<header>
+		<div class=\\"title\\">
+			<h2>
+				<a href=\\"/single-post/88\\">
+					这本世界上发行量最大的书，到底都讲了些什么？
+				</a>
+			</h2>
+			<p>		<span class=\\"tag\\" style=\\"background-color:#00E6E6\\">置顶</span>
+		<a href=/>
+			<span class=\\"tag\\" style=\\"background-color:#8C6238;\\">山姆哥</span>
+		</a>
+</p>
+		</div>
+		<div class=\\"meta\\">
+			<time class=\\"published\\" datetime=(dateFormatter date)>
+				2019年3月27日
+			</time>
+			<a
+				href=\\"https://renzhen1024.com/u/sambro/summary\\"
+				class=\\"author\\"
+				target=\\"_blank\\"
+			>
+				<span class=\\"name\\">
+					小山
+				</span>
+				<img src=\\"https://renzhen1024.com/user_avatar/renzhen1024.com/sambro/240/40_2.png\\" alt=\\"\\" />
+			</a>
+		</div>
+	</header>
+	<p>
+			1月20日，美国正式迎来第45任总统特朗普–一个大选前不被所有主流媒体看好，被戏称作 “史上唯一跟女人吵架吵赢了”的古稀之年老男人。在整个就职流程中，有些环节算是美国所特有的现象，比如明天的祷告和双手放在圣经上宣誓。 
+ 
+这张图片是特朗普在竞选期间的照片，很多人都在为他祷告，或许这正是一个七十岁老人的力量来源 
+说起祷告，我们国人往往想到的是老太太求菩萨保平安，又或者是百姓商贾求财神爷发大财。说白了，都是想跟神搞好关系，做交易，要好处&hellip;
+	</p>
+	<footer>
+		<ul class=\\"actions\\">
+			<li>
+				<a href=\\"/single-post/88\\" class=\\"button large\\">
+					继续阅读
+				</a>
+			</li>
+		</ul>
+		<ul class=\\"stats\\">
+			<li>
+				<a href=\\"#\\" class=\\"border-none\\">
+					分类: 山姆哥
+				</a>
+			</li>
+			<li>
+				<a href=\\"#\\" class=\\"icon fa-heart\\">
+					0
+				</a>
+			</li>
+			<li>
+				<a href=\\"#\\" class=\\"icon fa-comment\\">
+					2
+				</a>
+			</li>
+		</ul>
+	</footer>
+</article>
+  <article class=\\"post\\">
+	<header>
+		<div class=\\"title\\">
+			<h2>
+				<a href=\\"/single-post/73\\">
+					美国职场的专业认证
+				</a>
+			</h2>
+			<p>		<span class=\\"tag\\" style=\\"background-color:#00E6E6\\">置顶</span>
+		<a href=/>
+			<span class=\\"tag\\" style=\\"background-color:#8C6238;\\">山姆哥</span>
+		</a>
+</p>
+		</div>
+		<div class=\\"meta\\">
+			<time class=\\"published\\" datetime=(dateFormatter date)>
+				2019年3月14日
+			</time>
+			<a
+				href=\\"https://renzhen1024.com/u/sambro/summary\\"
+				class=\\"author\\"
+				target=\\"_blank\\"
+			>
+				<span class=\\"name\\">
+					小山
+				</span>
+				<img src=\\"https://renzhen1024.com/user_avatar/renzhen1024.com/sambro/240/40_2.png\\" alt=\\"\\" />
+			</a>
+		</div>
+	</header>
+	<p>
+			请问你所从事的专业证书有哪些？有哪些是你考过或者打算考的？含金量如何？对于专业发展会有哪些影响？
+	</p>
+	<footer>
+		<ul class=\\"actions\\">
+			<li>
+				<a href=\\"/single-post/73\\" class=\\"button large\\">
+					继续阅读
+				</a>
+			</li>
+		</ul>
+		<ul class=\\"stats\\">
+			<li>
+				<a href=\\"#\\" class=\\"border-none\\">
+					分类: 山姆哥
+				</a>
+			</li>
+			<li>
+				<a href=\\"#\\" class=\\"icon fa-heart\\">
+					0
+				</a>
+			</li>
+			<li>
+				<a href=\\"#\\" class=\\"icon fa-comment\\">
+					4
+				</a>
+			</li>
+		</ul>
+	</footer>
+</article>
+  <article class=\\"post\\">
+	<header>
+		<div class=\\"title\\">
+			<h2>
+				<a href=\\"/single-post/56\\">
+					为什么我们吃着最好吃的饭，却体质不如人？
+				</a>
+			</h2>
+			<p>		<span class=\\"tag\\" style=\\"background-color:#0088CC\\">热点讨论</span>
+</p>
+		</div>
+		<div class=\\"meta\\">
+			<time class=\\"published\\" datetime=(dateFormatter date)>
+				2019年3月4日
+			</time>
+			<a
+				href=\\"https://renzhen1024.com/u/sambro/summary\\"
+				class=\\"author\\"
+				target=\\"_blank\\"
+			>
+				<span class=\\"name\\">
+					小山
+				</span>
+				<img src=\\"https://renzhen1024.com/user_avatar/renzhen1024.com/sambro/240/40_2.png\\" alt=\\"\\" />
+			</a>
+		</div>
+	</header>
+	<p>
+			内容被山姆哥藏起来了，点击“继续阅读”
+	</p>
+	<footer>
+		<ul class=\\"actions\\">
+			<li>
+				<a href=\\"/single-post/56\\" class=\\"button large\\">
+					继续阅读
+				</a>
+			</li>
+		</ul>
+		<ul class=\\"stats\\">
+			<li>
+				<a href=\\"#\\" class=\\"border-none\\">
+					分类: 山姆哥
+				</a>
+			</li>
+			<li>
+				<a href=\\"#\\" class=\\"icon fa-heart\\">
+					1
+				</a>
+			</li>
+			<li>
+				<a href=\\"#\\" class=\\"icon fa-comment\\">
+					10
+				</a>
+			</li>
+		</ul>
+	</footer>
+</article>
+ 
+
+	<!-- Pagination -->
+	<ul class=\\"actions pagination\\">
+		<li>
+			<a
+				href=\\"/?currentPage=0\\"
+				class=\\"disabled button large previous\\"
+			>
+				上一页
+			</a>
+		</li>
+		<li>
+			<a
+				href=\\"/?currentPage=0\\"
+				class=\\"disabled button large next\\"
+			>
+				下一页
+			</a>
+		</li>
+	</ul>
+</div>
+
+<section id=\\"sidebar\\">
+	<section id=\\"intro\\">
+		<a href=\\"#\\" class=\\"logo\\">
+			<img src=\\"images/sam-site-profile-image.png\\" alt=\\"\\" />
+		</a>
+		<header>
+			<h2>
+				北美山姆哥 
+			</h2>
+			<p>
+				一个赴美建厂&amp;自动化改造的亲历者
+			</p>
+		</header>
+	</section>
+	<section>
+		<h3 class=\\"mini-posts-header\\">
+			山姆哥的最新评论
+		</h3>
+		<div class=\\"mini-posts\\">
+			 <article class=\\"mini-post\\">
+	<header>
+		<h3>
+			<a href=\\"/single-post/66\\">全新的理念，全新的市场，“无知”的用户，如何找到真实需求</a>
+		</h3>
+		<time class=\\"published\\" datetime=\\"2019-03-15T03:15:10.304Z\\">
+			2019年3月14日
+		</time>
+	</header>
+	<div class=\\"mini-post-content\\">我想提两家企业，一个是vivo和OPPO（算一家）；另一家是spacex和特斯拉（算一家）； 
+对于...</div>
+</article>
+  <article class=\\"mini-post\\">
+	<header>
+		<h3>
+			<a href=\\"/single-post/72\\">对你人生影响最大的三本书</a>
+		</h3>
+		<time class=\\"published\\" datetime=\\"2019-03-15T03:11:33.185Z\\">
+			2019年3月14日
+		</time>
+	</header>
+	<div class=\\"mini-post-content\\">这确实是一个很难回答的问题，而且也不是因为读了很多书。 
+而是读的书往往已经记不得具体讲了什么，往往...</div>
+</article>
+  <article class=\\"mini-post\\">
+	<header>
+		<h3>
+			<a href=\\"/single-post/56\\">为什么我们吃着最好吃的饭，却体质不如人？</a>
+		</h3>
+		<time class=\\"published\\" datetime=\\"2019-03-05T21:53:06.594Z\\">
+			2019年3月5日
+		</time>
+	</header>
+	<div class=\\"mini-post-content\\">哈哈 胖了22年。。。我第一次有体重概念就是小学140斤，我从来没有体重低于140的概念。。。。 
+...</div>
+</article>
+  <article class=\\"mini-post\\">
+	<header>
+		<h3>
+			<a href=\\"/single-post/56\\">为什么我们吃着最好吃的饭，却体质不如人？</a>
+		</h3>
+		<time class=\\"published\\" datetime=\\"2019-03-05T21:47:38.764Z\\">
+			2019年3月5日
+		</time>
+	</header>
+	<div class=\\"mini-post-content\\">嗯，女票爸妈来的时候，我带他们去吃德州路边摊Texas roadhouse，通过他们的眼睛，我发现美...</div>
+</article>
+  <article class=\\"mini-post\\">
+	<header>
+		<h3>
+			<a href=\\"/single-post/56\\">为什么我们吃着最好吃的饭，却体质不如人？</a>
+		</h3>
+		<time class=\\"published\\" datetime=\\"2019-03-05T21:45:09.014Z\\">
+			2019年3月5日
+		</time>
+	</header>
+	<div class=\\"mini-post-content\\">是，我觉得差别主要从中学开始的。其实你看小学或者初中的美国孩子，身形跟中国人还是挺接近的，都是高挑瘦...</div>
+</article>
+  <article class=\\"mini-post\\">
+	<header>
+		<h3>
+			<a href=\\"/single-post/59\\">如何跳出坏习惯</a>
+		</h3>
+		<time class=\\"published\\" datetime=\\"2019-03-05T21:43:06.460Z\\">
+			2019年3月5日
+		</time>
+	</header>
+	<div class=\\"mini-post-content\\">我想到了Shelton，每个人天生就不一样吧，有自己的特点挺好的，能摸清自己的节奏，坦然一点，我觉得...</div>
+</article>
+  <article class=\\"mini-post\\">
+	<header>
+		<h3>
+			<a href=\\"/single-post/40\\">如果不考虑收入和面子，你将选择什么作为职业</a>
+		</h3>
+		<time class=\\"published\\" datetime=\\"2019-03-04T14:46:24.721Z\\">
+			2019年3月4日
+		</time>
+	</header>
+	<div class=\\"mini-post-content\\">在我看来，职业样式可以多样，但归根结底一定要能创造！！最好是有机会原创！！ 
+人之所以为人，相较于动...</div>
+</article>
+  <article class=\\"mini-post\\">
+	<header>
+		<h3>
+			<a href=\\"/single-post/47\\">如何准备一场演讲？</a>
+		</h3>
+		<time class=\\"published\\" datetime=\\"2019-03-04T14:33:27.370Z\\">
+			2019年3月4日
+		</time>
+	</header>
+	<div class=\\"mini-post-content\\">sounds great！有种即将改变世界的感觉</div>
+</article>
+  <article class=\\"mini-post\\">
+	<header>
+		<h3>
+			<a href=\\"/single-post/47\\">如何准备一场演讲？</a>
+		</h3>
+		<time class=\\"published\\" datetime=\\"2019-03-04T14:32:52.580Z\\">
+			2019年3月4日
+		</time>
+	</header>
+	<div class=\\"mini-post-content\\">嗯，我觉得在日常交谈中是可以举一反三，从具体例子中归纳出结论来讨论的。 
+但是作为单向传播，倾向于具...</div>
+</article>
+  <article class=\\"mini-post\\">
+	<header>
+		<h3>
+			<a href=\\"/single-post/47\\">如何准备一场演讲？</a>
+		</h3>
+		<time class=\\"published\\" datetime=\\"2019-03-04T00:57:21.947Z\\">
+			2019年3月3日
+		</time>
+	</header>
+	<div class=\\"mini-post-content\\">昨天刚刚在夏洛特做了一次中美文化方面的分享，反响很不错，我可以结合这次的演讲回答一下题主的问题 
+我...</div>
+</article>
+  <article class=\\"mini-post\\">
+	<header>
+		<h3>
+			<a href=\\"/single-post/34\\">讨论一个有些沉重的话题？</a>
+		</h3>
+		<time class=\\"published\\" datetime=\\"2019-02-28T00:06:27.372Z\\">
+			2019年2月27日
+		</time>
+	</header>
+	<div class=\\"mini-post-content\\">这个话题，我在出国前也是有些忌讳，直到来了美国，在教会认识了一些美国家庭，也常去参加他们的一些日常活...</div>
+</article>
+  <article class=\\"mini-post\\">
+	<header>
+		<h3>
+			<a href=\\"/single-post/28\\">b2c的下一个风口在哪里？</a>
+		</h3>
+		<time class=\\"published\\" datetime=\\"2019-02-26T17:03:39.569Z\\">
+			2019年2月26日
+		</time>
+	</header>
+	<div class=\\"mini-post-content\\">作为机械工程师，分享三个我在工作中所感受到的趋势： 
+一是：3D扫描。 
+之前去听过一次报告，现在3...</div>
+</article>
+ 
+		</div>
+	</section>
+	<section>
+		<h3>山姆哥的伙伴们</h3>
+		<ul class=\\"posts\\">
+			 <li>
+	<article>
+		<header>
+			<h3>
+				<a href=\\"https://renzhen1024.com/u/sambro/summary\\">
+					@sambro
+				</a>
+			</h3>
+			<p>小山</p>
+		</header>
+		<a href=\\"https://renzhen1024.com/u/sambro/summary\\" class=\\"image\\" target=\\"_blank\\">
+			<img src=\\"https://renzhen1024.com/user_avatar/renzhen1024.com/sambro/240/90_2.png\\" alt=\\"\\" />
+		</a>
+	</article>
+</li>
+  <li>
+	<article>
+		<header>
+			<h3>
+				<a href=\\"https://renzhen1024.com/u/Vivian/summary\\">
+					@Vivian
+				</a>
+			</h3>
+			<p></p>
+		</header>
+		<a href=\\"https://renzhen1024.com/u/Vivian/summary\\" class=\\"image\\" target=\\"_blank\\">
+			<img src=\\"https://renzhen1024.com/user_avatar/renzhen1024.com/vivian/240/40_2.png\\" alt=\\"\\" />
+		</a>
+	</article>
+</li>
+  <li>
+	<article>
+		<header>
+			<h3>
+				<a href=\\"https://renzhen1024.com/u/tningjs/summary\\">
+					@tningjs
+				</a>
+			</h3>
+			<p>Tao Ning</p>
+		</header>
+		<a href=\\"https://renzhen1024.com/u/tningjs/summary\\" class=\\"image\\" target=\\"_blank\\">
+			<img src=\\"https://renzhen1024.com/user_avatar/renzhen1024.com/tningjs/240/14_2.png\\" alt=\\"\\" />
+		</a>
+	</article>
+</li>
+  <li>
+	<article>
+		<header>
+			<h3>
+				<a href=\\"https://renzhen1024.com/u/306970744/summary\\">
+					@306970744
+				</a>
+			</h3>
+			<p>阿壮</p>
+		</header>
+		<a href=\\"https://renzhen1024.com/u/306970744/summary\\" class=\\"image\\" target=\\"_blank\\">
+			<img src=\\"https://renzhen1024.com/user_avatar/renzhen1024.com/306970744/240/49_2.png\\" alt=\\"\\" />
+		</a>
+	</article>
+</li>
+  <li>
+	<article>
+		<header>
+			<h3>
+				<a href=\\"https://renzhen1024.com/u/jsch/summary\\">
+					@jsch
+				</a>
+			</h3>
+			<p>石头猫</p>
+		</header>
+		<a href=\\"https://renzhen1024.com/u/jsch/summary\\" class=\\"image\\" target=\\"_blank\\">
+			<img src=\\"https://renzhen1024.com/letter_avatar_proxy/v3/letter/j/74df32/240.png\\" alt=\\"\\" />
+		</a>
+	</article>
+</li>
+ 
+		</ul>
+	</section>
+	<section class=\\"blurb\\">
+		<h2>
+			山姆哥简介
+		</h2>
+		<p>
+			重庆大学车辆工程学士，美国匹兹堡大学工业工程硕士。PMP项目管理专业人士资格认证；AUTODESK INVENTOR三维设计专业认证。个人公众号：《山姆哥和他的小伙伴们》(ID: UncleSamChina)，微信：UncleSam_China，邮箱：Unclesamchina2016@Gmail.com
+		</p>
+		<ul class=\\"actions\\">
+			<li>
+				<a href=\\"#\\" class=\\"button\\">
+					了解更多
+				</a>
+			</li>
+		</ul>
+	</section>
+	<section id=\\"footer\\">
+		<ul class=\\"icons\\">
+			<li>
+				<a href=\\"http://facebook.com\\" class=\\"fa-facebook\\">
+					<span class=\\"label\\">
+						Facebook
+					</span>
+				</a>
+			</li>
+			<li>
+				<a href=\\"http://twitter.com\\" class=\\"fa-twitter\\">
+					<span class=\\"label\\">
+						Twitter
+					</span>
+				</a>
+			</li>
+			<li>
+				<a href=\\"https://www.instagram.com\\" class=\\"fa-instagram\\">
+					<span class=\\"label\\">
+						Instagram
+					</span>
+				</a>
+			</li>
+			<li>
+				<a href=\\"https://rss.com/\\" class=\\"fa-rss\\">
+					<span class=\\"label\\">
+						RSS
+					</span>
+				</a>
+			</li>
+			<li>
+				<a href=\\"mailto:mountainsun1988@gmail.com\\" class=\\"fa-envelope\\">
+					<span class=\\"label\\">
+						Email
+					</span>
+				</a>
+			</li>
+		</ul>
+		<p class=\\"copyright\\">
+			© From:
+			<a href=\\"https://renzhen1024.com\\" target=\\"_blank\\">renzhen1024.com</a>
+		</p>
+	</section>
+</section>
+
+
+		</div>
+		<script src=\\"/assets/js/bundle_5fe32d6bcd.js\\"></script>
+	</body>
+</html>
+"
+`;

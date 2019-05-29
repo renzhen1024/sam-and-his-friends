@@ -24,13 +24,27 @@ describe('GET /single-post/:topicId', () => {
 		moxios.uninstall();
 	});
 
-	test('It should fetch from renzhen1024.com', async () => {
-		await request(app()).get('/single-post/125');
-		expect(moxios.requests.mostRecent().url).toMatch(REQUEST_URL);
+	test('It should fetch from renzhen1024.com', done => {
+		// Due to `hbs.registerPartials` in `app.js` reads file async, need to ramp this in `setTimeout`, otherwise, test will be flaky with error that partile is not available.
+		setTimeout(() => {
+			request(app())
+				.get('/single-post/125')
+				.then(() => {
+					expect(moxios.requests.mostRecent().url).toMatch(REQUEST_URL);
+					done();
+				});
+		}, 1000);
 	});
 
-	test.skip('It should match snapshot', async () => {
-		const result = await request(app()).get('/single-post/125');
-		expect(result.text).toMatchSnapshot();
+	test('It should match snapshot', done => {
+		// Due to `hbs.registerPartials` in `app.js` reads file async, need to ramp this in `setTimeout`, otherwise, test will be flaky with error that partile is not available.
+		setTimeout(() => {
+			request(app())
+				.get('/single-post/125')
+				.then(result => {
+					expect(result.text).toMatchSnapshot();
+					done();
+				});
+		}, 1000);
 	});
 });

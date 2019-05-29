@@ -53,24 +53,48 @@ describe('GET /index', () => {
 		moxios.uninstall();
 	});
 
-	test('It should fetch from renzhen1024.com', async () => {
-		await request(app()).get('/');
-		MAIN_CATEGORY.concat(COMMON_RESOURCE_MAP).forEach(({ URL }, index) => {
-			expect(moxios.requests.at(index).url).toMatch(URL);
-		});
+	test('It should fetch from renzhen1024.com', done => {
+		// Due to `hbs.registerPartials` in `app.js` reads file async, need to ramp this in `setTimeout`, otherwise, test will be flaky with error that partile is not available.
+		setTimeout(() => {
+			request(app())
+				.get('/')
+				.expect(200)
+				.then(() => {
+					MAIN_CATEGORY.concat(COMMON_RESOURCE_MAP).forEach(
+						({ URL }, index) => {
+							expect(moxios.requests.at(index).url).toMatch(URL);
+						}
+					);
+					done();
+				});
+		}, 1000);
 	});
 
-	test('It should fetch from renzhen1024.com - when visit subcategory', async () => {
-		await request(app()).get(`/?subcategory=${encodeURI('文化逻辑')}`);
-		SUB_CATEGORY.concat(COMMON_RESOURCE_MAP).forEach(({ URL }, index) => {
-			expect(moxios.requests.at(index).url).toMatch(URL);
-		});
+	test('It should fetch from renzhen1024.com - when visit subcategory', done => {
+		// Due to `hbs.registerPartials` in `app.js` reads file async, need to ramp this in `setTimeout`, otherwise, test will be flaky with error that partile is not available.
+		setTimeout(() => {
+			request(app())
+				.get(`/?subcategory=${encodeURI('文化逻辑')}`)
+				.expect(200)
+				.then(() => {
+					SUB_CATEGORY.concat(COMMON_RESOURCE_MAP).forEach(({ URL }, index) => {
+						expect(moxios.requests.at(index).url).toMatch(URL);
+					});
+					done();
+				});
+		}, 1000);
 	});
 
-	// The test gives errors sam-and-his-friends/views/templates/index.hbs: The partial post could not be found
-	// Need to dive deeper to see the root cause
-	test.skip('It should match snapshot', async () => {
-		const result = await request(app()).get('/');
-		expect(result.text).toMatchSnapshot();
+	test('It should render a tempate that match snapshot', done => {
+		// Due to `hbs.registerPartials` in `app.js` reads file async, need to ramp this in `setTimeout`, otherwise, test will be flaky with error that partile is not available.
+		setTimeout(() => {
+			request(app())
+				.get('/')
+				.expect(200)
+				.then(result => {
+					expect(result.text).toMatchSnapshot();
+					done();
+				});
+		}, 1000);
 	});
 });

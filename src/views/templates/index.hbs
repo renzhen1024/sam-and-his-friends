@@ -6,7 +6,7 @@
 		<li>
 			<a
 				href="/?currentPage={{previouPage}}"
-				class="{{eq previouPage 0 'disabled'}} button large previous"
+				class="{{#if (eq previouPage 0)}}disabled{{/if}} button large previous"
 			>
 				{{t "i18n-pagination-previous-page"}}
 			</a>
@@ -14,7 +14,7 @@
 		<li>
 			<a
 				href="/?currentPage={{nextPage}}"
-				class="{{eq nextPage 0 'disabled'}} button large next"
+				class="{{#if (eq nextPage 0)}}disabled{{/if}} button large next"
 			>
 				{{t "i18n-pagination-next-page"}}
 			</a>

@@ -157,3 +157,19 @@ exports.twitterWebsiteMetaTags = [
 exports.defalutMetaTagImageSrcStr = defalutMetaTagImageSrcStr;
 exports.fbCommonMetaTags = fbCommonMetaTags;
 exports.twitterCommonMetaTags = twitterCommonMetaTags;
+
+exports.setting = {
+	/**
+	 * The UI strings will be translated to the prefered language for user, user
+	 * also need to provide translated string in `/src/locale/<local>.js` with
+	 * same file name. If not set, it will be default to user's browser setting,
+	 * in this case, user need to provide all possible translation string files.
+	 */
+	locale: 'zh-cn',
+	/**
+	 * When display full name, should family name comes first, some of the lange
+	 * has family name comes first like Chinese while other language has givename
+	 * first, e.g. English
+	 */
+	familyNameFirst: true,
+};

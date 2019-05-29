@@ -1,6 +1,8 @@
 const moxios = require('moxios');
 const request = require('supertest');
+
 const app = require('../../src/app');
+const { wait } = require('../test-helpers/helpers');
 
 const postsMock = require('../test-helpers/route-mocks/index/posts.json');
 const miniPostsMock = require('../test-helpers/route-mocks/index/mini-posts.json');
@@ -44,7 +46,7 @@ function setupTest() {
 	);
 }
 
-describe('GET /index', () => {
+describe('Route | Index', () => {
 	beforeEach(() => {
 		setupTest();
 	});
@@ -53,48 +55,37 @@ describe('GET /index', () => {
 		moxios.uninstall();
 	});
 
-	test('It should fetch from renzhen1024.com', done => {
-		// Due to `hbs.registerPartials` in `app.js` reads file async, need to ramp this in `setTimeout`, otherwise, test will be flaky with error that partile is not available.
-		setTimeout(() => {
-			request(app())
-				.get('/')
-				.expect(200)
-				.then(() => {
-					MAIN_CATEGORY.concat(COMMON_RESOURCE_MAP).forEach(
-						({ URL }, index) => {
-							expect(moxios.requests.at(index).url).toMatch(URL);
-						}
-					);
-					done();
-				});
-		}, 1000);
+	test('It should fetch from renzhen1024.com', async () => {
+		// Due to `hbs.registerPartials` in `app.js` reads file async, need to wait for it, otherwise, test will be flaky with error that partile is not available.
+		await wait(1000);
+		await request(app())
+			.get('/')
+			.expect(200);
+
+		MAIN_CATEGORY.concat(COMMON_RESOURCE_MAP).forEach(({ URL }, index) => {
+			expect(moxios.requests.at(index).url).toMatch(URL);
+		});
 	});
 
-	test('It should fetch from renzhen1024.com - when visit subcategory', done => {
-		// Due to `hbs.registerPartials` in `app.js` reads file async, need to ramp this in `setTimeout`, otherwise, test will be flaky with error that partile is not available.
-		setTimeout(() => {
-			request(app())
-				.get(`/?subcategory=${encodeURI('文化逻辑')}`)
-				.expect(200)
-				.then(() => {
-					SUB_CATEGORY.concat(COMMON_RESOURCE_MAP).forEach(({ URL }, index) => {
-						expect(moxios.requests.at(index).url).toMatch(URL);
-					});
-					done();
-				});
-		}, 1000);
+	test('It should fetch from renzhen1024.com - when visit subcategory', async () => {
+		// Due to `hbs.registerPartials` in `app.js` reads file async, need to wait for it, otherwise, test will be flaky with error that partile is not available.
+		await wait(1000);
+		await request(app())
+			.get(`/?subcategory=${encodeURI('文化逻辑')}`)
+			.expect(200);
+
+		SUB_CATEGORY.concat(COMMON_RESOURCE_MAP).forEach(({ URL }, index) => {
+			expect(moxios.requests.at(index).url).toMatch(URL);
+		});
 	});
 
-	test('It should render a tempate that match snapshot', done => {
-		// Due to `hbs.registerPartials` in `app.js` reads file async, need to ramp this in `setTimeout`, otherwise, test will be flaky with error that partile is not available.
-		setTimeout(() => {
-			request(app())
-				.get('/')
-				.expect(200)
-				.then(result => {
-					expect(result.text).toMatchSnapshot();
-					done();
-				});
-		}, 1000);
+	test('It should render a tempate that match snapshot', async () => {
+		// Due to `hbs.registerPartials` in `app.js` reads file async, need to wait for it, otherwise, test will be flaky with error that partile is not available.
+		await wait(1000);
+		const result = await request(app())
+			.get('/')
+			.expect(200);
+
+		expect(result.text).toMatchSnapshot();
 	});
 });

@@ -1,6 +1,8 @@
 const moxios = require('moxios');
 const request = require('supertest');
+
 const app = require('../../src/app');
+const { wait } = require('../test-helpers/helpers');
 
 const response = require('../test-helpers/route-mocks/single-post.json');
 
@@ -24,27 +26,19 @@ describe('GET /single-post/:topicId', () => {
 		moxios.uninstall();
 	});
 
-	test('It should fetch from renzhen1024.com', done => {
-		// Due to `hbs.registerPartials` in `app.js` reads file async, need to ramp this in `setTimeout`, otherwise, test will be flaky with error that partile is not available.
-		setTimeout(() => {
-			request(app())
-				.get('/single-post/125')
-				.then(() => {
-					expect(moxios.requests.mostRecent().url).toMatch(REQUEST_URL);
-					done();
-				});
-		}, 1000);
+	test('It should fetch from renzhen1024.com', async () => {
+		// Due to `hbs.registerPartials` in `app.js` reads file async, need to wait for it, otherwise, test will be flaky with error that partile is not available.
+		await wait(1000);
+		await request(app()).get('/single-post/125');
+
+		expect(moxios.requests.mostRecent().url).toMatch(REQUEST_URL);
 	});
 
-	test('It should match snapshot', done => {
-		// Due to `hbs.registerPartials` in `app.js` reads file async, need to ramp this in `setTimeout`, otherwise, test will be flaky with error that partile is not available.
-		setTimeout(() => {
-			request(app())
-				.get('/single-post/125')
-				.then(result => {
-					expect(result.text).toMatchSnapshot();
-					done();
-				});
-		}, 1000);
+	test('It should match snapshot', async () => {
+		// Due to `hbs.registerPartials` in `app.js` reads file async, need to wait for it, otherwise, test will be flaky with error that partile is not available.
+		await wait(1000);
+		const result = await request(app()).get('/single-post/125');
+
+		expect(result.text).toMatchSnapshot();
 	});
 });

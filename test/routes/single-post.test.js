@@ -17,7 +17,7 @@ function setupTest() {
 	});
 }
 
-describe('GET /single-post/:topicId', () => {
+describe('Route | single-post', () => {
 	beforeEach(() => {
 		setupTest();
 	});

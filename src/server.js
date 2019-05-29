@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 
 /**
- * Module dependencies.
+ * @module src/server
+ * Import the express app and use nodejs' http module to set up a server
  */
 const debug = require('debug')('sam-and-his-friends:server');
 const http = require('http');
@@ -14,6 +15,7 @@ const port = 3000;
 
 /**
  * Event listener for HTTP server "error" event.
+ * @param {object} error
  */
 function onError(error) {
 	if (error.syscall !== 'listen') {
@@ -47,9 +49,6 @@ function onListening() {
 	debug(`Listening on ${bind}`);
 }
 
-/**
- * Listen on provided port, on all network interfaces.
- */
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);

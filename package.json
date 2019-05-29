@@ -27,7 +27,6 @@
   "dependencies": {
     "@renzhen1024/sam-and-his-friends-vendor": "^2.0.0",
     "axios": "^0.18.0",
-    "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "express": "~4.16.0",
     "hbs": "~4.0.1",
@@ -35,7 +34,6 @@
     "jest": "^24.7.1",
     "jsdom": "^15.0.0",
     "moment": "^2.24.0",
-    "morgan": "~1.9.0",
     "moxios": "^0.4.0",
     "node-polyglot": "^2.3.0",
     "readability": "https://github.com/mozilla/readability.git",

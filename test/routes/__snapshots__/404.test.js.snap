@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Route | 404 It should match snapshot 1`] = `
+"<!--
+ Name: sam-and-his-friends v6.0.0
+ Description: An express application extrac discourse data from renzhen1024.com
+ Copyright: (c) 2019 tningjs
+ License: MIT
+ https://github.com/tningjs/sam-and-his-friends
+ -->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script
+			async
+			src=\\"https://www.googletagmanager.com/gtag/js?id=UA-135903447-3\\"
+		></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag('js', new Date());
+
+			gtag('config', 'UA-135903447-3');
+		</script>
+		<title>北美山姆哥</title>
+		<meta charset=\\"utf-8\\" />
+		<meta
+			name=\\"viewport\\"
+			content=\\"width=device-width, initial-scale=1, user-scalable=no\\"
+		/>
+		<link rel=\\"icon\\" type=\\"image/png\\" href=\\"/images/favicon/favicon.ico\\" />
+		<link rel=\\"apple-touch-icon\\" href=\\"/images/favicon/apple-touch-icon.png\\">
+		<link rel=\\"manifest\\" href=\\"/images/favicon/site.webmanifest\\" />
+		<link rel=\\"stylesheet\\" href=\\"/assets/sass/404_86aefdbbd4.css\\" />
+	</head>
+	<body class=\\"bg-purple\\">
+		<div class=\\"stars\\">
+  <div class=\\"central-body\\">
+		<h2 class=\\"not-found-page-title\\">抱歉~ 访问的页面被山姆哥搬走了</h2>
+
+    <a
+      href=\\"/\\"
+      class=\\"btn-go-home\\"
+    >
+      返回主页
+    </a>
+  </div>
+  <div class=\\"objects\\">
+    <img
+      class=\\"object_rocket\\"
+      src=\\"images/404/rocket.svg\\"
+      width=\\"40px\\"
+     />
+
+    <div class=\\"earth-moon\\">
+      <img
+        class=\\"object_earth\\"
+        src=\\"images/404/earth.svg\\"
+        width=\\"100px\\"
+       />
+
+      <img
+        class=\\"object_moon\\"
+        src=\\"images/404/moon.svg\\"
+        width=\\"80px\\"
+       />
+
+    </div>
+    <div class=\\"box_astronaut\\">
+      <img
+        class=\\"object_astronaut\\"
+        src=\\"images/404/astronaut.svg\\"
+        width=\\"140px\\"
+       />
+
+    </div>
+  </div>
+  <div class=\\"glowing_stars\\">
+    <div class=\\"star\\"></div>
+    <div class=\\"star\\"></div>
+    <div class=\\"star\\"></div>
+    <div class=\\"star\\"></div>
+    <div class=\\"star\\"></div>
+  </div>
+</div>
+
+	</body>
+</html>
+"
+`;

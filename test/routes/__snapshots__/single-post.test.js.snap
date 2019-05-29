@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`GET /single-post/:topicId It should match snapshot 1`] = `
+exports[`Route | single-post It should match snapshot 1`] = `
 "<!--
  Name: sam-and-his-friends v6.0.0
  Description: An express application extrac discourse data from renzhen1024.com

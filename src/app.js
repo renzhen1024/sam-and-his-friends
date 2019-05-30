@@ -3,7 +3,6 @@
  * Entry point of the source code
  * Init express app and mount middlewares
  */
-
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');

@@ -105,7 +105,7 @@ const fbCommonMetaTags = [
 	},
 ];
 
-exports.fbWebsiteMetaTags = [
+exports.fbMetaTagsForIndexRoute = [
 	{ type: 'og:url', content: 'https://samandhisfriends.com' },
 	{
 		type: 'og:type',
@@ -138,7 +138,7 @@ const twitterCommonMetaTags = [
 	},
 ];
 
-exports.twitterWebsiteMetaTags = [
+exports.twitterMetaTagsForIndexRoute = [
 	{
 		type: 'twitter:title',
 		content: siteTitle,

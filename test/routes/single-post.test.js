@@ -2,6 +2,7 @@ const moxios = require('moxios');
 const request = require('supertest');
 
 const app = require('../../src/app');
+// Due to `hbs.registerPartials` in `app.js` reads file async, need to wait for it, otherwise, test will be flaky with error that partile is not available.
 const { wait } = require('../test-helpers/helpers');
 
 const response = require('../test-helpers/route-mocks/single-post.json');
@@ -27,7 +28,6 @@ describe('Route | single-post', () => {
 	});
 
 	test('It should fetch from renzhen1024.com', async () => {
-		// Due to `hbs.registerPartials` in `app.js` reads file async, need to wait for it, otherwise, test will be flaky with error that partile is not available.
 		await wait(1000);
 		await request(app()).get('/single-post/125');
 
@@ -35,7 +35,6 @@ describe('Route | single-post', () => {
 	});
 
 	test('It should match snapshot', async () => {
-		// Due to `hbs.registerPartials` in `app.js` reads file async, need to wait for it, otherwise, test will be flaky with error that partile is not available.
 		await wait(1000);
 		const result = await request(app()).get('/single-post/125');
 

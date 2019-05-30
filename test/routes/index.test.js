@@ -2,6 +2,7 @@ const moxios = require('moxios');
 const request = require('supertest');
 
 const app = require('../../src/app');
+// Due to `hbs.registerPartials` in `app.js` reads file async, need to wait for it, otherwise, test will be flaky with error that partile is not available.
 const { wait } = require('../test-helpers/helpers');
 
 const postsMock = require('../test-helpers/route-mocks/index/posts.json');
@@ -56,7 +57,6 @@ describe('Route | Index', () => {
 	});
 
 	test('It should fetch from renzhen1024.com', async () => {
-		// Due to `hbs.registerPartials` in `app.js` reads file async, need to wait for it, otherwise, test will be flaky with error that partile is not available.
 		await wait(1000);
 		await request(app())
 			.get('/')
@@ -68,7 +68,6 @@ describe('Route | Index', () => {
 	});
 
 	test('It should fetch from renzhen1024.com - when visit subcategory', async () => {
-		// Due to `hbs.registerPartials` in `app.js` reads file async, need to wait for it, otherwise, test will be flaky with error that partile is not available.
 		await wait(1000);
 		await request(app())
 			.get(`/?subcategory=${encodeURI('文化逻辑')}`)
@@ -80,7 +79,6 @@ describe('Route | Index', () => {
 	});
 
 	test('It should render a tempate that match snapshot', async () => {
-		// Due to `hbs.registerPartials` in `app.js` reads file async, need to wait for it, otherwise, test will be flaky with error that partile is not available.
 		await wait(1000);
 		const result = await request(app())
 			.get('/')

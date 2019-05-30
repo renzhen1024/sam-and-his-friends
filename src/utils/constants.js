@@ -31,8 +31,6 @@ exports.DISCOURSE_RESOURCE_MAP = {
 	USER_ACTIONS: 'user_actions',
 };
 
-exports.NUMBER_OF_POSTS_IN_ONE_PAGE = 30;
-
 /**
  * Currently, the design is store everyting into one hashset. One entity is map
  * to a field of the hashset:
